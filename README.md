@@ -51,16 +51,16 @@ STEVE PERRETT / AD:VERSE / STRIKE DADDY / RIDDIM ’N RUM
 | Act | About | Style | Links | Spotify | Track link |
 | --- | --- | --- | --- | --- | --- |
 | **LANX** | — | — | — | — | — |
-| **Jamma Gold** | No established UK act under this exact name turned up in public listings (distinct from DJ **Jamma**, footwear brand LANX, etc.); may be a local or unpublished project. | — | — | — | — |
+| **Jamma Gold** | — | — | — | — | — |
 | **Boson** | Listed as **BOSON**; best public match is **Higgs and the Bosons**, a five-piece from West Kent playing original indie guitar rock with garage, punk, and grunge influences; BBC Radio Kent session act. | Indie rock, garage rock, punk, grunge | — | [Spotify](https://open.spotify.com/artist/47Zn90Sequ7PobMhzLHpNh) | — |
 | **The Milkman** | Listed as **THE MILKMAN**; performing as **The Milk Men**, a UK blues-rock quartet (Jamie Smy, Adam Norsworthy, Lloyd Green, Mike Roberts) with chart-topping blues releases and major festival slots. | Blues rock, R&B, rock | — | [Spotify](https://open.spotify.com/artist/0GsQGvJXAKmnAwzKPrLcnR) | — |
 | **Grillo** | — | — | — | — | — |
-| **Rogan Josh** | No UK band or DJ duo under this pun name found in public sources (distinct from the curry dish and unrelated “Rogan” acts); likely a local bill name with little web footprint. | — | — | — | — |
+| **Rogan Josh** | — | — | — | — | — |
 | **Mint** | Four-piece indie rock band from Grimsby (Zak Rashid and co.), known for high-energy anthems and BBC Introducing / Radio 1 support. | Indie rock, Brit-rock | — | [Spotify](https://open.spotify.com/artist/3P1VGtEN58XJY7P0TzIapp) | — |
-| **Dommo** | No clear match for a UK festival act named Dommo (unrelated companies/artists use similar spellings); identity unconfirmed from public listings. | — | — | — | — |
+| **Dommo** | — | — | — | — | — |
 | **Virgin Vinyls** | **The Virgin Vinyls**: crate-digging DJ duo presenting rare funk, disco, Latin, rock, and psychedelia on vinyl; monthly *Sounds & Siestas* show on Totally Wired Radio. | Funk, disco, rare grooves, Latin, rock (DJ) | [Totally Wired Radio](https://totallywiredradio.com/the-virgin-vinyls/) | — | — |
 | **Steve Perrett** | — | — | — | — | — |
-| **AD:verse** | No Worcestershire-area covers act under **AD:VERSE** or **Ad:verse** found (not to be confused with Midlands project **Adverse Camber**); likely a local band with minimal online presence. | — | — | — | — |
+| **AD:verse** | — | — | — | — | — |
 | **Strike Daddy** | Listed as **STRIKE DADDY**; closest match is **Ska Daddy**, a Stroud-area ska/dub/reggae party band (also performs as Wandering Ska); poster name may be a misread. | Ska, dub, reggae, R&B | [Website](https://www.skadaddy.co.uk/), [Myspace](https://www.myspace.com/skadaddyuk) | — | — |
 | **Riddim ’n Rum** | Best match is **R.U.M. / R.U.M.BAND** (Rhythmic Underground Movement): London funk/soul collective led by Michael Bailey and Ama Lia, with a rotating cast of veteran session players. | Funk, soul, Latin, blues, jazz | [Website](https://www.rumband.com/), [Instagram](https://www.instagram.com/rum_band), [Bandcamp](https://rummusic.bandcamp.com/) | [Spotify](https://open.spotify.com/artist/6ipbFS4ZIfSabswGzJiIeR) | — |
 
