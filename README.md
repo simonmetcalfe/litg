@@ -5,8 +5,6 @@ One-page promotional site for **Lost in the Grass**, a small family festival in 
 **Domain:** tbc  
 **Repo:** public — intended for GitHub Pages deployment
 
----
-
 ## Festival
 
 ### Presenter
@@ -22,7 +20,6 @@ LOST IN THE GRASS
 
 Join Us for a Weekend of Music, Camping, and Family-friendly fun Near Malvern!  We’ll keep you dancing with a hand-picked lineup of incredible acts, or enjoy our family activities! 
 
----
 
 ## Lineup
 
@@ -64,7 +61,6 @@ STEVE PERRETT / AD:VERSE / STRIKE DADDY / RIDDIM ’N RUM
 | **Strike Daddy** | — | — | — |
 | **Riddim ’n Rum** | Best match is **R.U.M. / R.U.M.BAND** (Rhythmic Underground Movement): London funk/soul collective led by Michael Bailey and Ama Lia, with a rotating cast of veteran session players. | Funk, soul, Latin, blues, jazz | [Spotify](https://open.spotify.com/artist/6ipbFS4ZIfSabswGzJiIeR) |
 
----
 
 ## Tickets
 
@@ -101,7 +97,6 @@ Dogs
 £5 per dog
 
 
----
 
 ## What's on
 
@@ -114,7 +109,6 @@ CAFE SERVING DELICIOUS FOOD & DRINKS / BAR / CAMPING / GLAMPING / WOODFIRED HOT 
 KIDS ENTERTAINMENT INC. CINEMA & DISCO / BOUNCY CASTLE / BALL PIT / GAMES / TREASURE HUNT / ARTS & CRAFTS
 
 
----
 
 ## Opening times
 
@@ -126,7 +120,6 @@ Kids Events FRI-SUN Daily
 Kids Disco Fri 5-6 / Kids CinemA Fri-SUN 6-9  
 Campfire & Hot tub Fri-Sat EVE Till Late
 
----
 
 ## Good to know
 
@@ -137,7 +130,6 @@ Alcohol allowed in campsite only (no glass)
 Cafe inc. Breakfast, Sandwiches, chips, CURRY, KEBAB (vegan/Kids options)  
 baby changing & Hot showers (free)
 
----
 
 ### Follow us
 
@@ -148,7 +140,6 @@ instagram.com/l0st_in_the_grass
 
 Want to DJ or Perform?  QUESTIONS? Whatsapp: 
 
----
 
 
 
