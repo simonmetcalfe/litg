@@ -32,15 +32,15 @@ THE GULLS / FUKUSHIMA DOLPHIN
 KIMOSABE / NEBULA SUN / LIV SANGSTER  
 MAII / MOONBIRD
 
-| Act | About | Style | Links | Spotify | Track link |
-| --- | --- | --- | --- | --- | --- |
-| **The Gulls** | Nomadic UK power trio (Will Fairhead, Kilian Aubertin, Tali Knight), formed in Camden and known for high-energy rock and DIY outdoor gigs on the road. | Rock, funk, folk, psychedelia | [Instagram](https://www.instagram.com/the_gulls_official/), [Facebook](https://www.facebook.com/thegullsofficial/), [Website](https://www.the-gulls.com/) | [Spotify](https://open.spotify.com/artist/2n0FlGHc3OxI0x2WI39BEc) | [Freedom](https://open.spotify.com/track/7BqfnrKhArFRbnqtNEfJpu) |
-| **Fukushima Dolphin** | Brighton duo of Josh Butler (guitar, vocals, songwriter) and Alex Marino (drums), blending swirling guitars with driving rhythms and psychedelic production. | Indie / rock / electronic, psychedelic | [Facebook](https://www.facebook.com/fukushimadolphin), [Twitter/X](https://twitter.com/fukdolphin), [Bandcamp](https://fukushimadolphin.bandcamp.com/) | [Spotify](https://open.spotify.com/artist/6AdQ6qTDQo6wPcBYJ6zQfj) | [Space Lift](https://open.spotify.com/track/3Lc52aqMNPX8NRg1Cus9BG) |
-| **Kimosabe** | Female-fronted band from the Chesham / Buckinghamshire area, rooted in UK sound-system culture and regulars on the local festival circuit. | Dub, funk, ska, punk (soulful dub) | [Lemonrock](https://www.lemonrock.com/kimosabi) | — | — |
-| **Nebula Sun** | Norwich quintet formed in 2014 (originally King Kiwanda), with a distinctive double-tenor sax section and DIY-recorded debut album *Breathe Into Form*. | Progressive rock, jazz, psychedelia, soul | [Linktree](https://linktr.ee/nebulasun), [Instagram](https://www.instagram.com/nebulasunband/), [Facebook](https://www.facebook.com/NebulaSunBand/), [Bandcamp](https://nebulasun.bandcamp.com/) | [Spotify](https://open.spotify.com/artist/3Swhpora4IpX5frCYZ9zaC) | [Master Healer](https://open.spotify.com/track/1H2w2vXcdB9vAtaymUugWJ) |
-| **Liv Sangster** | Brighton-based multi-instrumentalist and busker, releasing freestyle-driven material across voice, beatbox, and layered textures. | Ethereal / dream-pop, hip-hop, beatbox | [Instagram](https://www.instagram.com/livsangster), [Bandcamp](https://livsangster.bandcamp.com/) | [Spotify](https://open.spotify.com/artist/4FCuIRaeCVFJEwfR9e9INY) | [In Her Rein (Freestyle)](https://open.spotify.com/track/0VZhXTduGwvOLMw1qfF4kc) |
-| **MAII** | Oxford five-piece instrumental group (often listed as **Maiians** / **MAiiANS**), known for twin drummers and kaleidoscopic live electronica; largely inactive on streaming since 2017. | Electronic, Balearic post-rock, dance | [Bandcamp](https://maiians.bandcamp.com/) | [Spotify](https://open.spotify.com/artist/0mETWhuGnP7a4tLgwNTMAt?si=8mcACOHbR8i_orNvcOVthw) | — |
-| **Moonbird** | Bristol duo of Dom Blake (electronics, bass) and Cal Smith (guitar, vocals), building summery psychedelic electronica live with loops and synths; BBC Introducing showcase act. | Psychedelic electronica, indie electronic | — | [Spotify](https://open.spotify.com/artist/5Xha2kjFXFMfvvaDwZmIuG?si=rq8MJdKJSNWk86i9US9ulw) | — |
+| Act | About | Style | Listen |
+| --- | --- | --- | --- |
+| **The Gulls** | Nomadic UK power trio (Will Fairhead, Kilian Aubertin, Tali Knight), formed in Camden and known for high-energy rock and DIY outdoor gigs on the road. | Rock, funk, folk, psychedelia | [Spotify](https://open.spotify.com/artist/2n0FlGHc3OxI0x2WI39BEc) |
+| **Fukushima Dolphin** | Brighton duo of Josh Butler (guitar, vocals, songwriter) and Alex Marino (drums), blending swirling guitars with driving rhythms and psychedelic production. | Indie / rock / electronic, psychedelic | [Spotify](https://open.spotify.com/artist/6AdQ6qTDQo6wPcBYJ6zQfj) |
+| **Kimosabe** | Female-fronted band from the Chesham / Buckinghamshire area, rooted in UK sound-system culture and regulars on the local festival circuit. | Dub, funk, ska, punk (soulful dub) | — |
+| **Nebula Sun** | Norwich quintet formed in 2014 (originally King Kiwanda), with a distinctive double-tenor sax section and DIY-recorded debut album *Breathe Into Form*. | Progressive rock, jazz, psychedelia, soul | [Spotify](https://open.spotify.com/artist/3Swhpora4IpX5frCYZ9zaC) |
+| **Liv Sangster** | Brighton-based multi-instrumentalist and busker, releasing freestyle-driven material across voice, beatbox, and layered textures. | Ethereal / dream-pop, hip-hop, beatbox | [Spotify](https://open.spotify.com/artist/4FCuIRaeCVFJEwfR9e9INY) |
+| **MAII** | Oxford five-piece instrumental group (often listed as **Maiians** / **MAiiANS**), known for twin drummers and kaleidoscopic live electronica; largely inactive on streaming since 2017. | Electronic, Balearic post-rock, dance | [Spotify](https://open.spotify.com/artist/0mETWhuGnP7a4tLgwNTMAt?si=8mcACOHbR8i_orNvcOVthw) |
+| **Moonbird** | Bristol duo of Dom Blake (electronics, bass) and Cal Smith (guitar, vocals), building summery psychedelic electronica live with loops and synths; BBC Introducing showcase act. | Psychedelic electronica, indie electronic | [Spotify](https://open.spotify.com/artist/5Xha2kjFXFMfvvaDwZmIuG?si=rq8MJdKJSNWk86i9US9ulw) |
 
 ### Other acts
 
@@ -48,21 +48,21 @@ LANX / JAMMA GOLD / BOSON / THE MILKMAN/
 GRILLO / ROGAN JOSH / MINT / DOMMO / VIRGIN VINYLS /  
 STEVE PERRETT / AD:VERSE / STRIKE DADDY / RIDDIM ’N RUM
 
-| Act | About | Style | Links | Spotify | Track link |
-| --- | --- | --- | --- | --- | --- |
-| **LANX** | — | — | — | — | — |
-| **Jamma Gold** | — | — | — | — | — |
-| **Boson** | Listed as **BOSON**; best public match is **Higgs and the Bosons**, a five-piece from West Kent playing original indie guitar rock with garage, punk, and grunge influences; BBC Radio Kent session act. | Indie rock, garage rock, punk, grunge | — | [Spotify](https://open.spotify.com/artist/47Zn90Sequ7PobMhzLHpNh) | — |
-| **The Milkman** | Listed as **THE MILKMAN**; performing as **The Milk Men**, a UK blues-rock quartet (Jamie Smy, Adam Norsworthy, Lloyd Green, Mike Roberts) with chart-topping blues releases and major festival slots. | Blues rock, R&B, rock | — | [Spotify](https://open.spotify.com/artist/0GsQGvJXAKmnAwzKPrLcnR) | — |
-| **Grillo** | — | — | — | — | — |
-| **Rogan Josh** | — | — | — | — | — |
-| **Mint** | Four-piece indie rock band from Grimsby (Zak Rashid and co.), known for high-energy anthems and BBC Introducing / Radio 1 support. | Indie rock, Brit-rock | — | [Spotify](https://open.spotify.com/artist/3P1VGtEN58XJY7P0TzIapp) | — |
-| **Dommo** | — | — | — | — | — |
-| **Virgin Vinyls** | **The Virgin Vinyls**: crate-digging DJ duo presenting rare funk, disco, Latin, rock, and psychedelia on vinyl; monthly *Sounds & Siestas* show on Totally Wired Radio. | Funk, disco, rare grooves, Latin, rock (DJ) | [Totally Wired Radio](https://totallywiredradio.com/the-virgin-vinyls/) | — | — |
-| **Steve Perrett** | — | — | — | — | — |
-| **AD:verse** | — | — | — | — | — |
-| **Strike Daddy** | Listed as **STRIKE DADDY**; closest match is **Ska Daddy**, a Stroud-area ska/dub/reggae party band (also performs as Wandering Ska); poster name may be a misread. | Ska, dub, reggae, R&B | [Website](https://www.skadaddy.co.uk/), [Myspace](https://www.myspace.com/skadaddyuk) | — | — |
-| **Riddim ’n Rum** | Best match is **R.U.M. / R.U.M.BAND** (Rhythmic Underground Movement): London funk/soul collective led by Michael Bailey and Ama Lia, with a rotating cast of veteran session players. | Funk, soul, Latin, blues, jazz | [Website](https://www.rumband.com/), [Instagram](https://www.instagram.com/rum_band), [Bandcamp](https://rummusic.bandcamp.com/) | [Spotify](https://open.spotify.com/artist/6ipbFS4ZIfSabswGzJiIeR) | — |
+| Act | About | Style | Listen |
+| --- | --- | --- | --- |
+| **LANX** | — | — | — |
+| **Jamma Gold** | — | — | — |
+| **Boson** | Listed as **BOSON**; best public match is **Higgs and the Bosons**, a five-piece from West Kent playing original indie guitar rock with garage, punk, and grunge influences; BBC Radio Kent session act. | Indie rock, garage rock, punk, grunge | [Spotify](https://open.spotify.com/artist/47Zn90Sequ7PobMhzLHpNh) |
+| **The Milkman** | Listed as **THE MILKMAN**; performing as **The Milk Men**, a UK blues-rock quartet (Jamie Smy, Adam Norsworthy, Lloyd Green, Mike Roberts) with chart-topping blues releases and major festival slots. | Blues rock, R&B, rock | [Spotify](https://open.spotify.com/artist/0GsQGvJXAKmnAwzKPrLcnR) |
+| **Grillo** | — | — | — |
+| **Rogan Josh** | — | — | — |
+| **Mint** | Four-piece indie rock band from Grimsby (Zak Rashid and co.), known for high-energy anthems and BBC Introducing / Radio 1 support. | Indie rock, Brit-rock | [Spotify](https://open.spotify.com/artist/3P1VGtEN58XJY7P0TzIapp) |
+| **Dommo** | — | — | — |
+| **Virgin Vinyls** | **The Virgin Vinyls**: crate-digging DJ duo presenting rare funk, disco, Latin, rock, and psychedelia on vinyl; monthly *Sounds & Siestas* show on Totally Wired Radio. | Funk, disco, rare grooves, Latin, rock (DJ) | [Totally Wired Radio](https://totallywiredradio.com/the-virgin-vinyls/) |
+| **Steve Perrett** | — | — | — |
+| **AD:verse** | — | — | — |
+| **Strike Daddy** | — | — | — |
+| **Riddim ’n Rum** | Best match is **R.U.M. / R.U.M.BAND** (Rhythmic Underground Movement): London funk/soul collective led by Michael Bailey and Ama Lia, with a rotating cast of veteran session players. | Funk, soul, Latin, blues, jazz | [Spotify](https://open.spotify.com/artist/6ipbFS4ZIfSabswGzJiIeR) |
 
 ---
 
