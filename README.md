@@ -98,23 +98,34 @@ Want to DJ or Perform?  QUESTIONS? Whatsapp:
 
 ## Venue
 
+### Host
+
 Hosted by OUT to GRASS, Woodend Farm, Bromyard Rd, Malvern, WR13 5JW.  outtograss.com  
 https://www.outtograss.com/
 
-Out To Grass is located at:
-Woodend Farm,
-Cradley,
-Malvern,
-Worcs,
+### Address
+
+Out To Grass is located at:  
+Woodend Farm,  
+Cradley,  
+Malvern,  
+Worcs,  
 WR13 5JW.
+
+### Grid reference
 
 Grid Reference: 370250E 248750N (N52:08:10 W2:26:10)
 
-Directions from M5
+### Directions
+
+#### From M5
+
 Junction 7 (Worcester South). Head towards Worcester. Left at first roundabout (signposted to Hereford). Left at fifth roundabout (A4103 signposted to Hereford). Continue along A4103 through Bransford, Leigh Sinton (beware of speed camera), Storridge. Ignore to signs to Cradley. At the top of the steep hill turn right onto the B4220 for Bromyard. OTG is 1.4 miles on the left.
 
-Directions from A49
+#### From A49
+
 At Leominster take A44 to Bromyard. Continue along A44 through Bromyard (beware of speed camera) towards Worcester. 1 mile out of Bromyard turn right onto the B4220 for Malvern. Continue along B4220 for 4 miles, over the crossroads, up the hill and round the 90° left bend. OTG is on the right.
 
-Directions from Hereford
+#### From Hereford
+
 Take the A4103 towards Worcester. Continue along the A4103 for 15 miles, up the big hill and through Fromes Hill. 2 miles out of Fromes Hill turn left onto the B4220 for Bromyard. OTG is 1.4 miles on the left.
