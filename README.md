@@ -20,7 +20,7 @@ LOST IN THE GRASS
 
 ### Intro
 
-intro blurb
+Join Us for a Weekend of Music, Camping, and Family-friendly fun Near Malvern!  We’ll keep you dancing with a hand-picked lineup of incredible acts, or enjoy our family activities! 
 
 ---
 
@@ -32,23 +32,74 @@ THE GULLS / FUKUSHIMA DOLPHIN
 KIMOSABE / NEBULA SUN / LIV SANGSTER  
 MAII / MOONBIRD
 
+| Act | About | Style | Links | Spotify | Track link |
+| --- | --- | --- | --- | --- | --- |
+| **The Gulls** | Nomadic UK power trio (Will Fairhead, Kilian Aubertin, Tali Knight), formed in Camden and known for high-energy rock and DIY outdoor gigs on the road. | Rock, funk, folk, psychedelia | [Instagram](https://www.instagram.com/the_gulls_official/), [Facebook](https://www.facebook.com/thegullsofficial/), [Website](https://www.the-gulls.com/) | [Spotify](https://open.spotify.com/artist/2n0FlGHc3OxI0x2WI39BEc) | [Freedom](https://open.spotify.com/track/7BqfnrKhArFRbnqtNEfJpu) |
+| **Fukushima Dolphin** | Brighton duo of Josh Butler (guitar, vocals, songwriter) and Alex Marino (drums), blending swirling guitars with driving rhythms and psychedelic production. | Indie / rock / electronic, psychedelic | [Facebook](https://www.facebook.com/fukushimadolphin), [Twitter/X](https://twitter.com/fukdolphin), [Bandcamp](https://fukushimadolphin.bandcamp.com/) | [Spotify](https://open.spotify.com/artist/6AdQ6qTDQo6wPcBYJ6zQfj) | [Space Lift](https://open.spotify.com/track/3Lc52aqMNPX8NRg1Cus9BG) |
+| **Kimosabe** | Female-fronted band from the Chesham / Buckinghamshire area, rooted in UK sound-system culture and regulars on the local festival circuit. | Dub, funk, ska, punk (soulful dub) | [Lemonrock](https://www.lemonrock.com/kimosabi) | — | — |
+| **Nebula Sun** | Norwich quintet formed in 2014 (originally King Kiwanda), with a distinctive double-tenor sax section and DIY-recorded debut album *Breathe Into Form*. | Progressive rock, jazz, psychedelia, soul | [Linktree](https://linktr.ee/nebulasun), [Instagram](https://www.instagram.com/nebulasunband/), [Facebook](https://www.facebook.com/NebulaSunBand/), [Bandcamp](https://nebulasun.bandcamp.com/) | [Spotify](https://open.spotify.com/artist/3Swhpora4IpX5frCYZ9zaC) | [Master Healer](https://open.spotify.com/track/1H2w2vXcdB9vAtaymUugWJ) |
+| **Liv Sangster** | Brighton-based multi-instrumentalist and busker, releasing freestyle-driven material across voice, beatbox, and layered textures. | Ethereal / dream-pop, hip-hop, beatbox | [Instagram](https://www.instagram.com/livsangster), [Bandcamp](https://livsangster.bandcamp.com/) | [Spotify](https://open.spotify.com/artist/4FCuIRaeCVFJEwfR9e9INY) | [In Her Rein (Freestyle)](https://open.spotify.com/track/0VZhXTduGwvOLMw1qfF4kc) |
+| **MAII** | Oxford five-piece instrumental group (often listed as **Maiians** / **MAiiANS**), known for twin drummers and kaleidoscopic live electronica; largely inactive on streaming since 2017. | Electronic, Balearic post-rock, dance | [Bandcamp](https://maiians.bandcamp.com/), [SoundCloud](https://soundcloud.com/maiians), [Website](http://maiians.com) | — | — |
+| **Moonbird** | Bristol duo of Dom Blake (electronics, bass) and Cal Smith (guitar, vocals), building summery psychedelic electronica live with loops and synths; BBC Introducing showcase act. | Psychedelic electronica, indie electronic | — | — | — |
+
 ### Other acts
 
 LANX / JAMMA GOLD / BOSON / THE MILKMAN/  
 GRILLO / ROGAN JOSH / MINT / DOMMO / VIRGIN VINYLS /  
 STEVE PERRETT / AD:VERSE / STRIKE DADDY / RIDDIM ’N RUM
 
+| Act | About | Style | Links | Spotify | Track link |
+| --- | --- | --- | --- | --- | --- |
+| **LANX** | London-based drummer, vocalist, and keyboardist recording under the stage name Lanx; active on the gig circuit and seeking band projects (BandMix profile). | Alternative, classic rock, punk, rock | [BandMix](https://www.bandmix.co.uk/lanx/) | — | — |
+| **Jamma Gold** | No established UK act under this exact name turned up in public listings (distinct from DJ **Jamma**, footwear brand LANX, etc.); may be a local or unpublished project. | — | — | — | — |
+| **Boson** | Listed as **BOSON**; best public match is **Higgs and the Bosons**, a five-piece from West Kent playing original indie guitar rock with garage, punk, and grunge influences; BBC Radio Kent session act. | Indie rock, garage rock, punk, grunge | [Website](http://higgsandthebosons.co.uk/), [Facebook](https://www.facebook.com/TheBosons/), [Twitter/X](https://twitter.com/higgsntbosons), [Bandcamp](https://higgsandthebosons.bandcamp.com/) | [Spotify](https://open.spotify.com/artist/47Zn90Sequ7PobMhzLHpNh) | [A Little More Time](https://open.spotify.com/track/5ifOOV9cwdyC8PapxLTkay) |
+| **The Milkman** | Listed as **THE MILKMAN**; performing as **The Milk Men**, a UK blues-rock quartet (Jamie Smy, Adam Norsworthy, Lloyd Green, Mike Roberts) with chart-topping blues releases and major festival slots. | Blues rock, R&B, rock | [Website](https://www.themilkmenmusic.com/), [Facebook](https://www.facebook.com/TheMilkMenRockBand/), [Instagram](https://www.instagram.com/themilkmenrockband) | [Spotify](https://open.spotify.com/artist/0GsQGvJXAKmnAwzKPrLcnR) | [Misty Road](https://open.spotify.com/track/51jjUzbx9UrHWG0dzVbMvO) |
+| **Grillo** | **Mike Grillo** (The Mike Grillo Sound): published singer-songwriter and veteran live performer, also known for rock-history talks and the one-man show *The Roy Orbison & Del Shannon Story*. | Singer-songwriter, pop, rock, Americana | [Website](https://themikegrillosound.com/), [Instagram](https://www.instagram.com/mike_grillo51), [Facebook](https://www.facebook.com/mikegrillosound), [Bandcamp](https://themikegrillosound.bandcamp.com/), [YouTube](https://www.youtube.com/@MikeVandettaUk) | — | — |
+| **Rogan Josh** | No UK band or DJ duo under this pun name found in public sources (distinct from the curry dish and unrelated “Rogan” acts); likely a local bill name with little web footprint. | — | — | — | — |
+| **Mint** | Four-piece indie rock band from Grimsby (Zak Rashid and co.), known for high-energy anthems and BBC Introducing / Radio 1 support. | Indie rock, Brit-rock | [Facebook](https://www.facebook.com/WeAreJustMint/), [Twitter/X](https://twitter.com/wearejustmint), [YouTube](https://www.youtube.com/channel/UCuZKUJhOi7aaWZ9SsE8Vp_A) | [Spotify](https://open.spotify.com/artist/3P1VGtEN58XJY7P0TzIapp) | [M180](https://open.spotify.com/track/25cPFFTziKKFPqCr3anbpb) |
+| **Dommo** | No clear match for a UK festival act named Dommo (unrelated companies/artists use similar spellings); identity unconfirmed from public listings. | — | — | — | — |
+| **Virgin Vinyls** | **The Virgin Vinyls**: crate-digging DJ duo presenting rare funk, disco, Latin, rock, and psychedelia on vinyl; monthly *Sounds & Siestas* show on Totally Wired Radio. | Funk, disco, rare grooves, Latin, rock (DJ) | [Totally Wired Radio](https://totallywiredradio.com/the-virgin-vinyls/), [Instagram](https://www.instagram.com/thevirginvinyls) | — | — |
+| **Steve Perrett** | Torquay-based musician **Steve Perrett**, releasing laid-back original material as **Songsparrow** on SoundClick; former band player now focused on studio recordings rather than live work. | Country-pop, eclectic songwriter | [SoundClick](https://www.soundclick.com/Songsparrow) | — | — |
+| **AD:verse** | No Worcestershire-area covers act under **AD:VERSE** or **Ad:verse** found (not to be confused with Midlands project **Adverse Camber**); likely a local band with minimal online presence. | — | — | — | — |
+| **Strike Daddy** | Listed as **STRIKE DADDY**; closest match is **Ska Daddy**, a Stroud-area ska/dub/reggae party band (also performs as Wandering Ska); poster name may be a misread. | Ska, dub, reggae, R&B | [Website](https://www.skadaddy.co.uk/), [Myspace](https://www.myspace.com/skadaddyuk) | — | — |
+| **Riddim ’n Rum** | Best match is **R.U.M. / R.U.M.BAND** (Rhythmic Underground Movement): London funk/soul collective led by Michael Bailey and Ama Lia, with a rotating cast of veteran session players. | Funk, soul, Latin, blues, jazz | [Website](https://www.rumband.com/), [Instagram](https://www.instagram.com/rum_band), [Bandcamp](https://rummusic.bandcamp.com/) | [Spotify](https://open.spotify.com/artist/6ipbFS4ZIfSabswGzJiIeR) | [What Is What](https://open.spotify.com/track/7dZPsgwuOV9GKbHa4Ujnr7) |
+
 ---
 
-## Tickets & social
+## Tickets
 
-### Tickets
+### Link
 
 OUTTOGRASS.COM/PRODUCT-CATEGORY/LOST-IN-THE-GRASS-2026
 
-### Follow us
+### Admission
 
-instagram.com/l0st_in_the_grass
+Adults  
+£110 (18+)  
+
+KIDS  
+£35 (5-17)  
+UNDER 5S free
+
+### Camping
+
+Campers  
+£30  
+ElEC Hookup  
+£35
+
+### Glamping
+
+Glamping  
+£360 per tent  
+ 1-4 pax  
+No towels
+
+### Dogs
+
+Dogs  
+£5 per dog
+
 
 ---
 
@@ -62,9 +113,6 @@ CAFE SERVING DELICIOUS FOOD & DRINKS / BAR / CAMPING / GLAMPING / WOODFIRED HOT 
 
 KIDS ENTERTAINMENT INC. CINEMA & DISCO / BOUNCY CASTLE / BALL PIT / GAMES / TREASURE HUNT / ARTS & CRAFTS
 
-### Highlights
-
-WEEKEND TICKET / KID FRIENDLY / DOGS WELCOME
 
 ---
 
@@ -82,6 +130,7 @@ Campfire & Hot tub Fri-Sat EVE Till Late
 
 ## Good to know
 
+KID FRIENDLY / DOGS WELCOME
 Quiet/FAmily Camping available  
 Card Accepted / Car parking only in car park  
 Alcohol allowed in campsite only (no glass)  
@@ -90,11 +139,18 @@ baby changing & Hot showers (free)
 
 ---
 
+### Follow us
+
+instagram.com/l0st_in_the_grass
+
+
 ## Get involved
 
 Want to DJ or Perform?  QUESTIONS? Whatsapp: 
 
 ---
+
+
 
 ## Venue
 
