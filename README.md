@@ -44,6 +44,7 @@ MAII / MOONBIRD
 LANX / JAMMA GOLD / BOSON / THE MILKMAN/  
 GRILLO / ROGAN JOSH / MINT / DOMMO / VIRGIN VINYLS /  
 STEVE PERRETT / AD:VERSE / STRIKE DADDY / RIDDIM ’N RUM
+Howdo Bean & The Dinos / Mr Tumnus
 
 | Act | About | Style | Listen |
 | --- | --- | --- | --- |
@@ -60,6 +61,21 @@ STEVE PERRETT / AD:VERSE / STRIKE DADDY / RIDDIM ’N RUM
 | **AD:verse** | — | — | — |
 | **Strike Daddy** | — | — | — |
 | **Riddim ’n Rum** | Best match is **R.U.M. / R.U.M.BAND** (Rhythmic Underground Movement): London funk/soul collective led by Michael Bailey and Ama Lia, with a rotating cast of veteran session players. | Funk, soul, Latin, blues, jazz | [Spotify](https://open.spotify.com/artist/6ipbFS4ZIfSabswGzJiIeR) |
+
+### DJs
+Virgin Vinyls (Brighton)
+Lanx (Somerset)
+Jamma Gold (Somerset)
+Dommo (Bristol)
+Steve Perrett (Wiltshire)
+AD:Verse (Malvern)
+Boson (Coventry)
+Milkman (Surrey)
+Grillo (Brighton)
+Rogan Josh (London)
+Mint (Somerset)
+Strike Daddy (Brighton)
+
 
 
 ## Tickets
