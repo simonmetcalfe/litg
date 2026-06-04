@@ -27,7 +27,9 @@ Join Us for a Weekend of Music, Camping, and Family-friendly fun Near Malvern!  
 
 THE GULLS / FUKUSHIMA DOLPHIN  
 KIMOSABE / NEBULA SUN / LIV SANGSTER  
-MAII / MOONBIRD
+MAII / MOONBIRD  
+RIDDIM ’N RUM  
+HOWDO BEAN & THE DINOS / MR TUMNUS
 
 | Act | About | Style | Listen |
 | --- | --- | --- | --- |
@@ -38,15 +40,9 @@ MAII / MOONBIRD
 | **Liv Sangster** | Brighton-based multi-instrumentalist and busker, releasing freestyle-driven material across voice, beatbox, and layered textures. | Ethereal / dream-pop, hip-hop, beatbox | [Spotify](https://open.spotify.com/artist/4FCuIRaeCVFJEwfR9e9INY) |
 | **MAII** | Oxford five-piece instrumental group (often listed as **Maiians** / **MAiiANS**), known for twin drummers and kaleidoscopic live electronica; largely inactive on streaming since 2017. | Electronic, Balearic post-rock, dance | [Spotify](https://open.spotify.com/artist/0mETWhuGnP7a4tLgwNTMAt?si=8mcACOHbR8i_orNvcOVthw) |
 | **Moonbird** | Bristol duo of Dom Blake (electronics, bass) and Cal Smith (guitar, vocals), building summery psychedelic electronica live with loops and synths; BBC Introducing showcase act. | Psychedelic electronica, indie electronic | [Spotify](https://open.spotify.com/artist/5Xha2kjFXFMfvvaDwZmIuG?si=rq8MJdKJSNWk86i9US9ulw) |
-
-### Other acts
-
-RIDDIM ’N RUM  
-Howdo Bean & The Dinos / Mr Tumnus
-
-| Act | About | Style | Listen |
-| --- | --- | --- | --- |
 | **Riddim ’n Rum** | Best match is **R.U.M. / R.U.M.BAND** (Rhythmic Underground Movement): London funk/soul collective led by Michael Bailey and Ama Lia, with a rotating cast of veteran session players. | Funk, soul, Latin, blues, jazz | [Spotify](https://open.spotify.com/artist/6ipbFS4ZIfSabswGzJiIeR) |
+| **Howdo Bean & The Dinos** | — | — | — |
+| **Mr Tumnus** | — | — | — |
 
 ### DJs
 
