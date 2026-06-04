@@ -41,40 +41,42 @@ MAII / MOONBIRD
 
 ### Other acts
 
-LANX / JAMMA GOLD / BOSON / THE MILKMAN/  
-GRILLO / ROGAN JOSH / MINT / DOMMO / VIRGIN VINYLS /  
-STEVE PERRETT / AD:VERSE / STRIKE DADDY / RIDDIM ’N RUM
+RIDDIM ’N RUM  
 Howdo Bean & The Dinos / Mr Tumnus
 
 | Act | About | Style | Listen |
 | --- | --- | --- | --- |
-| **LANX** | — | — | — |
-| **Jamma Gold** | — | — | — |
-| **Boson** | Listed as **BOSON**; best public match is **Higgs and the Bosons**, a five-piece from West Kent playing original indie guitar rock with garage, punk, and grunge influences; BBC Radio Kent session act. | Indie rock, garage rock, punk, grunge | [Spotify](https://open.spotify.com/artist/47Zn90Sequ7PobMhzLHpNh) |
-| **The Milkman** | Listed as **THE MILKMAN**; performing as **The Milk Men**, a UK blues-rock quartet (Jamie Smy, Adam Norsworthy, Lloyd Green, Mike Roberts) with chart-topping blues releases and major festival slots. | Blues rock, R&B, rock | [Spotify](https://open.spotify.com/artist/0GsQGvJXAKmnAwzKPrLcnR) |
-| **Grillo** | — | — | — |
-| **Rogan Josh** | — | — | — |
-| **Mint** | Four-piece indie rock band from Grimsby (Zak Rashid and co.), known for high-energy anthems and BBC Introducing / Radio 1 support. | Indie rock, Brit-rock | [Spotify](https://open.spotify.com/artist/3P1VGtEN58XJY7P0TzIapp) |
-| **Dommo** | — | — | — |
-| **Virgin Vinyls** | **The Virgin Vinyls**: crate-digging DJ duo presenting rare funk, disco, Latin, rock, and psychedelia on vinyl; monthly *Sounds & Siestas* show on Totally Wired Radio. | Funk, disco, rare grooves, Latin, rock (DJ) | [Totally Wired Radio](https://totallywiredradio.com/the-virgin-vinyls/) |
-| **Steve Perrett** | — | — | — |
-| **AD:verse** | — | — | — |
-| **Strike Daddy** | — | — | — |
 | **Riddim ’n Rum** | Best match is **R.U.M. / R.U.M.BAND** (Rhythmic Underground Movement): London funk/soul collective led by Michael Bailey and Ama Lia, with a rotating cast of veteran session players. | Funk, soul, Latin, blues, jazz | [Spotify](https://open.spotify.com/artist/6ipbFS4ZIfSabswGzJiIeR) |
 
 ### DJs
-Virgin Vinyls (Brighton)
-Lanx (Somerset)
-Jamma Gold (Somerset)
-Dommo (Bristol)
-Steve Perrett (Wiltshire)
-AD:Verse (Malvern)
-Boson (Coventry)
-Milkman (Surrey)
-Grillo (Brighton)
-Rogan Josh (London)
-Mint (Somerset)
+
+Virgin Vinyls (Brighton)  
+Lanx (Somerset)  
+Jamma Gold (Somerset)  
+Dommo (Bristol)  
+Steve Perrett (Wiltshire)  
+AD:Verse (Malvern)  
+Boson (Coventry)  
+Milkman (Surrey)  
+Grillo (Brighton)  
+Rogan Josh (London)  
+Mint (Somerset)  
 Strike Daddy (Brighton)
+
+| DJ | About | Style | Listen |
+| --- | --- | --- | --- |
+| **Virgin Vinyls** | Brighton. **The Virgin Vinyls**: crate-digging DJ duo presenting rare funk, disco, Latin, rock, and psychedelia on vinyl; monthly *Sounds & Siestas* show on Totally Wired Radio. | Funk, disco, rare grooves, Latin, rock | [Totally Wired Radio](https://totallywiredradio.com/the-virgin-vinyls/) |
+| **Lanx** | Somerset. | — | — |
+| **Jamma Gold** | Somerset. | — | — |
+| **Dommo** | Bristol. | — | — |
+| **Steve Perrett** | Wiltshire. | — | — |
+| **AD:Verse** | Malvern. | — | — |
+| **Boson** | Coventry. Listed as **BOSON**; best public match is **Higgs and the Bosons**, a five-piece from West Kent playing original indie guitar rock with garage, punk, and grunge influences; BBC Radio Kent session act. | Indie rock, garage rock, punk, grunge | [Spotify](https://open.spotify.com/artist/47Zn90Sequ7PobMhzLHpNh) |
+| **Milkman** | Surrey. Listed as **THE MILKMAN**; performing as **The Milk Men**, a UK blues-rock quartet (Jamie Smy, Adam Norsworthy, Lloyd Green, Mike Roberts) with chart-topping blues releases and major festival slots. | Blues rock, R&B, rock | [Spotify](https://open.spotify.com/artist/0GsQGvJXAKmnAwzKPrLcnR) |
+| **Grillo** | Brighton. | — | — |
+| **Rogan Josh** | London. | — | — |
+| **Mint** | Somerset. Four-piece indie rock band from Grimsby (Zak Rashid and co.), known for high-energy anthems and BBC Introducing / Radio 1 support. | Indie rock, Brit-rock | [Spotify](https://open.spotify.com/artist/3P1VGtEN58XJY7P0TzIapp) |
+| **Strike Daddy** | Brighton. | — | — |
 
 
 
