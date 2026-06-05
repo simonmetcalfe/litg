@@ -62,16 +62,16 @@ Strike Daddy (Brighton)
 | DJ | About | Style | Listen |
 | --- | --- | --- | --- |
 | **Virgin Vinyls** | Brighton. **The Virgin Vinyls**: crate-digging DJ duo presenting rare funk, disco, Latin, rock, and psychedelia on vinyl; monthly *Sounds & Siestas* show on Totally Wired Radio. | Funk, disco, rare grooves, Latin, rock | [Totally Wired Radio](https://totallywiredradio.com/the-virgin-vinyls/) |
-| **Lanx** | Somerset. | — | — |
+| **Lanx** | Somerset. Wincanton-based community vinyl DJ and Somerset party-circuit regular, resident at local events and known for wide-ranging crate-digging sets that roam across all eras. | Mod, funk, soul, jazz, folk, rock, synth-pop | — |
 | **Jamma Gold** | Somerset. | — | — |
 | **Dommo** | Bristol. | — | — |
 | **Steve Perrett** | Wiltshire. | — | — |
 | **AD:Verse** | Malvern. | — | — |
-| **Boson** | Coventry. Listed as **BOSON**; best public match is **Higgs and the Bosons**, a five-piece from West Kent playing original indie guitar rock with garage, punk, and grunge influences; BBC Radio Kent session act. | Indie rock, garage rock, punk, grunge | [Spotify](https://open.spotify.com/artist/47Zn90Sequ7PobMhzLHpNh) |
-| **Milkman** | Surrey. Listed as **THE MILKMAN**; performing as **The Milk Men**, a UK blues-rock quartet (Jamie Smy, Adam Norsworthy, Lloyd Green, Mike Roberts) with chart-topping blues releases and major festival slots. | Blues rock, R&B, rock | [Spotify](https://open.spotify.com/artist/0GsQGvJXAKmnAwzKPrLcnR) |
+| **Boson** | Coventry. | — | — |
+| **Milkman** | Surrey. | — | — |
 | **Grillo** | Brighton. | — | — |
 | **Rogan Josh** | London. | — | — |
-| **Mint** | Somerset. Four-piece indie rock band from Grimsby (Zak Rashid and co.), known for high-energy anthems and BBC Introducing / Radio 1 support. | Indie rock, Brit-rock | [Spotify](https://open.spotify.com/artist/3P1VGtEN58XJY7P0TzIapp) |
+| **Mint** | Somerset. | — | — |
 | **Strike Daddy** | Brighton. | — | — |
 
 
