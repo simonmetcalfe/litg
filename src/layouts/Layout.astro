@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { asset } from '../utils';
+import { absoluteAsset, asset } from '../utils';
 
 interface Props {
   title?: string;
@@ -22,7 +22,8 @@ const {
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={asset('poster/IG2.png')} />
+    <meta property="og:image" content={absoluteAsset('poster/IG2.png')} />
+    <meta property="og:url" content={import.meta.env.SITE + import.meta.env.BASE_URL} />
     <meta name="theme-color" content="#0C1907" />
     <link rel="icon" type="image/png" href={asset('logo/website_logo.png')} />
 
