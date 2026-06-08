@@ -1,1 +1,10 @@
+# Dependencies and build output
+node_modules/
+dist/
+
+# Astro cache
+.astro/
+
+# OS files
 **/.DS_Store
+/node_modules

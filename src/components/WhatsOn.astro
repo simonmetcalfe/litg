@@ -1,0 +1,74 @@
+---
+import { whatsOnGeneral, whatsOnExtra, whatsOnKids, openingTimes } from '../data/site';
+import { asset } from '../utils';
+---
+
+<section id="whats-on" class="bg-lotg-dark py-20 px-4 md:px-8 lg:px-16">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <h2 class="font-bangers text-lotg-green text-6xl md:text-8xl tracking-wider text-outline-lg leading-none">
+        What's On
+      </h2>
+    </div>
+
+    <!-- Icon grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 mb-10">
+      {whatsOnGeneral.map(item => (
+        <div class="flex flex-col items-center gap-3 p-4 bg-lotg-card rounded-2xl border border-lotg-green/20 hover:border-lotg-green/50 transition-colors">
+          <img
+            src={asset(item.icon)}
+            alt={item.label}
+            class="w-16 h-16 object-contain"
+            loading="lazy"
+          />
+          <p class="text-lotg-offwhite text-sm text-center leading-tight tracking-wide uppercase">{item.label}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Extra activities (text pills) -->
+    <div class="flex flex-wrap justify-center gap-2 mb-14">
+      {whatsOnExtra.map(item => (
+        <span class="bg-lotg-mid border border-lotg-green/30 text-lotg-offwhite/80 text-sm px-4 py-1.5 rounded-full uppercase tracking-wide">
+          {item}
+        </span>
+      ))}
+    </div>
+
+    <!-- Two column: kids + opening times -->
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Kids -->
+      <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-yellow/20">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="text-3xl">🦕</span>
+          <h3 class="font-bangers text-lotg-yellow text-3xl tracking-wide">Kids Corner</h3>
+        </div>
+        <ul class="space-y-2">
+          {whatsOnKids.map(item => (
+            <li class="flex items-start gap-2 text-lotg-offwhite">
+              <span class="text-lotg-green mt-0.5 shrink-0">✦</span>
+              <span class="tracking-wide">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Opening times -->
+      <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/20">
+        <h3 class="font-bangers text-lotg-green text-3xl tracking-wide mb-5">Opening Times</h3>
+        <div class="space-y-2">
+          {openingTimes.map(row => (
+            <div class="flex justify-between gap-4 border-b border-lotg-green/10 pb-2 last:border-0 last:pb-0">
+              <span class="text-lotg-offwhite/70 text-sm uppercase tracking-wide">{row.label}</span>
+              <span class="text-lotg-green text-sm text-right">{row.times}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

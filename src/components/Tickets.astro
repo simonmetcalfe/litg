@@ -1,0 +1,73 @@
+---
+const ticketUrl = 'https://outtograss.com/product-category/lost-in-the-grass-2026';
+---
+
+<section id="tickets" class="section-alt py-20 px-4 md:px-8 lg:px-16">
+  <div class="max-w-5xl mx-auto text-center">
+
+    <!-- Heading -->
+    <h2 class="font-bangers text-lotg-green text-6xl md:text-8xl tracking-wider text-outline-lg leading-none mb-3">
+      Tickets
+    </h2>
+    <p class="text-lotg-yellow text-lg tracking-wide mb-12">On sale now — limited availability</p>
+
+    <!-- Ticket cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+
+      <!-- Adults -->
+      <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/40 flex flex-col items-center gap-2 hover:border-lotg-green hover:shadow-[0_0_20px_rgba(98,212,32,0.2)] transition-all">
+        <span class="text-3xl">🎟️</span>
+        <h3 class="font-bangers text-lotg-offwhite text-2xl tracking-wide">Adults</h3>
+        <p class="font-bangers text-lotg-green text-5xl">£110</p>
+        <p class="text-lotg-offwhite/50 text-sm">18+</p>
+      </div>
+
+      <!-- Kids -->
+      <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/40 flex flex-col items-center gap-2 hover:border-lotg-green hover:shadow-[0_0_20px_rgba(98,212,32,0.2)] transition-all">
+        <span class="text-3xl">🦕</span>
+        <h3 class="font-bangers text-lotg-offwhite text-2xl tracking-wide">Kids</h3>
+        <p class="font-bangers text-lotg-green text-5xl">£35</p>
+        <p class="text-lotg-offwhite/50 text-sm">Ages 5–17</p>
+        <p class="text-lotg-yellow text-xs uppercase">Under 5s FREE</p>
+      </div>
+
+      <!-- Camping -->
+      <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/30 flex flex-col items-center gap-2">
+        <span class="text-3xl">⛺</span>
+        <h3 class="font-bangers text-lotg-offwhite text-2xl tracking-wide">Camping</h3>
+        <p class="font-bangers text-lotg-green text-5xl">£30</p>
+        <p class="text-lotg-offwhite/50 text-sm">Per person</p>
+        <p class="text-lotg-offwhite/40 text-xs">Elec hookup £35</p>
+      </div>
+
+      <!-- Glamping -->
+      <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-yellow/40 flex flex-col items-center gap-2 relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-lotg-yellow to-transparent"></div>
+        <span class="text-3xl">🏕️</span>
+        <h3 class="font-bangers text-lotg-yellow text-2xl tracking-wide">Glamping</h3>
+        <p class="font-bangers text-lotg-yellow text-5xl">£360</p>
+        <p class="text-lotg-offwhite/50 text-sm">Per tent · 1–4 guests</p>
+        <p class="text-lotg-offwhite/40 text-xs">No towels provided</p>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <a
+      href={ticketUrl}
+      target="_blank"
+      rel="noopener"
+      class="inline-flex items-center gap-3 bg-lotg-green text-lotg-dark text-2xl px-10 py-4 rounded-full font-bold uppercase hover:bg-lotg-yellow hover:scale-105 transition-all duration-200 shadow-[0_0_30px_rgba(98,212,32,0.4)]"
+    >
+      Buy Tickets Now
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </a>
+
+    <p class="mt-5 text-lotg-offwhite/40 text-sm">
+      Via <a href="https://www.outtograss.com" target="_blank" rel="noopener" class="underline hover:text-lotg-green transition-colors">outtograss.com</a>
+    </p>
+
+  </div>
+</section>

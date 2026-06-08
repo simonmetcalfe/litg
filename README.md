@@ -2,8 +2,26 @@
 
 One-page promotional site for **Lost in the Grass**, a small family festival in the UK. Also serves as a public example of hosting a simple website directly from a GitHub repo (GitHub Pages or similar).
 
-**Domain:** tbc  
-**Repo:** public — intended for GitHub Pages deployment
+**Live site:** https://simonmetcalfe.github.io/litg/  
+**Repo:** https://github.com/simonmetcalfe/litg
+
+## Deployment
+
+The site is built with [Astro](https://astro.build) and deployed to GitHub Pages via GitHub Actions (`.github/workflows/deploy.yml`). Pushes to `main` trigger a build and deploy automatically.
+
+**One-time setup in the GitHub repo:**
+
+1. **Settings → Pages → Build and deployment → Source:** select **GitHub Actions**
+2. Merge website changes into `main` and push
+
+**Local development:**
+
+```bash
+npm install
+npm run dev        # http://localhost:4321/litg/
+npm run build      # output in dist/
+npm run preview    # preview production build locally
+```
 
 ## Festival
 
@@ -152,7 +170,7 @@ instagram.com/l0st_in_the_grass
 
 ## Get involved
 
-Want to DJ or Perform?  QUESTIONS? Whatsapp: 
+Want to DJ or Perform? Questions? DM us on Instagram.
 
 
 
@@ -190,3 +208,5 @@ At Leominster take A44 to Bromyard. Continue along A44 through Bromyard (beware 
 #### From Hereford
 
 Take the A4103 towards Worcester. Continue along the A4103 for 15 miles, up the big hill and through Fromes Hill. 2 miles out of Fromes Hill turn left onto the B4220 for Bromyard. OTG is 1.4 miles on the left.
+
+## Style guide

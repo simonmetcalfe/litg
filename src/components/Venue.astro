@@ -1,0 +1,67 @@
+---
+import Carousel from './Carousel.astro';
+import { venuePhotos } from '../data/site';
+import { asset } from '../utils';
+---
+
+<section id="venue" class="section-alt py-20 px-4 md:px-8 lg:px-16">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <h2 class="font-bangers text-lotg-green text-6xl md:text-8xl tracking-wider text-outline-lg leading-none">
+        Venue
+      </h2>
+      <p class="text-lotg-yellow text-lg tracking-wide mt-2">Out to Grass · Woodend Farm · Malvern</p>
+    </div>
+
+    <!-- Carousel -->
+    <Carousel
+      images={venuePhotos}
+      altPrefix="Venue photo"
+      class="rounded-2xl overflow-hidden shadow-2xl border border-lotg-green/20 mb-12"
+      aspectClass="aspect-video"
+    />
+
+    <!-- Venue info -->
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+
+      <!-- Description + address -->
+      <div>
+        <p class="text-lotg-offwhite text-lg leading-relaxed mb-6">
+          Lost in the Grass is hosted at <span class="text-lotg-green">Out to Grass</span>, a stunning
+          outdoor event space on Woodend Farm in the Malvern Hills. The site features a tipi main stage,
+          bar, café, hot tub, camping and glamping — all set in beautiful Worcestershire countryside.
+        </p>
+        <div class="bg-lotg-card rounded-xl p-5 border border-lotg-green/20 space-y-1 text-sm">
+          <p class="text-lotg-yellow uppercase tracking-wider text-xs mb-2">Address</p>
+          <p class="text-lotg-offwhite">Woodend Farm, Cradley</p>
+          <p class="text-lotg-offwhite">Malvern, Worcs, <span class="text-lotg-green">WR13 5JW</span></p>
+          <p class="text-lotg-offwhite/50 text-xs mt-2">Grid Ref: 370250E 248750N</p>
+        </div>
+      </div>
+
+      <!-- OTG logo + link -->
+      <div class="flex flex-col items-center justify-center gap-6">
+        <img
+          src={asset('logo_venue_farm/otg-logo.png')}
+          alt="Out to Grass logo"
+          class="w-40 md:w-52 opacity-90"
+          loading="lazy"
+        />
+        <a
+          href="https://www.outtograss.com"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 border border-lotg-green/50 text-lotg-green px-6 py-2.5 rounded-full hover:bg-lotg-green hover:text-lotg-dark transition-all duration-200 uppercase tracking-wide text-sm"
+        >
+          outtograss.com
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>

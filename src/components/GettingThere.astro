@@ -1,0 +1,84 @@
+---
+import { directions } from '../data/site';
+import { asset } from '../utils';
+
+const mapsUrl = 'https://maps.google.com/?q=Woodend+Farm+Cradley+Malvern+WR13+5JW';
+---
+
+<section id="getting-there" class="section-alt py-20 px-4 md:px-8 lg:px-16">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center mb-12">
+      <h2 class="font-bangers text-lotg-green text-6xl md:text-8xl tracking-wider text-outline-lg leading-none">
+        Getting There
+      </h2>
+      <p class="text-lotg-yellow text-lg tracking-wide mt-2">Woodend Farm · Cradley · Malvern · WR13 5JW</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-10">
+
+      <!-- Directions accordion -->
+      <div class="space-y-3">
+        {directions.map((dir, i) => (
+          <details class="group bg-lotg-card rounded-2xl border border-lotg-green/20 overflow-hidden hover:border-lotg-green/40 transition-colors">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none select-none">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-lotg-green text-lotg-dark font-bold text-sm flex items-center justify-center shrink-0">{i + 1}</span>
+                <span class="font-bangers text-lotg-offwhite text-xl tracking-wide">{dir.from}</span>
+              </div>
+              <svg
+                class="w-5 h-5 text-lotg-green transition-transform duration-200 group-open:rotate-180 shrink-0"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 pt-1">
+              <p class="text-lotg-offwhite/80 text-sm leading-relaxed">{dir.steps}</p>
+            </div>
+          </details>
+        ))}
+
+        <!-- Google Maps link -->
+        <a
+          href={mapsUrl}
+          target="_blank"
+          rel="noopener"
+          class="flex items-center gap-3 bg-lotg-card rounded-2xl border border-lotg-green/30 px-6 py-4 hover:border-lotg-green hover:bg-lotg-green/5 transition-all"
+        >
+          <svg class="w-6 h-6 text-lotg-green shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+          <div>
+            <p class="font-bangers text-lotg-green text-lg tracking-wide">Open in Google Maps</p>
+            <p class="text-lotg-offwhite/40 text-xs">WR13 5JW</p>
+          </div>
+          <svg class="w-4 h-4 text-lotg-green ml-auto shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+
+        <!-- Grid ref -->
+        <div class="text-center text-lotg-offwhite/30 text-xs mt-2 tracking-wider">
+          Grid Reference: 370250E 248750N (N52:08:10 W2:26:10)
+        </div>
+      </div>
+
+      <!-- Map image -->
+      <div class="relative rounded-2xl overflow-hidden border border-lotg-green/30 shadow-2xl">
+        <img
+          src={asset('map/Map.png')}
+          alt="Venue location map"
+          class="w-full h-full object-cover min-h-64"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-lotg-dark/60 via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4">
+          <p class="font-bangers text-lotg-green text-2xl tracking-wide drop-shadow-lg">Out to Grass</p>
+          <p class="text-lotg-offwhite/80 text-sm">Woodend Farm, Cradley, Malvern</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
