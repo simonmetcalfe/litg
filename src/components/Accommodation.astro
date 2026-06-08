@@ -1,0 +1,72 @@
+---
+import Carousel from './Carousel.astro';
+import { accomPhotos } from '../data/site';
+import { asset } from '../utils';
+---
+
+<section id="accommodation" class="section-alt py-20 px-4 md:px-8 lg:px-16">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <h2 class="font-bangers text-lotg-green text-6xl md:text-8xl tracking-wider text-outline-lg leading-none">
+        Accommodation
+      </h2>
+      <p class="text-lotg-yellow text-lg tracking-wide mt-2">Camping & Glamping on site</p>
+    </div>
+
+    <!-- Carousel -->
+    <Carousel
+      images={accomPhotos}
+      altPrefix="Glamping photo"
+      class="rounded-2xl overflow-hidden shadow-2xl border border-lotg-green/20 mb-12"
+      aspectClass="aspect-video"
+    />
+
+    <!-- Pricing cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/30 flex flex-col gap-2">
+        <div class="flex items-center gap-2 mb-1">
+        <img src={asset('icons_fun/img_tent.png')} alt="" class="w-10 h-10 object-contain" />
+        <h3 class="font-bangers text-lotg-green text-2xl tracking-wide">Camping</h3>
+      </div>
+      <p class="font-bangers text-lotg-yellow text-4xl">£30</p>
+      <p class="text-lotg-offwhite/60 text-sm">Per person</p>
+        <p class="text-lotg-offwhite/60 text-sm">Electric hookup <span class="text-lotg-offwhite">+£5 (£35)</span></p>
+      </div>
+
+      <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-yellow/30 flex flex-col gap-2 relative overflow-hidden">
+        <div class="absolute top-3 right-3 bg-lotg-yellow text-lotg-dark text-xs px-2 py-0.5 rounded-full uppercase font-bold">Featured</div>
+        <div class="flex items-center gap-2 mb-1">
+          <img src={asset('icons_fun/img_tent2.png')} alt="" class="w-10 h-10 object-contain" />
+          <h3 class="font-bangers text-lotg-yellow text-2xl tracking-wide">Glamping</h3>
+        </div>
+        <p class="font-bangers text-lotg-yellow text-4xl">£360</p>
+        <p class="text-lotg-offwhite/60 text-sm">Per tent (sleeps 1–4)</p>
+        <p class="text-lotg-offwhite/60 text-sm">No towels provided</p>
+      </div>
+
+      <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/20 flex flex-col gap-2">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="text-2xl">🐕</span>
+          <h3 class="font-bangers text-lotg-green text-2xl tracking-wide">Dogs</h3>
+        </div>
+        <p class="font-bangers text-lotg-yellow text-4xl">£5</p>
+        <p class="text-lotg-offwhite/60 text-sm">Per dog</p>
+        <p class="text-lotg-green text-sm mt-2">Dogs welcome!</p>
+      </div>
+
+      <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/20 flex flex-col gap-3">
+        <h3 class="font-bangers text-lotg-green text-2xl tracking-wide">Good to know</h3>
+        <ul class="space-y-1.5 text-sm text-lotg-offwhite/70">
+          <li class="flex gap-2"><span class="text-lotg-green shrink-0">✦</span> Quiet/family camping area available</li>
+          <li class="flex gap-2"><span class="text-lotg-green shrink-0">✦</span> Hot showers included (free)</li>
+          <li class="flex gap-2"><span class="text-lotg-green shrink-0">✦</span> Baby changing facilities</li>
+          <li class="flex gap-2"><span class="text-lotg-green shrink-0">✦</span> No glass in campsite</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>

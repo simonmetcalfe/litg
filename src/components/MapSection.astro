@@ -1,0 +1,82 @@
+---
+import { asset } from '../utils';
+---
+
+<section id="map" class="bg-lotg-dark py-20 px-4 md:px-8 lg:px-16">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center mb-10">
+      <h2 class="font-bangers text-lotg-green text-6xl md:text-8xl tracking-wider text-outline-lg leading-none">
+        Site Map
+      </h2>
+      <p class="text-lotg-yellow text-lg tracking-wide mt-2">Out to Grass · Woodend Farm · WR13 5JW</p>
+    </div>
+
+    <!-- Map + legend -->
+    <div class="relative rounded-2xl overflow-hidden border border-lotg-green/30 shadow-2xl mb-8">
+      <img
+        src={asset('map/Map.png')}
+        alt="Lost in the Grass site map"
+        class="w-full h-auto"
+        loading="lazy"
+      />
+
+      <!-- Legend overlay (bottom right corner) -->
+      <div class="absolute bottom-4 right-4 hidden md:block">
+        <img
+          src={asset('map_legend/LegendTranslucent.png')}
+          alt="Map legend"
+          class="w-48 lg:w-64 rounded-xl shadow-lg"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <!-- Mobile: legend below map -->
+    <div class="md:hidden flex justify-center mb-8">
+      <img
+          src={asset('map_legend/LegendTranslucent.png')}
+          alt="Map legend"
+          class="w-64 rounded-xl shadow-lg"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Map icon legend grid -->
+    <div class="bg-lotg-mid rounded-2xl p-6 border border-lotg-green/20">
+      <h3 class="font-bangers text-lotg-yellow text-2xl tracking-wide mb-5 text-center">Key</h3>
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
+        {[
+          { icon: 'map_legend_icons/Property 1=stage.png',          label: 'Stage' },
+          { icon: 'map_legend_icons/Property 1=bar.png',            label: 'Bar' },
+          { icon: 'map_legend_icons/Property 1=food.png',           label: 'Food' },
+          { icon: 'map_legend_icons/Property 1=coffeee.png',        label: 'Café' },
+          { icon: 'map_legend_icons/Property 1=campingRegular.png', label: 'Camping' },
+          { icon: 'map_legend_icons/Property 1=campingGlamping.png',label: 'Glamping' },
+          { icon: 'map_legend_icons/Property 1=hottub.png',         label: 'Hot Tub' },
+          { icon: 'map_legend_icons/Property 1=carpark.png',        label: 'Car Park' },
+          { icon: 'map_legend_icons/Property 1=toilet.png',         label: 'Toilets' },
+          { icon: 'map_legend_icons/Property 1=showers.png',        label: 'Showers' },
+          { icon: 'map_legend_icons/Property 1=firstaid.png',       label: 'First Aid' },
+          { icon: 'map_legend_icons/Property 1=dog.png',            label: 'Dogs OK' },
+          { icon: 'map_legend_icons/Property 1=cinema.png',         label: 'Cinema' },
+          { icon: 'map_legend_icons/Property 1=bouncyCastle.png',   label: 'Bouncy Castle' },
+          { icon: 'map_legend_icons/Property 1=campfire.png',       label: 'Campfire' },
+          { icon: 'map_legend_icons/Property 1=water.png',          label: 'Water' },
+        ].map(item => (
+          <div class="flex flex-col items-center gap-1.5">
+            <img
+              src={asset(item.icon)}
+              alt={item.label}
+              class="w-10 h-10 object-contain"
+              loading="lazy"
+            />
+            <span class="text-lotg-offwhite/60 text-xs text-center uppercase tracking-wide">{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>

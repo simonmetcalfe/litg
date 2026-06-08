@@ -1,0 +1,67 @@
+---
+import { asset } from '../utils';
+---
+
+<section
+  id="hero"
+  class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-14"
+>
+  <!-- Background image -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src={asset('background/background_poster.jpeg')}
+      alt="Lost in the Grass festival scene"
+      class="w-full h-full object-cover object-center"
+      loading="eager"
+    />
+    <!-- Dark overlay for text legibility -->
+    <div class="absolute inset-0 bg-gradient-to-b from-lotg-dark/60 via-lotg-dark/40 to-lotg-dark/80"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto">
+
+    <!-- Festival logo -->
+    <img
+      src={asset('logo/website_logo.png')}
+      alt="Lost in the Grass — 21–23 Aug 2026"
+      class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg animate-fade-up drop-shadow-2xl"
+      loading="eager"
+    />
+
+    <!-- Tagline -->
+    <p class="mt-6 text-lotg-offwhite text-xl md:text-2xl lg:text-3xl tracking-wide max-w-xl leading-snug animate-fade-up-delay drop-shadow-lg">
+      Music · Camping · Family Fun Near Malvern
+    </p>
+
+    <!-- CTA buttons -->
+    <div class="mt-8 flex flex-wrap gap-4 justify-center animate-fade-up-delay2">
+      <a
+        href="https://outtograss.com/product-category/lost-in-the-grass-2026"
+        target="_blank"
+        rel="noopener"
+        class="bg-lotg-green text-lotg-dark px-8 py-3 rounded-full text-xl uppercase font-bold hover:bg-lotg-yellow hover:scale-105 transition-all duration-200 shadow-lg"
+      >
+        Get Tickets
+      </a>
+      <a
+        href="#lineup"
+        class="border-2 border-lotg-green text-lotg-green px-8 py-3 rounded-full text-xl uppercase font-bold hover:bg-lotg-green hover:text-lotg-dark hover:scale-105 transition-all duration-200"
+      >
+        See Lineup
+      </a>
+    </div>
+
+    <!-- Venue -->
+    <p class="mt-8 text-lotg-offwhite/70 text-base tracking-widest uppercase animate-fade-up-delay2">
+      Out to Grass · Woodend Farm · Malvern
+    </p>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+    <svg class="w-6 h-6 text-lotg-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+</section>

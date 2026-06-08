@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import { asset } from '../utils';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Lost in the Grass | 21–23 Aug 2026',
+  description = 'A weekend of live music, camping & family-friendly fun near Malvern. 21–23 August 2026.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={asset('poster/IG2.png')} />
+    <meta name="theme-color" content="#0C1907" />
+    <link rel="icon" type="image/png" href={asset('logo/website_logo.png')} />
+
+    <!-- Google Fonts: Frijole (logo) + Bangers (display/body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Frijole&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-lotg-dark text-lotg-offwhite font-bangers antialiased">
+    <slot />
+  </body>
+</html>

@@ -152,7 +152,7 @@ instagram.com/l0st_in_the_grass
 
 ## Get involved
 
-Want to DJ or Perform?  QUESTIONS? Whatsapp: 
+Want to DJ or Perform? Questions? DM us on Instagram.
 
 
 
@@ -190,3 +190,5 @@ At Leominster take A44 to Bromyard. Continue along A44 through Bromyard (beware 
 #### From Hereford
 
 Take the A4103 towards Worcester. Continue along the A4103 for 15 miles, up the big hill and through Fromes Hill. 2 miles out of Fromes Hill turn left onto the B4220 for Bromyard. OTG is 1.4 miles on the left.
+
+## Style guide

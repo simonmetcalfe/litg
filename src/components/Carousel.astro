@@ -1,0 +1,105 @@
+---
+interface Props {
+  images: string[];       // paths relative to publicDir root (no leading slash)
+  altPrefix?: string;
+  class?: string;
+  aspectClass?: string;   // e.g. 'aspect-video' or 'aspect-[4/3]'
+}
+
+const {
+  images,
+  altPrefix = 'Photo',
+  class: className = '',
+  aspectClass = 'aspect-video',
+} = Astro.props;
+
+import { asset } from '../utils';
+---
+
+<div class={`relative group ${className}`} data-carousel>
+  <!-- Track -->
+  <div
+    class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar"
+    data-track
+  >
+    {images.map((src, i) => (
+      <div class={`snap-center shrink-0 w-full ${aspectClass} overflow-hidden`}>
+        <img
+          src={asset(src)}
+          alt={`${altPrefix} ${i + 1}`}
+          class="w-full h-full object-cover"
+          loading={i === 0 ? 'eager' : 'lazy'}
+        />
+      </div>
+    ))}
+  </div>
+
+  <!-- Prev button -->
+  <button
+    data-prev
+    aria-label="Previous"
+    class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-lotg-dark/70 text-lotg-yellow text-2xl leading-none flex items-center justify-center hover:bg-lotg-green hover:text-lotg-dark transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
+  >‹</button>
+
+  <!-- Next button -->
+  <button
+    data-next
+    aria-label="Next"
+    class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-lotg-dark/70 text-lotg-yellow text-2xl leading-none flex items-center justify-center hover:bg-lotg-green hover:text-lotg-dark transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
+  >›</button>
+
+  <!-- Dot indicators -->
+  <div
+    class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10"
+    data-dots
+  >
+    {images.map((_, i) => (
+      <button
+        data-dot={i}
+        aria-label={`Go to slide ${i + 1}`}
+        class="w-2 h-2 rounded-full bg-lotg-offwhite/40 transition-all duration-200"
+      />
+    ))}
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const track = carousel.querySelector('[data-track]') as HTMLElement;
+    const prevBtn = carousel.querySelector('[data-prev]') as HTMLButtonElement;
+    const nextBtn = carousel.querySelector('[data-next]') as HTMLButtonElement;
+    const dots = carousel.querySelectorAll('[data-dot]') as NodeListOf<HTMLButtonElement>;
+
+    if (!track) return;
+
+    const totalSlides = dots.length;
+    let current = 0;
+
+    const goTo = (index: number) => {
+      current = Math.max(0, Math.min(index, totalSlides - 1));
+      track.scrollTo({ left: current * track.offsetWidth, behavior: 'smooth' });
+      dots.forEach((dot, i) => {
+        if (i === current) {
+          dot.classList.add('bg-lotg-green', '!opacity-100', 'scale-125');
+          dot.classList.remove('bg-lotg-offwhite/40');
+        } else {
+          dot.classList.remove('bg-lotg-green', '!opacity-100', 'scale-125');
+          dot.classList.add('bg-lotg-offwhite/40');
+        }
+      });
+    };
+
+    prevBtn?.addEventListener('click', () => goTo(current - 1));
+    nextBtn?.addEventListener('click', () => goTo(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+    // Sync dots on manual scroll
+    track.addEventListener('scroll', () => {
+      const idx = Math.round(track.scrollLeft / track.offsetWidth);
+      if (idx !== current) goTo(idx);
+    }, { passive: true });
+
+    // Init first dot
+    goTo(0);
+  });
+</script>

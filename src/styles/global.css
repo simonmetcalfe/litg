@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colours */
+  --color-lotg-green:    #62D420;
+  --color-lotg-yellow:   #EDE840;
+  --color-lotg-offwhite: #F2F0EC;
+  --color-lotg-dark:     #0C1907;
+  --color-lotg-mid:      #142B09;
+  --color-lotg-card:     #1C3A0D;
+
+  /* Fonts — both loaded via Google Fonts in Layout.astro */
+  --font-frijole: "Frijole", cursive;
+  --font-bangers: "Bangers", cursive;
+}
+
+/* ── Base ──────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-lotg-dark);
+  color: var(--color-lotg-offwhite);
+  font-family: var(--font-bangers);
+  letter-spacing: 0.03em;
+}
+
+/* ── Scrollbar hide (carousel tracks) ─────────────────── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── Text shadow — replicates the outlined comic-book look on headings ── */
+.text-outline {
+  -webkit-text-stroke: 2px #0C1907;
+  paint-order: stroke fill;
+}
+
+.text-outline-lg {
+  -webkit-text-stroke: 3px #0C1907;
+  paint-order: stroke fill;
+}
+
+/* ── Section helpers ───────────────────────────────────── */
+.section-alt {
+  background-color: var(--color-lotg-mid);
+}
+
+/* ── Act card fallback gradients (cycling per act) ─────── */
+.card-gradient-1 { background: linear-gradient(135deg, #1C3A0D 0%, #0C2404 100%); }
+.card-gradient-2 { background: linear-gradient(135deg, #1A3520 0%, #0C1A10 100%); }
+.card-gradient-3 { background: linear-gradient(135deg, #2A2C10 0%, #151607 100%); }
+.card-gradient-4 { background: linear-gradient(135deg, #1E2A10 0%, #101508 100%); }
+.card-gradient-5 { background: linear-gradient(135deg, #2C1E10 0%, #180F08 100%); }
+.card-gradient-6 { background: linear-gradient(135deg, #1A1C30 0%, #0C0E18 100%); }
+
+/* ── Hero logo entrance animation ─────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out both;
+}
+.animate-fade-up-delay {
+  animation: fadeUp 0.8s ease-out 0.3s both;
+}
+.animate-fade-up-delay2 {
+  animation: fadeUp 0.8s ease-out 0.55s both;
+}

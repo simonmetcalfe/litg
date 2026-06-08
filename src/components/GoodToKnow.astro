@@ -1,0 +1,41 @@
+---
+import { goodToKnow } from '../data/site';
+---
+
+<section id="good-to-know" class="bg-lotg-dark py-20 px-4 md:px-8 lg:px-16">
+  <div class="max-w-4xl mx-auto">
+
+    <div class="text-center mb-12">
+      <h2 class="font-bangers text-lotg-green text-6xl md:text-8xl tracking-wider text-outline-lg leading-none">
+        Good to Know
+      </h2>
+    </div>
+
+    <!-- Info grid -->
+    <div class="grid sm:grid-cols-2 gap-4">
+      {goodToKnow.map(item => (
+        <div class="flex items-start gap-3 bg-lotg-card rounded-xl p-4 border border-lotg-green/20 hover:border-lotg-green/40 transition-colors">
+          <span class="text-lotg-green text-xl mt-0.5 shrink-0">✦</span>
+          <p class="text-lotg-offwhite tracking-wide leading-snug">{item}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Kid + dog highlight -->
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <div class="flex items-center gap-2 bg-lotg-mid border border-lotg-green/30 rounded-full px-5 py-2">
+        <span class="text-2xl">👶</span>
+        <span class="font-bangers text-lotg-green text-xl tracking-wide">Kid Friendly</span>
+      </div>
+      <div class="flex items-center gap-2 bg-lotg-mid border border-lotg-green/30 rounded-full px-5 py-2">
+        <span class="text-2xl">🐕</span>
+        <span class="font-bangers text-lotg-green text-xl tracking-wide">Dogs Welcome</span>
+      </div>
+      <div class="flex items-center gap-2 bg-lotg-mid border border-lotg-green/30 rounded-full px-5 py-2">
+        <span class="text-2xl">💳</span>
+        <span class="font-bangers text-lotg-green text-xl tracking-wide">Card Accepted</span>
+      </div>
+    </div>
+
+  </div>
+</section>
