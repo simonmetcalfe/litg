@@ -2,7 +2,7 @@
 
 One-page promotional site for **Lost in the Grass**, a small family festival in the UK. Also serves as a public example of hosting a simple website directly from a GitHub repo (GitHub Pages or similar).
 
-**Live site:** https://simonmetcalfe.github.io/litg/  
+**Live site:** https://lostinthegrass.org.uk  
 **Repo:** https://github.com/simonmetcalfe/litg
 
 ## Deployment
@@ -18,7 +18,7 @@ The site is built with [Astro](https://astro.build) and deployed to GitHub Pages
 
 ```bash
 npm install
-npm run dev        # http://localhost:4321/litg/
+npm run dev        # http://localhost:4321/
 npm run build      # output in dist/
 npm run preview    # preview production build locally
 ```

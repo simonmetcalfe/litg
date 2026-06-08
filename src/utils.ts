@@ -11,6 +11,6 @@ const _normalised = _base.endsWith('/') ? _base : `${_base}/`;
 
 export const asset = (path: string): string => `${_normalised}${path}`;
 
-/** Absolute URL for meta tags (og:image, etc.) on GitHub Pages. */
+/** Absolute URL for meta tags (og:image, etc.). */
 export const absoluteAsset = (path: string): string =>
   new URL(asset(path), import.meta.env.SITE).href;
