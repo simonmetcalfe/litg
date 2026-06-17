@@ -2,17 +2,17 @@
 const ticketUrl = 'https://outtograss.com/product-category/lost-in-the-grass-2026';
 ---
 
-<section id="tickets" class="section-alt py-20 px-4 md:px-8 lg:px-16">
+<section id="tickets" class="bg-lotg-dark py-20 px-4 md:px-8 lg:px-16">
   <div class="max-w-5xl mx-auto text-center">
 
     <!-- Heading -->
     <h2 class="font-bangers text-lotg-green text-6xl md:text-8xl tracking-wider text-outline-lg leading-none mb-3">
       Tickets
     </h2>
-    <p class="text-lotg-yellow text-lg tracking-wide mb-12">On sale now — limited availability</p>
+    <p class="text-lotg-yellow text-lg tracking-wide mb-12">Limited availability</p>
 
     <!-- Ticket cards -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
 
       <!-- Adults -->
       <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/40 flex flex-col items-center gap-2 hover:border-lotg-green hover:shadow-[0_0_20px_rgba(98,212,32,0.2)] transition-all">
@@ -41,15 +41,22 @@ const ticketUrl = 'https://outtograss.com/product-category/lost-in-the-grass-202
       </div>
 
       <!-- Glamping -->
-      <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-yellow/40 flex flex-col items-center gap-2 relative overflow-hidden">
-        <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-lotg-yellow to-transparent"></div>
+      <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/30 flex flex-col items-center gap-2">
         <span class="text-3xl">🏕️</span>
-        <h3 class="font-bangers text-lotg-yellow text-2xl tracking-wide">Glamping</h3>
-        <p class="font-bangers text-lotg-yellow text-5xl">£360</p>
+        <h3 class="font-bangers text-lotg-offwhite text-2xl tracking-wide">Glamping</h3>
+        <p class="font-bangers text-lotg-green text-5xl">£360</p>
         <p class="text-lotg-offwhite/50 text-sm">Per tent · 1–4 guests</p>
         <p class="text-lotg-offwhite/40 text-xs">No towels provided</p>
       </div>
 
+    </div>
+
+    <!-- Dogs card – slim -->
+    <div class="bg-lotg-card rounded-2xl px-6 py-4 border border-lotg-green/20 flex items-center justify-center gap-4 mb-10">
+      <span class="text-2xl">🐕</span>
+      <h3 class="font-bangers text-lotg-offwhite text-2xl tracking-wide">Dogs</h3>
+      <p class="font-bangers text-lotg-green text-3xl">£5</p>
+      <p class="text-lotg-offwhite/50 text-sm">Per dog</p>
     </div>
 
     <!-- CTA -->
@@ -64,10 +71,6 @@ const ticketUrl = 'https://outtograss.com/product-category/lost-in-the-grass-202
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
       </svg>
     </a>
-
-    <p class="mt-5 text-lotg-offwhite/40 text-sm">
-      Via <a href="https://www.outtograss.com" target="_blank" rel="noopener" class="underline hover:text-lotg-green transition-colors">outtograss.com</a>
-    </p>
 
   </div>
 </section>
