@@ -109,7 +109,7 @@ KIDS
 £35 (5-17)  
 UNDER 5S free
 
-### Camping
+### Campervans
 
 Campers  
 £30  
@@ -130,15 +130,23 @@ Dogs
 
 
 
-## What's on
+## Activities & Food
 
-### General
+### Entertainment
 
-CAFE SERVING DELICIOUS FOOD & DRINKS / BAR / CAMPING / GLAMPING / WOODFIRED HOT TUB / WELLBEING AREA INCLUDING YOGA & MASSAGE / MUSIC ALL WEEKEND / ACOUSTIC FIRESIDE JAMMING / FIRE SHOW AND MAZE EACH NIGHT
+ACOUSTIC FIRESIDE JAMMING / FIRE SHOW EACH NIGHT / MAZE EACH NIGHT
 
 ### Kids
 
-KIDS ENTERTAINMENT INC. CINEMA & DISCO / BOUNCY CASTLE / BALL PIT / GAMES / TREASURE HUNT / ARTS & CRAFTS
+CINEMA FRI-SUN 6-9PM / KIDS DISCO FRI 5-6PM / BOUNCY CASTLE / BALL PIT / GAMES / TREASURE HUNT / ARTS & CRAFTS
+
+### Food
+
+COFFEE / FRESH SMOOTHIES / BREAKFAST / HEALTHY SNACKS / SANDWICHES & MORE / BAR FRI-SAT AFTERNOON TILL LATE
+
+### Health & Wellbeing
+
+WOODFIRED HOT TUB / YOGA / MASSAGE / BABY CHANGING & HOT SHOWERS (FREE)
 
 
 
@@ -226,7 +234,7 @@ Every `<section>` must alternate between the two background tokens — **never t
 |---|---|---|
 | 1 | `lineup` | `bg-lotg-dark` |
 | 2 | `venue` | `section-alt` |
-| 3 | `whats-on` | `bg-lotg-dark` |
+| 3 | `whats-on` (Activities & Food) | `bg-lotg-dark` |
 | 4 | `accommodation` | `section-alt` |
 | 5 | `tickets` | `bg-lotg-dark` |
 | 6 | `good-to-know` | `section-alt` |

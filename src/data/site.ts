@@ -194,38 +194,74 @@ export const campingPhotos = [
   "photos_accom/camping_2.jpeg",
 ];
 
-// ── What's On ────────────────────────────────────────────
-export const whatsOnGeneral = [
-  { icon: "icons_fun/img_stage.png",  label: "Live Music All Weekend" },
-  { icon: "icons_fun/imge_bar.png",   label: "Bar" },
-  { icon: "icons_fun/img_tent.png",   label: "Camping" },
-  { icon: "icons_fun/img_tent2.png",  label: "Glamping" },
-  { icon: "icons_fun/img_pool.png",   label: "Woodfired Hot Tub" },
-  { icon: "icons_fun/img_piano.png",  label: "Acoustic Fireside Jamming" },
-];
+// ── Activities & Food ─────────────────────────────────────
+export interface ActivityCategory {
+  id: string;
+  emoji: string;
+  title: string;
+  accent: "green" | "yellow";
+  items: string[];
+}
 
-export const whatsOnExtra = [
-  "Delicious Café & Food",
-  "Wellbeing Area — Yoga & Massage",
-  "Fire Show & Maze Each Night",
-];
-
-export const whatsOnKids = [
-  "Cinema & Disco",
-  "Bouncy Castle & Ball Pit",
-  "Games & Treasure Hunt",
-  "Arts & Crafts",
+export const activityCategories: ActivityCategory[] = [
+  {
+    id: "entertainment",
+    emoji: "🎸",
+    title: "Entertainment",
+    accent: "green",
+    items: [
+      "Acoustic Fireside Jamming",
+      "Fire Show",
+      "Maze",
+    ],
+  },
+  {
+    id: "kids",
+    emoji: "🦕",
+    title: "Kids",
+    accent: "yellow",
+    items: [
+      "Cinema",
+      "Kids Disco",
+      "Bouncy Castle & Ball Pit",
+      "Games & Treasure Hunt",
+      "Arts & Crafts",
+    ],
+  },
+  {
+    id: "food",
+    emoji: "🍽️",
+    title: "Food",
+    accent: "green",
+    items: [
+      "Coffee",
+      "Fresh Smoothies",
+      "Breakfast",
+      "Healthy Snacks",
+      "Sandwiches & More",
+    ],
+  },
+  {
+    id: "wellbeing",
+    emoji: "🧘",
+    title: "Health & Wellbeing",
+    accent: "yellow",
+    items: [
+      "Woodfired Hot Tub",
+      "Yoga",
+      "Massage",
+    ],
+  },
 ];
 
 // ── Opening times ─────────────────────────────────────────
 export const openingTimes = [
   { label: "Site Open",         times: "Fri 12pm – Mon 12pm" },
-  { label: "Main Stage",        times: "Fri–Sat 12pm–12am" },
+  { label: "Main Stage",        times: "Fri–Sun" },
   { label: "Café",              times: "Sat–Sun Daily" },
   { label: "Bar",               times: "Fri–Sat Afternoon–Late" },
-  { label: "Kids Events",       times: "Fri–Sun Daily" },
-  { label: "Kids Disco",        times: "Fri 5–6pm" },
-  { label: "Kids Cinema",       times: "Fri–Sun 6–9pm" },
+  { label: "Kids Disco",        times: "Fri" },
+  { label: "Kids Cinema",       times: "Fri–Sun" },
   { label: "Campfire & Hot Tub",times: "Fri–Sat Eve Till Late" },
 ];
 
