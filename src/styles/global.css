@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Bangers";
+  src: url("/fonts/Bangers_main_body/Bangers-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Frijole";
+  src: url("/fonts/Frijole_logo/Frijole-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   /* Brand colours */
   --color-lotg-green:    #62D420;
@@ -9,7 +25,7 @@
   --color-lotg-mid:      #142B09;
   --color-lotg-card:     #1C3A0D;
 
-  /* Fonts — both loaded via Google Fonts in Layout.astro */
+  /* Fonts — self-hosted in assets/fonts/ */
   --font-frijole: "Frijole", cursive;
   --font-bangers: "Bangers", cursive;
 }

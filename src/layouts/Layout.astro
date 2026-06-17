@@ -27,12 +27,12 @@ const {
     <meta name="theme-color" content="#0C1907" />
     <link rel="icon" type="image/png" href={asset('logo/website_logo.png')} />
 
-    <!-- Google Fonts: Frijole (logo) + Bangers (display/body) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bangers&family=Frijole&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href={asset('fonts/Bangers_main_body/Bangers-Regular.ttf')}
+      as="font"
+      type="font/ttf"
+      crossorigin
     />
   </head>
   <body class="bg-lotg-dark text-lotg-offwhite font-bangers antialiased">
