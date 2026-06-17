@@ -1,7 +1,6 @@
 ---
 import Carousel from './Carousel.astro';
-import { venuePhotos } from '../data/site';
-import { asset } from '../utils';
+import { venuePhotoSections } from '../data/site';
 ---
 
 <section id="venue" class="section-alt py-20 px-4 md:px-8 lg:px-16">
@@ -14,9 +13,9 @@ import { asset } from '../utils';
       </h2>
     </div>
 
-    <!-- Carousel -->
+    <!-- Sectioned carousel -->
     <Carousel
-      images={venuePhotos}
+      sections={venuePhotoSections}
       altPrefix="Venue photo"
       class="rounded-2xl overflow-hidden shadow-2xl border border-lotg-green/20 mb-12"
       aspectClass="aspect-video"

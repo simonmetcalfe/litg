@@ -115,23 +115,62 @@ export const djs: DJ[] = [
   { name: "Strike Daddy", location: "Brighton" },
 ];
 
-// ── Venue photo carousel (curated selection) ─────────────
-export const venuePhotos = [
-  "photos_venue/main_stage1.jpeg",
-  "photos_venue/main_stage2.jpeg",
-  "photos_venue/main_stage3.jpeg",
-  "photos_venue/main_stage4.jpeg",
-  "photos_venue/main_stage5.jpeg",
-  "photos_venue/fire_night.jpg",
-  "photos_venue/fire_night2.jpg",
-  "photos_venue/mals_bar.jpeg",
-  "photos_venue/mals_bar2.jpeg",
-  "photos_venue/site1.jpg",
-  "photos_venue/site2.jpeg",
-  "photos_venue/site3.jpeg",
-  "photos_venue/night0.jpg",
-  "photos_venue/night2.jpeg",
-  "photos_venue/sound_bites_cafe.jpeg",
+// ── Venue photo carousel sections ────────────────────────
+export const venuePhotoSections = [
+  {
+    label: 'Day',
+    images: [
+      "photos_venue/day_1.jpeg",
+      "photos_venue/day_2.jpeg",
+      "photos_venue/day_3.jpeg",
+      "photos_venue/day_4.jpeg",
+      "photos_venue/day_5.jpg",
+      "photos_venue/day_6.jpeg",
+    ],
+  },
+  {
+    label: 'Night',
+    images: [
+      "photos_venue/night_1.jpg",
+      "photos_venue/night_2.jpg",
+      "photos_venue/night_3.jpeg",
+      "photos_venue/night_4.jpeg",
+      "photos_venue/night_5.jpeg",
+      "photos_venue/night_6.jpeg",
+      "photos_venue/night_7.jpg",
+      "photos_venue/night_8.jpg",
+      "photos_venue/night_9.jpg",
+    ],
+  },
+  {
+    label: 'Main Stage',
+    images: [
+      "photos_venue/main_stage_1.jpeg",
+      "photos_venue/main_stage_2.jpeg",
+      "photos_venue/main_stage_3.jpeg",
+      "photos_venue/main_stage_4.jpeg",
+    ],
+  },
+  {
+    label: 'Bar',
+    images: [
+      "photos_venue/bar_1.jpeg",
+      "photos_venue/bar_2.jpeg",
+    ],
+  },
+  {
+    label: 'Cafe',
+    images: [
+      "photos_venue/cafe_1.jpeg",
+    ],
+  },
+  {
+    label: 'Aerial',
+    images: [
+      "photos_venue/aerial_1.jpg",
+      "photos_venue/aerial_2.jpeg",
+    ],
+  },
 ];
 
 // ── Accommodation photo carousels ────────────────────────
@@ -152,6 +191,7 @@ export const glampingPhotos = [
 
 export const campingPhotos = [
   "photos_accom/camping_1.jpg",
+  "photos_accom/camping_2.jpeg",
 ];
 
 // ── What's On ────────────────────────────────────────────
