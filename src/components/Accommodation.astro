@@ -1,6 +1,6 @@
 ---
 import Carousel from './Carousel.astro';
-import { accomPhotos, goodToKnow } from '../data/site';
+import { accomPhotos } from '../data/site';
 ---
 
 <section id="accommodation" class="section-alt py-20 px-4 md:px-8 lg:px-16">
@@ -23,23 +23,10 @@ import { accomPhotos, goodToKnow } from '../data/site';
     />
 
     <!-- Summary -->
-    <p class="text-lotg-offwhite text-lg leading-relaxed mb-3">
-      Stay on site in your own tent or treat yourself to one of the furnished glamping pods, subject to availability.
+    <p class="text-lotg-offwhite text-lg leading-relaxed">
+      Stay on site in your own tent — quiet and family camping areas are available — or treat yourself to one of the furnished glamping pods, subject to availability.
       Dogs are very welcome. <a href="#tickets" class="text-lotg-green hover:underline">Tickets</a> has full pricing info.
     </p>
-
-    <!-- Good to Know -->
-    <div class="bg-lotg-mid rounded-2xl p-6 border border-lotg-green/20">
-      <h3 class="font-bangers text-lotg-yellow text-2xl tracking-wide mb-5">Good to Know</h3>
-      <div class="grid sm:grid-cols-2 gap-4">
-        {goodToKnow.map(item => (
-          <div class="flex items-start gap-3 bg-lotg-card rounded-xl p-4 border border-lotg-green/20 hover:border-lotg-green/40 transition-colors">
-            <span class="text-lotg-green text-xl mt-0.5 shrink-0">✦</span>
-            <p class="text-lotg-offwhite tracking-wide leading-snug">{item}</p>
-          </div>
-        ))}
-      </div>
-    </div>
 
   </div>
 </section>

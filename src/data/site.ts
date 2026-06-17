@@ -62,6 +62,7 @@ export const mainActs: Act[] = [
       "Brighton multi-instrumentalist releasing freestyle-driven material across voice, beatbox, and layered textures.",
     style: "Dream-pop / Hip-hop / Beatbox",
     spotify: "https://open.spotify.com/artist/4FCuIRaeCVFJEwfR9e9INY",
+    photo: "photos_bands/band_liv_sangster.jpeg",
   },
   {
     name: "MAII",
@@ -69,6 +70,7 @@ export const mainActs: Act[] = [
       "Oxford five-piece known for twin drummers and kaleidoscopic live electronica.",
     style: "Electronic / Balearic / Post-rock",
     spotify: "https://open.spotify.com/artist/0mETWhuGnP7a4tLgwNTMAt",
+    photo: "photos_bands/band_maii_and_the_shenanigans.jpeg",
   },
   {
     name: "Moonbird",
@@ -94,6 +96,7 @@ export const mainActs: Act[] = [
     name: "Mr Tumnus",
     about: "More info coming soon.",
     style: "",
+    photo: "photos_bands/band_mr_tumnus.jpeg",
   },
 ];
 
@@ -185,17 +188,6 @@ export const openingTimes = [
   { label: "Kids Disco",        times: "Fri 5–6pm" },
   { label: "Kids Cinema",       times: "Fri–Sun 6–9pm" },
   { label: "Campfire & Hot Tub",times: "Fri–Sat Eve Till Late" },
-];
-
-// ── Good to Know ─────────────────────────────────────────
-export const goodToKnow = [
-  "Kid friendly & dogs welcome (£5 per dog)",
-  "Quiet / family camping available",
-  "Card accepted",
-  "Car parking only in designated car park",
-  "Alcohol allowed in campsite only — no glass",
-  "Café serving breakfast, sandwiches, chips, curry & kebab (vegan / kids options)",
-  "Baby changing & hot showers included (free)",
 ];
 
 // ── Directions ────────────────────────────────────────────
