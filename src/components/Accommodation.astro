@@ -1,6 +1,6 @@
 ---
 import Carousel from './Carousel.astro';
-import { accomPhotos } from '../data/site';
+import { glampingPhotos, campingPhotos } from '../data/site';
 ---
 
 <section id="accommodation" class="section-alt py-20 px-4 md:px-8 lg:px-16">
@@ -14,10 +14,13 @@ import { accomPhotos } from '../data/site';
       <p class="text-lotg-yellow text-lg tracking-wide mt-2">Camping & Glamping on site</p>
     </div>
 
-    <!-- Carousel -->
+    <!-- Sectioned carousel -->
     <Carousel
-      images={accomPhotos}
-      altPrefix="Glamping photo"
+      sections={[
+        { label: 'Glamping', images: glampingPhotos },
+        { label: 'Camping',  images: campingPhotos  },
+      ]}
+      altPrefix="Accommodation photo"
       class="rounded-2xl overflow-hidden shadow-2xl border border-lotg-green/20 mb-12"
       aspectClass="aspect-video"
     />

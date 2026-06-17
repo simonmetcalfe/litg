@@ -81,16 +81,10 @@ export const mainActs: Act[] = [
     photo: "photos_bands/band_moonbird.jpeg",
   },
   {
-    name: "Riddim 'n Rum",
-    about:
-      "London funk/soul collective with a rotating cast of veteran session players.",
-    style: "Funk / Soul / Latin / Jazz",
-    spotify: "https://open.spotify.com/artist/6ipbFS4ZIfSabswGzJiIeR",
-  },
-  {
     name: "Howdo Bean & The Dinos",
     about: "More info coming soon.",
     style: "",
+    photo: "photos_bands/band_howdo_bean_and_the_dinos.jpeg",
   },
   {
     name: "Mr Tumnus",
@@ -113,6 +107,7 @@ export const djs: DJ[] = [
   { name: "Steve Perrett", location: "Wiltshire" },
   { name: "AD:Verse", location: "Malvern" },
   { name: "Boson", location: "Coventry" },
+  { name: "Riddim 'n Rum", location: "London" },
   { name: "Milkman", location: "Surrey" },
   { name: "Grillo", location: "Brighton" },
   { name: "Rogan Josh", location: "London" },
@@ -132,15 +127,15 @@ export const venuePhotos = [
   "photos_venue/mals_bar.jpeg",
   "photos_venue/mals_bar2.jpeg",
   "photos_venue/site1.jpg",
-  "photos_venue/site2.jpg",
-  "photos_venue/site3.jpg",
+  "photos_venue/site2.jpeg",
+  "photos_venue/site3.jpeg",
   "photos_venue/night0.jpg",
-  "photos_venue/night2.jpg",
+  "photos_venue/night2.jpeg",
   "photos_venue/sound_bites_cafe.jpeg",
 ];
 
-// ── Accommodation photo carousel ─────────────────────────
-export const accomPhotos = [
+// ── Accommodation photo carousels ────────────────────────
+export const glampingPhotos = [
   "photos_accom/glamping1.jpg",
   "photos_accom/glamping2.jpg",
   "photos_accom/glamping3.jpg",
@@ -153,6 +148,10 @@ export const accomPhotos = [
   "photos_accom/glamping_interior6.jpg",
   "photos_accom/glamping_interior7.jpg",
   "photos_accom/glamping_interior8.jpg",
+];
+
+export const campingPhotos = [
+  "photos_accom/camping_1.jpg",
 ];
 
 // ── What's On ────────────────────────────────────────────
