@@ -76,6 +76,7 @@ export const mainActs: Act[] = [
       "Bristol duo building summery psychedelic electronica live with loops and synths. BBC Introducing showcase act.",
     style: "Psychedelic Electronica / Indie Electronic",
     spotify: "https://open.spotify.com/artist/5Xha2kjFXFMfvvaDwZmIuG",
+    photo: "photos_bands/band_moonbird.jpeg",
   },
   {
     name: "Riddim 'n Rum",
