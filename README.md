@@ -109,7 +109,7 @@ KIDS
 £35 (5-17)  
 UNDER 5S free
 
-### Camping
+### Campervans
 
 Campers  
 £30  
@@ -130,15 +130,23 @@ Dogs
 
 
 
-## What's on
+## Activities & Food
 
-### General
+### Entertainment
 
-CAFE SERVING DELICIOUS FOOD & DRINKS / BAR / CAMPING / GLAMPING / WOODFIRED HOT TUB / WELLBEING AREA INCLUDING YOGA & MASSAGE / MUSIC ALL WEEKEND / ACOUSTIC FIRESIDE JAMMING / FIRE SHOW AND MAZE EACH NIGHT
+ACOUSTIC FIRESIDE JAMMING / FIRE SHOW EACH NIGHT / MAZE EACH NIGHT
 
 ### Kids
 
-KIDS ENTERTAINMENT INC. CINEMA & DISCO / BOUNCY CASTLE / BALL PIT / GAMES / TREASURE HUNT / ARTS & CRAFTS
+CINEMA FRI-SUN 6-9PM / KIDS DISCO FRI 5-6PM / BOUNCY CASTLE / BALL PIT / GAMES / TREASURE HUNT / ARTS & CRAFTS
+
+### Food
+
+COFFEE / FRESH SMOOTHIES / BREAKFAST / HEALTHY SNACKS / SANDWICHES & MORE / BAR FRI-SAT AFTERNOON TILL LATE
+
+### Health & Wellbeing
+
+WOODFIRED HOT TUB / YOGA / MASSAGE / BABY CHANGING & HOT SHOWERS (FREE)
 
 
 
@@ -210,3 +218,27 @@ At Leominster take A44 to Bromyard. Continue along A44 through Bromyard (beware 
 Take the A4103 towards Worcester. Continue along the A4103 for 15 miles, up the big hill and through Fromes Hill. 2 miles out of Fromes Hill turn left onto the B4220 for Bromyard. OTG is 1.4 miles on the left.
 
 ## Style guide
+
+### Section background alternation
+
+Every `<section>` must alternate between the two background tokens — **never two consecutive sections with the same colour**.
+
+| Token | Tailwind class | Colour |
+|---|---|---|
+| Dark | `bg-lotg-dark` | Near-black |
+| Mid | `section-alt` | Dark green-grey mid-tone |
+
+**Current order (must be kept in sync when sections are added/moved):**
+
+| # | Section (`id`) | Background |
+|---|---|---|
+| 1 | `lineup` | `bg-lotg-dark` |
+| 2 | `venue` | `section-alt` |
+| 3 | `whats-on` (Activities & Food) | `bg-lotg-dark` |
+| 4 | `accommodation` | `section-alt` |
+| 5 | `tickets` | `bg-lotg-dark` |
+| 6 | `good-to-know` | `section-alt` |
+| 7 | `map` | `bg-lotg-dark` |
+| 8 | `contact` | `bg-lotg-dark` — intentional double (footer feel) |
+
+> If you add, remove, or reorder a section, update this table and audit every section's background class to restore the alternating pattern.

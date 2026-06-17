@@ -62,6 +62,7 @@ export const mainActs: Act[] = [
       "Brighton multi-instrumentalist releasing freestyle-driven material across voice, beatbox, and layered textures.",
     style: "Dream-pop / Hip-hop / Beatbox",
     spotify: "https://open.spotify.com/artist/4FCuIRaeCVFJEwfR9e9INY",
+    photo: "photos_bands/band_liv_sangster.jpeg",
   },
   {
     name: "MAII",
@@ -69,6 +70,7 @@ export const mainActs: Act[] = [
       "Oxford five-piece known for twin drummers and kaleidoscopic live electronica.",
     style: "Electronic / Balearic / Post-rock",
     spotify: "https://open.spotify.com/artist/0mETWhuGnP7a4tLgwNTMAt",
+    photo: "photos_bands/band_maii_and_the_shenanigans.jpeg",
   },
   {
     name: "Moonbird",
@@ -76,23 +78,19 @@ export const mainActs: Act[] = [
       "Bristol duo building summery psychedelic electronica live with loops and synths. BBC Introducing showcase act.",
     style: "Psychedelic Electronica / Indie Electronic",
     spotify: "https://open.spotify.com/artist/5Xha2kjFXFMfvvaDwZmIuG",
-  },
-  {
-    name: "Riddim 'n Rum",
-    about:
-      "London funk/soul collective with a rotating cast of veteran session players.",
-    style: "Funk / Soul / Latin / Jazz",
-    spotify: "https://open.spotify.com/artist/6ipbFS4ZIfSabswGzJiIeR",
+    photo: "photos_bands/band_moonbird.jpeg",
   },
   {
     name: "Howdo Bean & The Dinos",
     about: "More info coming soon.",
     style: "",
+    photo: "photos_bands/band_howdo_bean_and_the_dinos.jpeg",
   },
   {
     name: "Mr Tumnus",
     about: "More info coming soon.",
     style: "",
+    photo: "photos_bands/band_mr_tumnus.jpeg",
   },
 ];
 
@@ -109,6 +107,7 @@ export const djs: DJ[] = [
   { name: "Steve Perrett", location: "Wiltshire" },
   { name: "AD:Verse", location: "Malvern" },
   { name: "Boson", location: "Coventry" },
+  { name: "Riddim 'n Rum", location: "London" },
   { name: "Milkman", location: "Surrey" },
   { name: "Grillo", location: "Brighton" },
   { name: "Rogan Josh", location: "London" },
@@ -116,27 +115,66 @@ export const djs: DJ[] = [
   { name: "Strike Daddy", location: "Brighton" },
 ];
 
-// ── Venue photo carousel (curated selection) ─────────────
-export const venuePhotos = [
-  "photos_venue/main_stage1.jpeg",
-  "photos_venue/main_stage2.jpeg",
-  "photos_venue/main_stage3.jpeg",
-  "photos_venue/main_stage4.jpeg",
-  "photos_venue/main_stage5.jpeg",
-  "photos_venue/fire_night.jpg",
-  "photos_venue/fire_night2.jpg",
-  "photos_venue/mals_bar.jpeg",
-  "photos_venue/mals_bar2.jpeg",
-  "photos_venue/site1.jpg",
-  "photos_venue/site2.jpg",
-  "photos_venue/site3.jpg",
-  "photos_venue/night0.jpg",
-  "photos_venue/night2.jpg",
-  "photos_venue/sound_bites_cafe.jpeg",
+// ── Venue photo carousel sections ────────────────────────
+export const venuePhotoSections = [
+  {
+    label: 'Day',
+    images: [
+      "photos_venue/day_1.jpeg",
+      "photos_venue/day_2.jpeg",
+      "photos_venue/day_3.jpeg",
+      "photos_venue/day_4.jpeg",
+      "photos_venue/day_5.jpg",
+      "photos_venue/day_6.jpeg",
+    ],
+  },
+  {
+    label: 'Night',
+    images: [
+      "photos_venue/night_1.jpg",
+      "photos_venue/night_2.jpg",
+      "photos_venue/night_3.jpeg",
+      "photos_venue/night_4.jpeg",
+      "photos_venue/night_5.jpeg",
+      "photos_venue/night_6.jpeg",
+      "photos_venue/night_7.jpg",
+      "photos_venue/night_8.jpg",
+      "photos_venue/night_9.jpg",
+    ],
+  },
+  {
+    label: 'Main Stage',
+    images: [
+      "photos_venue/main_stage_1.jpeg",
+      "photos_venue/main_stage_2.jpeg",
+      "photos_venue/main_stage_3.jpeg",
+      "photos_venue/main_stage_4.jpeg",
+    ],
+  },
+  {
+    label: 'Bar',
+    images: [
+      "photos_venue/bar_1.jpeg",
+      "photos_venue/bar_2.jpeg",
+    ],
+  },
+  {
+    label: 'Cafe',
+    images: [
+      "photos_venue/cafe_1.jpeg",
+    ],
+  },
+  {
+    label: 'Aerial',
+    images: [
+      "photos_venue/aerial_1.jpg",
+      "photos_venue/aerial_2.jpeg",
+    ],
+  },
 ];
 
-// ── Accommodation photo carousel ─────────────────────────
-export const accomPhotos = [
+// ── Accommodation photo carousels ────────────────────────
+export const glampingPhotos = [
   "photos_accom/glamping1.jpg",
   "photos_accom/glamping2.jpg",
   "photos_accom/glamping3.jpg",
@@ -151,50 +189,80 @@ export const accomPhotos = [
   "photos_accom/glamping_interior8.jpg",
 ];
 
-// ── What's On ────────────────────────────────────────────
-export const whatsOnGeneral = [
-  { icon: "icons_fun/img_stage.png",  label: "Live Music All Weekend" },
-  { icon: "icons_fun/imge_bar.png",   label: "Bar" },
-  { icon: "icons_fun/img_tent.png",   label: "Camping" },
-  { icon: "icons_fun/img_tent2.png",  label: "Glamping" },
-  { icon: "icons_fun/img_pool.png",   label: "Woodfired Hot Tub" },
-  { icon: "icons_fun/img_piano.png",  label: "Acoustic Fireside Jamming" },
+export const campingPhotos = [
+  "photos_accom/camping_1.jpg",
+  "photos_accom/camping_2.jpeg",
 ];
 
-export const whatsOnExtra = [
-  "Delicious Café & Food",
-  "Wellbeing Area — Yoga & Massage",
-  "Fire Show & Maze Each Night",
-];
+// ── Activities & Food ─────────────────────────────────────
+export interface ActivityCategory {
+  id: string;
+  emoji: string;
+  title: string;
+  accent: "green" | "yellow";
+  items: string[];
+}
 
-export const whatsOnKids = [
-  "Cinema & Disco",
-  "Bouncy Castle & Ball Pit",
-  "Games & Treasure Hunt",
-  "Arts & Crafts",
+export const activityCategories: ActivityCategory[] = [
+  {
+    id: "entertainment",
+    emoji: "🎸",
+    title: "Entertainment",
+    accent: "green",
+    items: [
+      "Acoustic Fireside Jamming",
+      "Fire Show",
+      "Maze",
+    ],
+  },
+  {
+    id: "kids",
+    emoji: "🦕",
+    title: "Kids",
+    accent: "yellow",
+    items: [
+      "Cinema",
+      "Kids Disco",
+      "Bouncy Castle & Ball Pit",
+      "Games & Treasure Hunt",
+      "Arts & Crafts",
+    ],
+  },
+  {
+    id: "food",
+    emoji: "🍽️",
+    title: "Food",
+    accent: "green",
+    items: [
+      "Coffee",
+      "Fresh Smoothies",
+      "Breakfast",
+      "Healthy Snacks",
+      "Sandwiches & More",
+    ],
+  },
+  {
+    id: "wellbeing",
+    emoji: "🧘",
+    title: "Health & Wellbeing",
+    accent: "yellow",
+    items: [
+      "Woodfired Hot Tub",
+      "Yoga",
+      "Massage",
+    ],
+  },
 ];
 
 // ── Opening times ─────────────────────────────────────────
 export const openingTimes = [
   { label: "Site Open",         times: "Fri 12pm – Mon 12pm" },
-  { label: "Main Stage",        times: "Fri–Sat 12pm–12am" },
+  { label: "Main Stage",        times: "Fri–Sun" },
   { label: "Café",              times: "Sat–Sun Daily" },
   { label: "Bar",               times: "Fri–Sat Afternoon–Late" },
-  { label: "Kids Events",       times: "Fri–Sun Daily" },
-  { label: "Kids Disco",        times: "Fri 5–6pm" },
-  { label: "Kids Cinema",       times: "Fri–Sun 6–9pm" },
+  { label: "Kids Disco",        times: "Fri" },
+  { label: "Kids Cinema",       times: "Fri–Sun" },
   { label: "Campfire & Hot Tub",times: "Fri–Sat Eve Till Late" },
-];
-
-// ── Good to Know ─────────────────────────────────────────
-export const goodToKnow = [
-  "Kid friendly & dogs welcome (£5 per dog)",
-  "Quiet / family camping available",
-  "Card accepted",
-  "Car parking only in designated car park",
-  "Alcohol allowed in campsite only — no glass",
-  "Café serving breakfast, sandwiches, chips, curry & kebab (vegan / kids options)",
-  "Baby changing & hot showers included (free)",
 ];
 
 // ── Directions ────────────────────────────────────────────

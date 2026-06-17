@@ -25,20 +25,19 @@ let fallbackGradientIndex = 0;
 
     <!-- Section heading -->
     <div class="text-center mb-10">
-      <p class="text-lotg-yellow text-lg tracking-widest uppercase mb-1">Echofields Presents</p>
       <h2 class="font-bangers text-lotg-green text-6xl md:text-8xl tracking-wider text-outline-lg leading-none">
         Lineup
       </h2>
     </div>
 
     <!-- Poster-style billing -->
-    <div class="text-center border-y border-lotg-green/30 py-8 mb-14 space-y-2">
+    <div class="text-center py-8 mb-14 space-y-2">
       {billingRows.map((row, rowIdx) => (
         <p class={`font-bangers text-lotg-offwhite tracking-wider leading-tight ${rowSizes[rowIdx]}`}>
           {row.join(' · ')}
         </p>
       ))}
-      <p class="font-bangers text-lotg-offwhite/40 text-base tracking-widest mt-3">& MORE TBC…</p>
+      <p class="font-bangers text-lotg-offwhite/40 text-base tracking-widest mt-3">& MORE</p>
     </div>
 
     <!-- Act cards -->
@@ -104,7 +103,7 @@ let fallbackGradientIndex = 0;
     </div>
 
     <!-- DJs section -->
-    <div class="border-t border-lotg-green/30 pt-12">
+    <div class="pt-12">
       <h3 class="font-bangers text-lotg-yellow text-4xl md:text-5xl tracking-wider text-center mb-8">
         DJs
       </h3>

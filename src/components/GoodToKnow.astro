@@ -1,8 +1,14 @@
 ---
-import { goodToKnow } from '../data/site';
+const items = [
+  { emoji: '👶', label: 'Kid Friendly' },
+  { emoji: '🐕', label: 'Dogs Welcome (£5 per dog)' },
+  { emoji: '💳', label: 'Card Accepted' },
+  { emoji: '🚿', label: 'Baby changing & hot showers (free)' },
+  { emoji: '🍺', label: 'Alcohol in campsite only — no glass' },
+];
 ---
 
-<section id="good-to-know" class="bg-lotg-dark py-20 px-4 md:px-8 lg:px-16">
+<section id="good-to-know" class="section-alt py-20 px-4 md:px-8 lg:px-16">
   <div class="max-w-4xl mx-auto">
 
     <div class="text-center mb-12">
@@ -11,30 +17,13 @@ import { goodToKnow } from '../data/site';
       </h2>
     </div>
 
-    <!-- Info grid -->
-    <div class="grid sm:grid-cols-2 gap-4">
-      {goodToKnow.map(item => (
-        <div class="flex items-start gap-3 bg-lotg-card rounded-xl p-4 border border-lotg-green/20 hover:border-lotg-green/40 transition-colors">
-          <span class="text-lotg-green text-xl mt-0.5 shrink-0">✦</span>
-          <p class="text-lotg-offwhite tracking-wide leading-snug">{item}</p>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {items.map(({ emoji, label }) => (
+        <div class="flex items-center gap-3 bg-lotg-mid border border-lotg-green/30 rounded-full px-5 py-3">
+          <span class="text-2xl shrink-0">{emoji}</span>
+          <span class="font-bangers text-lotg-green text-lg tracking-wide leading-tight">{label}</span>
         </div>
       ))}
-    </div>
-
-    <!-- Kid + dog highlight -->
-    <div class="mt-8 flex flex-wrap justify-center gap-4">
-      <div class="flex items-center gap-2 bg-lotg-mid border border-lotg-green/30 rounded-full px-5 py-2">
-        <span class="text-2xl">👶</span>
-        <span class="font-bangers text-lotg-green text-xl tracking-wide">Kid Friendly</span>
-      </div>
-      <div class="flex items-center gap-2 bg-lotg-mid border border-lotg-green/30 rounded-full px-5 py-2">
-        <span class="text-2xl">🐕</span>
-        <span class="font-bangers text-lotg-green text-xl tracking-wide">Dogs Welcome</span>
-      </div>
-      <div class="flex items-center gap-2 bg-lotg-mid border border-lotg-green/30 rounded-full px-5 py-2">
-        <span class="text-2xl">💳</span>
-        <span class="font-bangers text-lotg-green text-xl tracking-wide">Card Accepted</span>
-      </div>
     </div>
 
   </div>

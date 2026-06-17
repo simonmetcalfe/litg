@@ -1,105 +1,193 @@
 ---
+interface Section {
+  label: string;
+  images: string[];
+}
+
 interface Props {
-  images: string[];       // paths relative to publicDir root (no leading slash)
+  /** Sectioned mode — each section gets a tab. */
+  sections?: Section[];
+  /** Simple mode — flat image list, no tabs. */
+  images?: string[];
   altPrefix?: string;
+  /** Applied to the slide-track wrapper (border, shadow, rounding, etc.) */
   class?: string;
-  aspectClass?: string;   // e.g. 'aspect-video' or 'aspect-[4/3]'
+  aspectClass?: string;
 }
 
 const {
-  images,
+  sections: rawSections,
+  images: rawImages,
   altPrefix = 'Photo',
   class: className = '',
   aspectClass = 'aspect-video',
 } = Astro.props;
 
 import { asset } from '../utils';
+
+// Normalise: flat images → single unlabelled section (no tabs rendered)
+const sections: Section[] = rawSections ?? (rawImages ? [{ label: '', images: rawImages }] : []);
+const showTabs = sections.length > 1;
+
+// Build flat slide list and section-start indices
+interface Slide { src: string; alt: string; sectionIdx: number; }
+const slides: Slide[] = [];
+const sectionStarts: number[] = [];
+
+sections.forEach((sec, si) => {
+  sectionStarts.push(slides.length);
+  sec.images.forEach((src, ii) => {
+    slides.push({ src, alt: `${altPrefix} ${ii + 1}`, sectionIdx: si });
+  });
+});
 ---
 
-<div class={`relative group ${className}`} data-carousel>
-  <!-- Track -->
-  <div
-    class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar"
-    data-track
-  >
-    {images.map((src, i) => (
-      <div class={`snap-center shrink-0 w-full ${aspectClass} overflow-hidden`}>
-        <img
-          src={asset(src)}
-          alt={`${altPrefix} ${i + 1}`}
-          class="w-full h-full object-cover"
-          loading={i === 0 ? 'eager' : 'lazy'}
+<div data-carousel data-section-starts={JSON.stringify(sectionStarts)}>
+
+  {/* Section tabs */}
+  {showTabs && (
+    <div class="flex justify-center gap-3 mb-6" data-tabs>
+      {sections.map((sec, i) => (
+        <button
+          data-tab-idx={i}
+          aria-pressed={i === 0 ? 'true' : 'false'}
+          class:list={[
+            'carousel-tab font-bangers tracking-wider text-xl px-6 py-2 rounded-full border-2 transition-all duration-200 border-lotg-green',
+            i === 0
+              ? 'bg-lotg-green text-lotg-dark'
+              : 'text-lotg-green hover:bg-lotg-green/10',
+          ]}
+        >{sec.label}</button>
+      ))}
+    </div>
+  )}
+
+  {/* Track wrapper — className (border, shadow, rounding) applies here */}
+  <div class={`relative group ${className}`}>
+
+    <div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar" data-track>
+      {slides.map((slide, i) => (
+        <div
+          class={`snap-center shrink-0 w-full ${aspectClass} overflow-hidden`}
+          data-slide-section={slide.sectionIdx}
+        >
+          <img
+            src={asset(slide.src)}
+            alt={slide.alt}
+            class="w-full h-full object-cover"
+            loading={i === 0 ? 'eager' : 'lazy'}
+          />
+        </div>
+      ))}
+    </div>
+
+    {/* Prev */}
+    <button
+      data-prev
+      aria-label="Previous"
+      class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-lotg-dark/70 text-lotg-yellow flex items-center justify-center hover:bg-lotg-green hover:text-lotg-dark transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
+    ><span class="material-icons" style="font-size:24px">chevron_left</span></button>
+
+    {/* Next */}
+    <button
+      data-next
+      aria-label="Next"
+      class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-lotg-dark/70 text-lotg-yellow flex items-center justify-center hover:bg-lotg-green hover:text-lotg-dark transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
+    ><span class="material-icons" style="font-size:24px">chevron_right</span></button>
+
+    {/* Dots */}
+    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10" data-dots>
+      {slides.map((_, i) => (
+        <button
+          data-dot={i}
+          aria-label={`Go to slide ${i + 1}`}
+          class="w-2 h-2 rounded-full bg-lotg-offwhite/40 transition-all duration-200"
         />
-      </div>
-    ))}
-  </div>
+      ))}
+    </div>
 
-  <!-- Prev button -->
-  <button
-    data-prev
-    aria-label="Previous"
-    class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-lotg-dark/70 text-lotg-yellow text-2xl leading-none flex items-center justify-center hover:bg-lotg-green hover:text-lotg-dark transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
-  >‹</button>
-
-  <!-- Next button -->
-  <button
-    data-next
-    aria-label="Next"
-    class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-lotg-dark/70 text-lotg-yellow text-2xl leading-none flex items-center justify-center hover:bg-lotg-green hover:text-lotg-dark transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
-  >›</button>
-
-  <!-- Dot indicators -->
-  <div
-    class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10"
-    data-dots
-  >
-    {images.map((_, i) => (
-      <button
-        data-dot={i}
-        aria-label={`Go to slide ${i + 1}`}
-        class="w-2 h-2 rounded-full bg-lotg-offwhite/40 transition-all duration-200"
-      />
-    ))}
   </div>
 </div>
 
 <script>
-  document.querySelectorAll('[data-carousel]').forEach(carousel => {
-    const track = carousel.querySelector('[data-track]') as HTMLElement;
-    const prevBtn = carousel.querySelector('[data-prev]') as HTMLButtonElement;
-    const nextBtn = carousel.querySelector('[data-next]') as HTMLButtonElement;
-    const dots = carousel.querySelectorAll('[data-dot]') as NodeListOf<HTMLButtonElement>;
+  document.querySelectorAll<HTMLElement>('[data-carousel]').forEach(carousel => {
+    const track    = carousel.querySelector<HTMLElement>('[data-track]')!;
+    const prevBtn  = carousel.querySelector<HTMLButtonElement>('[data-prev]');
+    const nextBtn  = carousel.querySelector<HTMLButtonElement>('[data-next]');
+    const dots     = carousel.querySelectorAll<HTMLButtonElement>('[data-dot]');
+    const tabBtns  = carousel.querySelectorAll<HTMLButtonElement>('[data-tab-idx]');
 
     if (!track) return;
 
-    const totalSlides = dots.length;
+    const totalSlides   = dots.length;
+    const sectionStarts: number[] = JSON.parse(carousel.dataset.sectionStarts ?? '[]');
     let current = 0;
 
-    const goTo = (index: number) => {
-      current = Math.max(0, Math.min(index, totalSlides - 1));
-      track.scrollTo({ left: current * track.offsetWidth, behavior: 'smooth' });
+    // Which section does slide `idx` belong to?
+    const sectionOf = (idx: number): number => {
+      let s = 0;
+      for (let i = 0; i < sectionStarts.length; i++) {
+        if (sectionStarts[i] <= idx) s = i;
+      }
+      return s;
+    };
+
+    const updateDots = (idx: number) => {
       dots.forEach((dot, i) => {
-        if (i === current) {
-          dot.classList.add('bg-lotg-green', '!opacity-100', 'scale-125');
-          dot.classList.remove('bg-lotg-offwhite/40');
-        } else {
-          dot.classList.remove('bg-lotg-green', '!opacity-100', 'scale-125');
-          dot.classList.add('bg-lotg-offwhite/40');
-        }
+        const active = i === idx;
+        dot.classList.toggle('bg-lotg-green',      active);
+        dot.classList.toggle('!opacity-100',        active);
+        dot.classList.toggle('scale-125',           active);
+        dot.classList.toggle('bg-lotg-offwhite/40', !active);
       });
+    };
+
+    const updateTabs = (idx: number) => {
+      const sec = sectionOf(idx);
+      tabBtns.forEach(btn => {
+        const active = Number(btn.dataset.tabIdx) === sec;
+        btn.setAttribute('aria-pressed', String(active));
+        btn.classList.toggle('bg-lotg-green',            active);
+        btn.classList.toggle('text-lotg-dark',           active);
+        btn.classList.toggle('text-lotg-green',          !active);
+        btn.classList.toggle('hover:bg-lotg-green/10',   !active);
+      });
+    };
+
+    const goTo = (idx: number) => {
+      current = ((idx % totalSlides) + totalSlides) % totalSlides;
+      track.scrollTo({ left: current * track.offsetWidth, behavior: 'smooth' });
+      updateDots(current);
+      updateTabs(current);
     };
 
     prevBtn?.addEventListener('click', () => goTo(current - 1));
     nextBtn?.addEventListener('click', () => goTo(current + 1));
     dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
 
-    // Sync dots on manual scroll
+    // Tab click → jump to section start
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sec = Number(btn.dataset.tabIdx);
+        goTo(sectionStarts[sec] ?? 0);
+      });
+    });
+
+    // Sync on manual swipe
+    let scrollTimer: ReturnType<typeof setTimeout>;
     track.addEventListener('scroll', () => {
-      const idx = Math.round(track.scrollLeft / track.offsetWidth);
-      if (idx !== current) goTo(idx);
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        const idx = Math.round(track.scrollLeft / track.offsetWidth);
+        if (idx !== current) {
+          current = idx;
+          updateDots(current);
+          updateTabs(current);
+        }
+      }, 150);
     }, { passive: true });
 
-    // Init first dot
-    goTo(0);
+    updateDots(0);
+    updateTabs(0);
   });
 </script>
