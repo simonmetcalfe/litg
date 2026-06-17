@@ -16,15 +16,154 @@ const mapsUrl = 'https://maps.app.goo.gl/pnr4GmAQKsL5SxAZ8';
       <p class="text-lotg-yellow text-lg tracking-wide mt-2">Out to Grass · Woodend Farm · WR13 5JW</p>
     </div>
 
-    <!-- Map image -->
-    <div class="relative rounded-2xl overflow-hidden border border-lotg-green/30 shadow-2xl mb-10">
+    <!-- Map image — pan/zoom wrapper -->
+    <div id="map-viewport" class="relative rounded-2xl border border-lotg-green/30 shadow-2xl mb-10 bg-black select-none" style="overflow:hidden; cursor:grab; touch-action:none; height:clamp(300px,55vw,680px)">
+
+      <!-- draggable inner (image only — legend stays outside so it's unaffected by zoom) -->
+      <div id="map-inner" style="position:absolute;top:0;left:0;width:100%;height:100%;transform-origin:0 0;will-change:transform;">
+        <img
+          src={asset('map/Map.png')}
+          alt="Lost in the Grass site map"
+          style="width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;"
+          loading="lazy"
+          draggable="false"
+        />
+      </div>
+
+      <!-- Legend: fixed to viewport bottom-right, outside map-inner so zoom doesn't affect it -->
       <img
-        src={asset('map/Map.png')}
-        alt="Lost in the Grass site map"
-        class="w-full h-auto"
+        src={asset('map_legend/LegendTranslucent.png')}
+        alt="Map legend"
+        class="absolute z-20 pointer-events-none"
+        style="bottom:10px;right:10px;width:clamp(110px,20%,240px);height:auto;"
         loading="lazy"
+        draggable="false"
       />
+
+      <!-- Zoom controls — top-right -->
+      <div class="absolute top-3 right-3 z-30 flex flex-col gap-1">
+        <button id="map-zoom-in"    aria-label="Zoom in"    class="w-9 h-9 rounded-lg bg-black/70 border border-lotg-green/50 text-lotg-green hover:bg-lotg-green hover:text-lotg-dark transition-colors flex items-center justify-center"><span class="material-icons" style="font-size:20px">add</span></button>
+        <button id="map-zoom-out"   aria-label="Zoom out"   class="w-9 h-9 rounded-lg bg-black/70 border border-lotg-green/50 text-lotg-green hover:bg-lotg-green hover:text-lotg-dark transition-colors flex items-center justify-center"><span class="material-icons" style="font-size:20px">remove</span></button>
+        <button id="map-zoom-reset" aria-label="Reset zoom" class="w-9 h-9 rounded-lg bg-black/70 border border-lotg-green/50 text-lotg-green hover:bg-lotg-green hover:text-lotg-dark transition-colors flex items-center justify-center"><span class="material-icons" style="font-size:20px">center_focus_weak</span></button>
+      </div>
     </div>
+
+    <script>
+    (function () {
+      const viewport = document.getElementById('map-viewport') as HTMLElement | null;
+      const inner    = document.getElementById('map-inner')    as HTMLElement | null;
+      const btnIn    = document.getElementById('map-zoom-in');
+      const btnOut   = document.getElementById('map-zoom-out');
+      const btnReset = document.getElementById('map-zoom-reset');
+      if (!viewport || !inner) return;
+
+      const INIT_SCALE = 1.5;
+      const MIN_SCALE  = 1.0;
+      const MAX_SCALE  = 5;
+      const STEP       = 0.25;
+
+      let scale = INIT_SCALE;
+      let tx = 0, ty = 0;
+      let isDragging = false;
+
+      function clamp(v: number, lo: number, hi: number) { return Math.max(lo, Math.min(hi, v)); }
+
+      function clampPan() {
+        const W = viewport.offsetWidth;
+        const H = viewport.offsetHeight;
+        tx = clamp(tx, W * (1 - scale), 0);
+        ty = clamp(ty, H * (1 - scale), 0);
+      }
+
+      function apply() {
+        clampPan();
+        inner.style.transform = `translate(${tx}px,${ty}px) scale(${scale})`;
+        viewport.style.cursor = isDragging ? 'grabbing' : 'grab';
+      }
+
+      function zoomAround(cx: number, cy: number, newScale: number) {
+        const rect = viewport.getBoundingClientRect();
+        const ox = cx - rect.left;
+        const oy = cy - rect.top;
+        const f  = newScale / scale;
+        tx = ox - f * (ox - tx);
+        ty = oy - f * (oy - ty);
+        scale = newScale;
+        apply();
+      }
+
+      function centredZoom(newScale: number) {
+        const W = viewport.offsetWidth;
+        const H = viewport.offsetHeight;
+        zoomAround(W / 2, H / 2, clamp(newScale, MIN_SCALE, MAX_SCALE));
+      }
+
+      const initRect = () => {
+        const W = viewport.offsetWidth;
+        const H = viewport.offsetHeight;
+        scale = INIT_SCALE;
+        tx = (W * (1 - INIT_SCALE)) / 2;
+        ty = (H * (1 - INIT_SCALE)) / 2;
+        apply();
+      };
+
+      if (document.readyState === 'complete') { initRect(); }
+      else { window.addEventListener('load', initRect); }
+
+      // ── Mouse drag ───────────────────────────────────────────────
+      let lastX = 0, lastY = 0;
+
+      viewport.addEventListener('mousedown', (e: MouseEvent) => {
+        isDragging = true;
+        lastX = e.clientX; lastY = e.clientY;
+        viewport.style.cursor = 'grabbing';
+      });
+      window.addEventListener('mousemove', (e: MouseEvent) => {
+        if (!isDragging) return;
+        tx += e.clientX - lastX;
+        ty += e.clientY - lastY;
+        lastX = e.clientX; lastY = e.clientY;
+        apply();
+      });
+      window.addEventListener('mouseup', () => {
+        if (isDragging) { isDragging = false; viewport.style.cursor = 'grab'; }
+      });
+
+      // ── Touch (pinch + pan) ──────────────────────────────────────
+      let lastTouches: TouchList | null = null;
+
+      viewport.addEventListener('touchstart', (e: TouchEvent) => {
+        e.preventDefault();
+        lastTouches = e.touches;
+      }, { passive: false });
+
+      viewport.addEventListener('touchmove', (e: TouchEvent) => {
+        e.preventDefault();
+        if (!lastTouches) return;
+        const t = e.touches;
+
+        if (t.length === 1 && lastTouches.length === 1) {
+          tx += t[0].clientX - lastTouches[0].clientX;
+          ty += t[0].clientY - lastTouches[0].clientY;
+          apply();
+        } else if (t.length === 2 && lastTouches.length === 2) {
+          const prevDist = Math.hypot(lastTouches[0].clientX - lastTouches[1].clientX, lastTouches[0].clientY - lastTouches[1].clientY);
+          const newDist  = Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
+          const midX = (t[0].clientX + t[1].clientX) / 2;
+          const midY = (t[0].clientY + t[1].clientY) / 2;
+          zoomAround(midX, midY, clamp(scale * (newDist / prevDist), MIN_SCALE, MAX_SCALE));
+        }
+        lastTouches = t;
+      }, { passive: false });
+
+      viewport.addEventListener('touchend', () => { lastTouches = null; }, { passive: true });
+
+      // ── Buttons (only zoom mechanism on desktop) ─────────────────
+      btnIn?.addEventListener('click',    () => centredZoom(scale + STEP));
+      btnOut?.addEventListener('click',   () => centredZoom(scale - STEP));
+      btnReset?.addEventListener('click', () => initRect());
+    })();
+    </script>
 
     <!-- Directions accordion + Google Maps link -->
     <div class="max-w-3xl mx-auto space-y-3">
@@ -35,12 +174,7 @@ const mapsUrl = 'https://maps.app.goo.gl/pnr4GmAQKsL5SxAZ8';
               <span class="w-8 h-8 rounded-full bg-lotg-green text-lotg-dark font-bold text-sm flex items-center justify-center shrink-0">{i + 1}</span>
               <span class="font-bangers text-lotg-offwhite text-xl tracking-wide">{dir.from}</span>
             </div>
-            <svg
-              class="w-5 h-5 text-lotg-green transition-transform duration-200 group-open:rotate-180 shrink-0"
-              fill="none" stroke="currentColor" viewBox="0 0 24 24"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
+            <span class="material-icons text-lotg-green transition-transform duration-200 group-open:rotate-180 shrink-0" style="font-size:20px">expand_more</span>
           </summary>
           <div class="px-6 pb-5 pt-1">
             <p class="text-lotg-offwhite/80 text-sm leading-relaxed">{dir.steps}</p>
@@ -62,9 +196,7 @@ const mapsUrl = 'https://maps.app.goo.gl/pnr4GmAQKsL5SxAZ8';
           <p class="font-bangers text-lotg-green text-lg tracking-wide">Open in Google Maps</p>
           <p class="text-lotg-offwhite/40 text-xs">Grid Reference: 370250E 248750N (N52:08:10 W2:26:10)</p>
         </div>
-        <svg class="w-4 h-4 text-lotg-green ml-auto shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-        </svg>
+        <span class="material-icons text-lotg-green ml-auto shrink-0" style="font-size:18px">open_in_new</span>
       </a>
     </div>
 
