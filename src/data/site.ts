@@ -1,3 +1,30 @@
+// ── Navigation / section headings ────────────────────────
+// Single source of truth: heading drives the section h2; label drives the nav tab.
+// Keep label short enough to fit the desktop nav bar.
+export interface NavLink {
+  href: string;
+  /** Full heading rendered as the section h2 */
+  heading: string;
+  /** Nav bar label — may be an abbreviation of heading */
+  label: string;
+}
+
+export const navLinks: NavLink[] = [
+  { href: '#lineup',        heading: 'Lineup',              label: 'Lineup'           },
+  { href: '#venue',         heading: 'Venue',               label: 'Venue'            },
+  { href: '#whats-on',      heading: 'Activities & Food',   label: 'Activities & Food'},
+  { href: '#accommodation', heading: 'Accommodation',       label: 'Accommodation'    },
+  { href: '#good-to-know',  heading: 'Good to Know',        label: 'Good to Know'     },
+  { href: '#tickets',       heading: 'Tickets',             label: 'Tickets'          },
+  { href: '#map',           heading: 'Map & Getting There', label: 'Getting There'    },
+  { href: '#contact',       heading: 'Get In Touch',        label: 'Get In Touch'     },
+];
+
+/** Keyed by section id (without #) for easy lookup in section components. */
+export const sectionHeadings = Object.fromEntries(
+  navLinks.map(l => [l.href.slice(1), l.heading])
+) as Record<string, string>;
+
 // ── Types ────────────────────────────────────────────────
 export interface Act {
   name: string;

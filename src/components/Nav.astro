@@ -1,31 +1,21 @@
 ---
 import { asset } from '../utils';
-const links = [
-  { href: '#lineup',        label: 'Lineup' },
-  { href: '#venue',         label: 'Venue' },
-  { href: '#whats-on',      label: "What's On" },
-  { href: '#accommodation', label: 'Stay' },
-  { href: '#map',           label: 'Map' },
-  { href: '#tickets',       label: 'Tickets' },
-  { href: '#contact',       label: 'Get In Touch' },
-];
-
-
+import { navLinks } from '../data/site';
 ---
 
 <nav
   id="site-nav"
-  class="fixed top-0 left-0 right-0 z-50 bg-lotg-dark/90 backdrop-blur-md border-b border-lotg-green/20 transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-50 bg-lotg-dark/90 backdrop-blur-md border-b border-lotg-green/20 transition-all duration-300 overflow-hidden"
 >
   <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
     <!-- Logo wordmark -->
-    <a href="#hero" class="font-frijole text-lotg-green text-lg leading-none hover:text-lotg-yellow transition-colors shrink-0">
+    <a href="#hero" class="font-frijole text-lotg-green text-lg leading-none hover:text-lotg-yellow transition-colors min-w-0 truncate mr-3">
       Lost in the Grass
     </a>
 
     <!-- Desktop nav -->
     <ul class="hidden lg:flex items-center gap-5 text-sm tracking-wide">
-      {links.map(link => (
+      {navLinks.map(link => (
         <li>
           <a
             href={link.href}
@@ -66,7 +56,7 @@ const links = [
     class="lg:hidden hidden bg-lotg-dark border-t border-lotg-green/20"
   >
     <ul class="flex flex-col px-4 py-3 gap-0">
-      {links.map(link => (
+      {navLinks.map(link => (
         <li>
           <a
             href={link.href}

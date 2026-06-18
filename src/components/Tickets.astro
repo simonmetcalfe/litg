@@ -1,4 +1,5 @@
 ---
+import { sectionHeadings } from '../data/site';
 const ticketUrl = 'https://outtograss.com/product-category/lost-in-the-grass-2026';
 ---
 
@@ -6,10 +7,9 @@ const ticketUrl = 'https://outtograss.com/product-category/lost-in-the-grass-202
   <div class="max-w-5xl mx-auto text-center">
 
     <!-- Heading -->
-    <h2 class="font-bangers text-lotg-green text-6xl md:text-8xl tracking-wider text-outline-lg leading-none mb-3">
-      Tickets
+    <h2 class="font-bangers text-lotg-green section-h2 tracking-wider text-outline-lg leading-none mb-12">
+      {sectionHeadings['tickets']}
     </h2>
-    <p class="text-lotg-yellow text-lg tracking-wide mb-12">Limited availability</p>
 
     <!-- Ticket cards -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">

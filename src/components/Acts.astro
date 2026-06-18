@@ -1,5 +1,5 @@
 ---
-import { billingRows, mainActs, djs } from '../data/site';
+import { billingRows, mainActs, djs, sectionHeadings } from '../data/site';
 import { asset } from '../utils';
 
 // Gradient classes for acts without photos (cycle through 6)
@@ -25,8 +25,8 @@ let fallbackGradientIndex = 0;
 
     <!-- Section heading -->
     <div class="text-center mb-10">
-      <h2 class="font-bangers text-lotg-green text-6xl md:text-8xl tracking-wider text-outline-lg leading-none">
-        Lineup
+      <h2 class="font-bangers text-lotg-green section-h2 tracking-wider text-outline-lg leading-none">
+        {sectionHeadings['lineup']}
       </h2>
     </div>
 

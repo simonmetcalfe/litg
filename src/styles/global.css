@@ -68,6 +68,17 @@ body {
   color: var(--color-lotg-offwhite);
   font-family: var(--font-bangers);
   letter-spacing: 0.03em;
+  /* Prevent any overflowing element from widening the layout viewport on mobile */
+  overflow-x: clip;
+}
+
+/* ── Section headings ──────────────────────────────────── */
+/* Fluid scale: fits single long words on small screens (~9vw),
+   caps at 5.4rem (~10% below text-8xl/6rem) on wide screens.
+   overflow-wrap:anywhere is a safety net if something still overflows. */
+.section-h2 {
+  font-size: clamp(1.75rem, 9vw, 5.4rem);
+  overflow-wrap: anywhere;
 }
 
 /* ── Scrollbar hide (carousel tracks) ─────────────────── */
