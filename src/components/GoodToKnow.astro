@@ -1,4 +1,5 @@
 ---
+import { sectionHeadings } from '../data/site';
 const items = [
   { emoji: '👶', label: 'Kid Friendly' },
   { emoji: '🐕', label: 'Dogs Welcome (£5 per dog)' },
@@ -12,8 +13,8 @@ const items = [
   <div class="max-w-4xl mx-auto">
 
     <div class="text-center mb-12">
-      <h2 class="font-bangers text-lotg-green text-6xl md:text-8xl tracking-wider text-outline-lg leading-none">
-        Good to Know
+      <h2 class="font-bangers text-lotg-green section-h2 tracking-wider text-outline-lg leading-none">
+        {sectionHeadings['good-to-know']}
       </h2>
     </div>
 

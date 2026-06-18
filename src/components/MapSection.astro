@@ -1,5 +1,5 @@
 ---
-import { directions } from '../data/site';
+import { directions, sectionHeadings } from '../data/site';
 import { asset } from '../utils';
 
 const mapsUrl = 'https://maps.app.goo.gl/pnr4GmAQKsL5SxAZ8';
@@ -10,8 +10,8 @@ const mapsUrl = 'https://maps.app.goo.gl/pnr4GmAQKsL5SxAZ8';
 
     <!-- Heading -->
     <div class="text-center mb-10">
-      <h2 class="font-bangers text-lotg-green text-6xl md:text-8xl tracking-wider text-outline-lg leading-none">
-        Map & Getting There
+      <h2 class="font-bangers text-lotg-green section-h2 tracking-wider text-outline-lg leading-none">
+        {sectionHeadings['map']}
       </h2>
       <p class="text-lotg-yellow text-lg tracking-wide mt-2">Out to Grass · Woodend Farm · WR13 5JW</p>
     </div>

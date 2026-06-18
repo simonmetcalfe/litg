@@ -46,13 +46,13 @@ sections.forEach((sec, si) => {
 
   {/* Section tabs */}
   {showTabs && (
-    <div class="flex justify-center gap-3 mb-6" data-tabs>
+    <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-6" data-tabs>
       {sections.map((sec, i) => (
         <button
           data-tab-idx={i}
           aria-pressed={i === 0 ? 'true' : 'false'}
           class:list={[
-            'carousel-tab font-bangers tracking-wider text-xl px-6 py-2 rounded-full border-2 transition-all duration-200 border-lotg-green',
+            'carousel-tab font-bangers tracking-wider text-sm px-3 py-1 md:text-xl md:px-6 md:py-2 rounded-full border-2 transition-all duration-200 border-lotg-green',
             i === 0
               ? 'bg-lotg-green text-lotg-dark'
               : 'text-lotg-green hover:bg-lotg-green/10',

@@ -1,5 +1,5 @@
 ---
-import { activityCategories, openingTimes } from '../data/site';
+import { activityCategories, openingTimes, sectionHeadings } from '../data/site';
 ---
 
 <section id="whats-on" class="bg-lotg-dark py-20 px-4 md:px-8 lg:px-16">
@@ -7,8 +7,8 @@ import { activityCategories, openingTimes } from '../data/site';
 
     <!-- Heading -->
     <div class="text-center mb-12">
-      <h2 class="font-bangers text-lotg-green text-6xl md:text-8xl tracking-wider text-outline-lg leading-none">
-        Activities &amp; Food
+      <h2 class="font-bangers text-lotg-green section-h2 tracking-wider text-outline-lg leading-none">
+        {sectionHeadings['whats-on']}
       </h2>
     </div>
 

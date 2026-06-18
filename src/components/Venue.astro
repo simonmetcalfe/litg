@@ -1,6 +1,6 @@
 ---
 import Carousel from './Carousel.astro';
-import { venuePhotoSections } from '../data/site';
+import { venuePhotoSections, sectionHeadings } from '../data/site';
 ---
 
 <section id="venue" class="section-alt py-20 px-4 md:px-8 lg:px-16">
@@ -8,8 +8,8 @@ import { venuePhotoSections } from '../data/site';
 
     <!-- Heading -->
     <div class="text-center mb-12">
-      <h2 class="font-bangers text-lotg-green text-6xl md:text-8xl tracking-wider text-outline-lg leading-none">
-        Venue
+      <h2 class="font-bangers text-lotg-green section-h2 tracking-wider text-outline-lg leading-none">
+        {sectionHeadings['venue']}
       </h2>
     </div>
 
