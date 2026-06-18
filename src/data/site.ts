@@ -14,9 +14,9 @@ export const navLinks: NavLink[] = [
   { href: '#venue',         heading: 'Venue',               label: 'Venue'            },
   { href: '#whats-on',      heading: 'Activities & Food',   label: 'Activities & Food'},
   { href: '#accommodation', heading: 'Accommodation',       label: 'Accommodation'    },
-  { href: '#good-to-know',  heading: 'Good to Know',        label: 'Good to Know'     },
   { href: '#tickets',       heading: 'Tickets',             label: 'Tickets'          },
-  { href: '#map',           heading: 'Map & Getting There', label: 'Getting There'    },
+  { href: '#good-to-know',  heading: 'Good to Know',        label: 'Good to Know'     },
+  { href: '#map',           heading: 'Map & Getting There', label: 'Map & Getting There'},
   { href: '#contact',       heading: 'Get In Touch',        label: 'Get In Touch'     },
 ];
 
