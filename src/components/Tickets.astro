@@ -12,7 +12,7 @@ const ticketUrl = 'https://outtograss.com/product-category/lost-in-the-grass-202
     </h2>
 
     <!-- Ticket cards -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-4">
 
       <!-- Adults -->
       <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/40 flex flex-col items-center gap-2 hover:border-lotg-green hover:shadow-[0_0_20px_rgba(98,212,32,0.2)] transition-all">
@@ -40,11 +40,27 @@ const ticketUrl = 'https://outtograss.com/product-category/lost-in-the-grass-202
         <p class="text-lotg-offwhite/40 text-xs">Elec hookup £35</p>
       </div>
 
-      <!-- Glamping -->
+      <!-- Lunar Tents -->
       <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/30 flex flex-col items-center gap-2">
+        <span class="text-3xl">🌙</span>
+        <h3 class="font-bangers text-lotg-offwhite text-2xl tracking-wide">Lunar Tents</h3>
+        <p class="font-bangers text-lotg-green text-5xl">£360</p>
+        <p class="text-lotg-offwhite/50 text-sm">Per tent · 1–4 guests</p>
+        <p class="text-lotg-offwhite/40 text-xs">No towels provided</p>
+        <a
+          href={ticketUrl}
+          target="_blank"
+          rel="noopener"
+          class="text-lotg-yellow text-xs uppercase hover:underline"
+        >Check availability on OTG website</a>
+      </div>
+
+      <!-- Glamping -->
+      <div class="relative bg-lotg-card rounded-2xl p-6 pt-8 border border-lotg-green/20 flex flex-col items-center gap-2 opacity-75">
+        <span class="absolute top-0 inset-x-0 bg-lotg-yellow text-lotg-dark text-xs font-bold uppercase tracking-wider py-1 rounded-t-2xl">Sold out</span>
         <span class="text-3xl">🏕️</span>
         <h3 class="font-bangers text-lotg-offwhite text-2xl tracking-wide">Glamping</h3>
-        <p class="font-bangers text-lotg-green text-5xl">£360</p>
+        <p class="font-bangers text-lotg-green text-4xl">£420–550</p>
         <p class="text-lotg-offwhite/50 text-sm">Per tent · 1–4 guests</p>
         <p class="text-lotg-offwhite/40 text-xs">No towels provided</p>
       </div>

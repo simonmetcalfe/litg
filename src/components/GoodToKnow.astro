@@ -1,5 +1,5 @@
 ---
-import { sectionHeadings } from '../data/site';
+import { openingTimes, sectionHeadings } from '../data/site';
 const items = [
   { emoji: '👶', label: 'Kid Friendly' },
   { emoji: '🐕', label: 'Dogs Welcome (£5 per dog)' },
@@ -25,6 +25,18 @@ const items = [
           <span class="font-bangers text-lotg-green text-lg tracking-wide leading-tight">{label}</span>
         </div>
       ))}
+    </div>
+
+    <div class="mt-12 bg-lotg-card rounded-2xl p-6 border border-lotg-green/20">
+      <h3 class="font-bangers text-lotg-green text-3xl tracking-wide mb-5">Opening Times</h3>
+      <div class="space-y-2">
+        {openingTimes.map(row => (
+          <div class="flex justify-between gap-4 border-b border-lotg-green/10 pb-2 last:border-0 last:pb-0">
+            <span class="text-lotg-offwhite/70 text-sm uppercase tracking-wide">{row.label}</span>
+            <span class="text-lotg-green text-sm text-right">{row.times}</span>
+          </div>
+        ))}
+      </div>
     </div>
 
   </div>

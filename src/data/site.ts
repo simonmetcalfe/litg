@@ -10,14 +10,14 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { href: '#lineup',        heading: 'Lineup',              label: 'Lineup'           },
-  { href: '#venue',         heading: 'Venue',               label: 'Venue'            },
-  { href: '#whats-on',      heading: 'Activities & Food',   label: 'Activities & Food'},
-  { href: '#accommodation', heading: 'Accommodation',       label: 'Accommodation'    },
-  { href: '#tickets',       heading: 'Tickets',             label: 'Tickets'          },
-  { href: '#good-to-know',  heading: 'Good to Know',        label: 'Good to Know'     },
-  { href: '#map',           heading: 'Map & Getting There', label: 'Map & Getting There'},
-  { href: '#contact',       heading: 'Get In Touch',        label: 'Get In Touch'     },
+  { href: '#lineup', heading: 'Lineup', label: 'Lineup' },
+  { href: '#venue', heading: 'Venue', label: 'Venue' },
+  { href: '#whats-on', heading: 'Activities & Food', label: 'Activities & Food' },
+  { href: '#accommodation', heading: 'Accommodation', label: 'Accommodation' },
+  { href: '#tickets', heading: 'Tickets', label: 'Tickets' },
+  { href: '#good-to-know', heading: 'Good to Know', label: 'Good to Know' },
+  { href: '#map', heading: 'Map & Getting There', label: 'Map & Getting There' },
+  { href: '#contact', heading: 'Get In Touch', label: 'Get In Touch' },
 ];
 
 /** Keyed by section id (without #) for easy lookup in section components. */
@@ -31,6 +31,7 @@ export interface Act {
   about: string;
   style: string;
   spotify?: string;
+  bandcamp?: string;
   photo?: string;
 }
 
@@ -47,7 +48,6 @@ export const billingRows = [
   ["THE GULLS", "FUKUSHIMA DOLPHIN"],
   ["KIMOSABE", "NEBULA SUN", "LIV SANGSTER"],
   ["MAII", "MOONBIRD"],
-  ["RIDDIM 'N RUM"],
   ["HOWDO BEAN & THE DINOS", "MR TUMNUS"],
 ];
 
@@ -55,7 +55,7 @@ export const mainActs: Act[] = [
   {
     name: "The Gulls",
     about:
-      "Nomadic UK power trio formed in Camden, known for high-energy rock and DIY outdoor gigs on the road.",
+      "Nomadic UK power quartet formed in Camden but based in Brighton, known for high-energy rock and DIY outdoor gigs on the road.",
     style: "Rock / Funk / Psychedelia",
     spotify: "https://open.spotify.com/artist/2n0FlGHc3OxI0x2WI39BEc",
     photo: "photos_bands/band_the_gulls.jpeg",
@@ -92,11 +92,11 @@ export const mainActs: Act[] = [
     photo: "photos_bands/band_liv_sangster.jpeg",
   },
   {
-    name: "MAII",
+    name: "MAII & The Shenanigans",
     about:
-      "Oxford five-piece known for twin drummers and kaleidoscopic live electronica.",
-    style: "Electronic / Balearic / Post-rock",
-    spotify: "https://open.spotify.com/artist/0mETWhuGnP7a4tLgwNTMAt",
+      "Biarritz-born Brighton act blending dreamy trip-hop with rock energy and jazz-tinged, poetic songwriting.",
+    style: "Trip-hop / Rock / Jazz",
+    spotify: "https://open.spotify.com/artist/1HDDMpc2ncTw3eosYutXvs",
     photo: "photos_bands/band_maii_and_the_shenanigans.jpeg",
   },
   {
@@ -109,14 +109,18 @@ export const mainActs: Act[] = [
   },
   {
     name: "Howdo Bean & The Dinos",
-    about: "More info coming soon.",
-    style: "",
+    about:
+      "Scottish children's entertainment act with catchy dinosaur songs, dancing games, and costumed dinos joining the fun.",
+    style: "Children's Music / Acoustic / Family",
+    bandcamp: "https://howdobean.bandcamp.com",
     photo: "photos_bands/band_howdo_bean_and_the_dinos.jpeg",
   },
   {
     name: "Mr Tumnus",
-    about: "More info coming soon.",
-    style: "",
+    about:
+      "St Albans solo project of Alex Thomas — atmospheric folk, prog, and post-rock honed over two decades.",
+    style: "Folk / Prog / Post-rock / Ambient",
+    bandcamp: "https://mrtumnus23.bandcamp.com",
     photo: "photos_bands/band_mr_tumnus.jpeg",
   },
 ];
@@ -134,7 +138,7 @@ export const djs: DJ[] = [
   { name: "Steve Perrett", location: "Wiltshire" },
   { name: "AD:Verse", location: "Malvern" },
   { name: "Boson", location: "Coventry" },
-  { name: "Riddim 'n Rum", location: "London" },
+  { name: "Riddim 'n Rum", location: "Brighton" },
   { name: "Milkman", location: "Surrey" },
   { name: "Grillo", location: "Brighton" },
   { name: "Rogan Josh", location: "London" },
@@ -200,25 +204,35 @@ export const venuePhotoSections = [
   },
 ];
 
-// ── Accommodation photo carousels ────────────────────────
-export const glampingPhotos = [
-  "photos_accom/glamping1.jpg",
-  "photos_accom/glamping2.jpg",
-  "photos_accom/glamping3.jpg",
-  "photos_accom/glamping4_king_pod.jpg",
-  "photos_accom/glamping_interior1.jpg",
-  "photos_accom/glamping_interior2.jpg",
-  "photos_accom/glamping_interior3.jpg",
-  "photos_accom/glamping_interior4.jpg",
-  "photos_accom/glamping_interior5.jpg",
-  "photos_accom/glamping_interior6.jpg",
-  "photos_accom/glamping_interior7.jpg",
-  "photos_accom/glamping_interior8.jpg",
-];
-
-export const campingPhotos = [
-  "photos_accom/camping_1.jpg",
-  "photos_accom/camping_2.jpeg",
+// ── Accommodation photo carousel sections ────────────────
+export const accommodationPhotoSections = [
+  {
+    label: 'Glamping',
+    images: [
+      "photos_accom/glamping_1.jpeg",
+      "photos_accom/glamping_2.jpeg",
+      "photos_accom/glamping_3.jpeg",
+      "photos_accom/glamping_4.jpeg",
+      "photos_accom/glamping_5.jpeg",
+      "photos_accom/glamping_6.jpeg",
+      "photos_accom/glamping_7.jpg",
+      "photos_accom/glamping_8.jpeg",
+    ],
+  },
+  {
+    label: 'Lunar tents',
+    images: [
+      "photos_accom/lunar_tent_1.jpeg",
+      "photos_accom/lunar_tent_2.jpeg",
+    ],
+  },
+  {
+    label: 'Camping',
+    images: [
+      "photos_accom/camping_1.jpg",
+      "photos_accom/camping_2.jpeg",
+    ],
+  },
 ];
 
 // ── Activities & Food ─────────────────────────────────────
@@ -237,9 +251,10 @@ export const activityCategories: ActivityCategory[] = [
     title: "Entertainment",
     accent: "green",
     items: [
+      "Live music and DJS all weekend",
       "Acoustic Fireside Jamming",
-      "Fire Show",
-      "Maze",
+      "Fire dancing performance",
+      "Fire maze",
     ],
   },
   {
@@ -248,7 +263,7 @@ export const activityCategories: ActivityCategory[] = [
     title: "Kids",
     accent: "yellow",
     items: [
-      "Cinema",
+      "Kids Cinema",
       "Kids Disco",
       "Bouncy Castle & Ball Pit",
       "Games & Treasure Hunt",
@@ -261,11 +276,11 @@ export const activityCategories: ActivityCategory[] = [
     title: "Food",
     accent: "green",
     items: [
-      "Coffee",
+      "Tea & Coffee",
       "Fresh Smoothies",
       "Breakfast",
-      "Healthy Snacks",
-      "Sandwiches & More",
+      "Delicious hot and cold food",
+      "More details to follow...",
     ],
   },
   {
@@ -275,21 +290,24 @@ export const activityCategories: ActivityCategory[] = [
     accent: "yellow",
     items: [
       "Woodfired Hot Tub",
-      "Yoga",
+      "Morning Yoga",
+      "Sound bath",
       "Massage",
+      "Woodland walks",
+      "Chillout spaces",
     ],
   },
 ];
 
 // ── Opening times ─────────────────────────────────────────
 export const openingTimes = [
-  { label: "Site Open",         times: "Fri 12pm – Mon 12pm" },
-  { label: "Main Stage",        times: "Fri–Sun" },
-  { label: "Café",              times: "Sat–Sun Daily" },
-  { label: "Bar",               times: "Fri–Sat Afternoon–Late" },
-  { label: "Kids Disco",        times: "Fri" },
-  { label: "Kids Cinema",       times: "Fri–Sun" },
-  { label: "Campfire & Hot Tub",times: "Fri–Sat Eve Till Late" },
+  { label: "Site Open", times: "Fri 12pm – Mon 12pm" },
+  { label: "Main Stage", times: "Fri–Sun" },
+  { label: "Café", times: "Sat–Sun Daily" },
+  { label: "Bar", times: "Fri–Sat Afternoon–Late" },
+  { label: "Kids Disco", times: "Fri" },
+  { label: "Kids Cinema", times: "Fri–Sun" },
+  { label: "Campfire & Hot Tub", times: "Fri–Sat Eve Till Late" },
 ];
 
 // ── Directions ────────────────────────────────────────────
