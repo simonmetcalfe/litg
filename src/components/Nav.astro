@@ -5,21 +5,28 @@ import { navLinks } from '../data/site';
 
 <nav
   id="site-nav"
-  class="fixed top-0 left-0 right-0 z-50 bg-lotg-dark/90 backdrop-blur-md border-b border-lotg-green/20 transition-all duration-300 overflow-hidden"
+  class="fixed top-0 left-0 right-0 z-50 bg-lotg-dark/90 backdrop-blur-md border-b border-lotg-green/20 transition-all duration-300"
 >
-  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
+  <!--
+    Mobile  (<lg): flex row — logo left, hamburger right
+    Desktop (≥lg): grid with 3 columns [auto | 1fr | auto]
+                   logo gets its natural width, CTA gets its natural width,
+                   nav links fill exactly what remains — no flex min-width fights
+  -->
+  <div class="max-w-7xl mx-auto px-4 min-h-14 py-2 xl:min-h-20 xl:py-4 2xl:min-h-24 2xl:py-5 flex items-center lg:grid nav-bar-grid gap-x-4">
+
     <!-- Logo wordmark -->
-    <a href="#hero" class="font-frijole text-lotg-green text-lg leading-none hover:text-lotg-yellow transition-colors min-w-0 truncate mr-3">
+    <a href="#hero" class="font-frijole text-lotg-green text-lg xl:text-xl 2xl:text-2xl leading-none hover:text-lotg-yellow transition-colors whitespace-nowrap self-center">
       Lost in the Grass
     </a>
 
-    <!-- Desktop nav -->
-    <ul class="hidden lg:flex items-center gap-5 text-sm tracking-wide">
+    <!-- Desktop nav — fills the 1fr column, links spread evenly, text wraps when tight -->
+    <ul class="hidden lg:flex items-center text-sm xl:text-base 2xl:text-lg tracking-wide">
       {navLinks.map(link => (
-        <li>
+        <li class="flex-1 text-center px-1 py-1">
           <a
             href={link.href}
-            class="text-lotg-offwhite hover:text-lotg-green transition-colors uppercase"
+            class="block text-lotg-offwhite hover:text-lotg-green transition-colors uppercase leading-tight"
           >
             {link.label}
           </a>
@@ -27,27 +34,28 @@ import { navLinks } from '../data/site';
       ))}
     </ul>
 
-    <!-- Tickets CTA (desktop) -->
-    <a
-      href="https://outtograss.com/product-category/lost-in-the-grass-2026"
-      target="_blank"
-      rel="noopener"
-      class="hidden lg:inline-flex items-center gap-1 bg-lotg-green text-lotg-dark px-4 py-1.5 rounded-full text-sm uppercase font-bold hover:bg-lotg-yellow transition-colors shrink-0"
-    >
-      Get Tickets
-    </a>
+    <!-- Tickets CTA (desktop) / hamburger (mobile) -->
+    <div class="ml-auto lg:ml-0 flex items-center">
+      <a
+        href="https://outtograss.com/product-category/lost-in-the-grass-2026"
+        target="_blank"
+        rel="noopener"
+        class="hidden lg:inline-flex items-center bg-lotg-green text-lotg-dark px-4 py-1.5 xl:px-5 xl:py-2 2xl:px-6 2xl:py-3 rounded-full text-sm xl:text-base 2xl:text-lg uppercase font-bold hover:bg-lotg-yellow transition-colors whitespace-nowrap"
+      >
+        Get Tickets
+      </a>
+      <button
+        id="nav-toggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8"
+      >
+        <span class="hamburger-line block h-0.5 w-6 bg-lotg-offwhite rounded transition-all duration-300"></span>
+        <span class="hamburger-line block h-0.5 w-6 bg-lotg-offwhite rounded transition-all duration-300"></span>
+        <span class="hamburger-line block h-0.5 w-6 bg-lotg-offwhite rounded transition-all duration-300"></span>
+      </button>
+    </div>
 
-    <!-- Mobile hamburger -->
-    <button
-      id="nav-toggle"
-      aria-label="Toggle menu"
-      aria-expanded="false"
-      class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8 shrink-0"
-    >
-      <span class="hamburger-line block h-0.5 w-6 bg-lotg-offwhite rounded transition-all duration-300"></span>
-      <span class="hamburger-line block h-0.5 w-6 bg-lotg-offwhite rounded transition-all duration-300"></span>
-      <span class="hamburger-line block h-0.5 w-6 bg-lotg-offwhite rounded transition-all duration-300"></span>
-    </button>
   </div>
 
   <!-- Mobile menu -->

@@ -63,12 +63,17 @@ html {
   scroll-behavior: smooth;
 }
 
+html {
+  /* clip on html ensures the viewport itself never scrolls horizontally;
+     body alone does not propagate 'clip' to the viewport level */
+  overflow-x: clip;
+}
+
 body {
   background-color: var(--color-lotg-dark);
   color: var(--color-lotg-offwhite);
   font-family: var(--font-bangers);
   letter-spacing: 0.03em;
-  /* Prevent any overflowing element from widening the layout viewport on mobile */
   overflow-x: clip;
 }
 
@@ -97,6 +102,13 @@ body {
 .text-outline-lg {
   -webkit-text-stroke: 3px #0C1907;
   paint-order: stroke fill;
+}
+
+/* ── Nav bar desktop grid ──────────────────────────────── */
+/* minmax(0,1fr) — unlike bare 1fr (= minmax(auto,1fr)) this allows the
+   nav link column to shrink below its min-content, keeping the CTA in frame */
+.nav-bar-grid {
+  grid-template-columns: auto minmax(0, 1fr) auto;
 }
 
 /* ── Section helpers ───────────────────────────────────── */

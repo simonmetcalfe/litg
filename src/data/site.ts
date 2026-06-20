@@ -12,12 +12,12 @@ export interface NavLink {
 export const navLinks: NavLink[] = [
   { href: '#lineup', heading: 'Lineup', label: 'Lineup' },
   { href: '#venue', heading: 'Venue', label: 'Venue' },
-  { href: '#whats-on', heading: 'Activities & Food', label: 'Activities & Food' },
+  { href: '#whats-on', heading: 'Activities & Food', label: 'Activities' },
   { href: '#accommodation', heading: 'Accommodation', label: 'Accommodation' },
   { href: '#tickets', heading: 'Tickets', label: 'Tickets' },
   { href: '#good-to-know', heading: 'Good to Know', label: 'Good to Know' },
-  { href: '#map', heading: 'Map & Getting There', label: 'Map & Getting There' },
-  { href: '#contact', heading: 'Get In Touch', label: 'Get In Touch' },
+  { href: '#map', heading: 'Map & Getting There', label: 'Directions' },
+  { href: '#contact', heading: 'Get In Touch', label: 'Contact' },
 ];
 
 /** Keyed by section id (without #) for easy lookup in section components. */
@@ -156,7 +156,6 @@ export const venuePhotoSections = [
       "photos_venue/day_3.jpeg",
       "photos_venue/day_4.jpeg",
       "photos_venue/day_5.jpg",
-      "photos_venue/day_6.jpeg",
     ],
   },
   {
@@ -295,6 +294,65 @@ export const activityCategories: ActivityCategory[] = [
       "Massage",
       "Woodland walks",
       "Chillout spaces",
+    ],
+  },
+];
+
+// ── Good to Know ──────────────────────────────────────────
+export interface GoodToKnowItem {
+  emoji: string;
+  text: string;
+}
+
+export interface GoodToKnowGroup {
+  title: string;
+  items: GoodToKnowItem[];
+}
+
+export const goodToKnowGroups: GoodToKnowGroup[] = [
+  {
+    title: 'Camping & Parking',
+    items: [
+      { emoji: '👶', text: 'This is a family-friendly event — kids are very welcome.' },
+      { emoji: '🐕', text: 'Dogs are welcome, but please keep them on a lead in the event spaces. £5 per dog.' },
+      { emoji: '🚗', text: 'Parking is available on site, but not next to your tent.' },
+      { emoji: '🚰', text: 'Drinking water is available across the site.' },
+      { emoji: '🚿', text: 'Hot showers and baby changing facilities are free for all guests.' },
+      { emoji: '🧼', text: 'Washing-up stations are available.' },
+      { emoji: '⚡', text: 'Electric hookups are available across the site for £30 for the weekend. You\'ll need a 3-pin mains adaptor — tokens available at the bar.' },
+      { emoji: '🚘', text: 'Electric car charging can be arranged, but please don\'t use the campsite hookups as it will cause a power outage across the site.' },
+    ],
+  },
+  {
+    title: 'Bar & Food',
+    items: [
+      { emoji: '🍺', text: 'There\'s a great on-site bar — please support it. You\'re welcome to bring your own drinks for the campsite only.' },
+      { emoji: '☕', text: 'Café opening times are yet to be confirmed; please bring a few snacks for out-of-hours eating.' },
+      { emoji: '💵', text: 'Cards are accepted but cash is preferred.' },
+    ],
+  },
+  {
+    title: 'Wellness & Activities',
+    items: [
+      { emoji: '🧖', text: 'The wood-fired hot tub if free.  Children must be accompanied by an adult at all times.' },
+      { emoji: '🧘', text: 'Yoga sessions are on — bring clothes and a mat if you\'d like to join in.' },
+      { emoji: '🔥', text: 'Fire pits are available to hire — firewood can be puchased from the bar.' },
+
+    ],
+  },
+  {
+    title: 'Recycling & Waste',
+    items: [
+
+      { emoji: '🚫', text: 'No glass anywhere on site — if you bring it, please take it home.' },
+      { emoji: '♻️', text: 'Recycling facilities are available for tins, plastic, cardboard, and food waste. Where possible, please take waste from your own camping home with you.' },
+    ],
+  },
+  {
+    title: 'What to Pack',
+    items: [
+      { emoji: '🧥', text: 'Temperatures drop in the evenings - pack warm layers, extra blankets, and base layers for sleeping.' },
+      { emoji: '🩱', text: 'Don\t forget your swimwear for the hot tub!' },
     ],
   },
 ];
