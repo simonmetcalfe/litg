@@ -1,12 +1,5 @@
 ---
-import { sectionHeadings } from '../data/site';
-const items = [
-  { emoji: '👶', label: 'Kid Friendly' },
-  { emoji: '🐕', label: 'Dogs Welcome (£5 per dog)' },
-  { emoji: '💳', label: 'Card Accepted' },
-  { emoji: '🚿', label: 'Baby changing & hot showers (free)' },
-  { emoji: '🍺', label: 'Alcohol in campsite only — no glass' },
-];
+import { openingTimes, goodToKnowGroups, sectionHeadings } from '../data/site';
 ---
 
 <section id="good-to-know" class="section-alt py-20 px-4 md:px-8 lg:px-16">
@@ -18,13 +11,32 @@ const items = [
       </h2>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      {items.map(({ emoji, label }) => (
-        <div class="flex items-center gap-3 bg-lotg-mid border border-lotg-green/30 rounded-full px-5 py-3">
-          <span class="text-2xl shrink-0">{emoji}</span>
-          <span class="font-bangers text-lotg-green text-lg tracking-wide leading-tight">{label}</span>
+    <div class="space-y-8">
+      {goodToKnowGroups.map(group => (
+        <div>
+          <h3 class="font-bangers text-lotg-yellow text-2xl tracking-wide mb-3">{group.title}</h3>
+          <div class="space-y-2">
+            {group.items.map(item => (
+              <div class="flex items-start gap-3 bg-lotg-mid border border-lotg-green/20 rounded-xl px-4 py-3">
+                <span class="text-xl shrink-0 mt-0.5">{item.emoji}</span>
+                <p class="text-lotg-offwhite text-sm leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       ))}
+    </div>
+
+    <div class="mt-12 bg-lotg-card rounded-2xl p-6 border border-lotg-green/20">
+      <h3 class="font-bangers text-lotg-green text-3xl tracking-wide mb-5">Opening Times</h3>
+      <div class="space-y-2">
+        {openingTimes.map(row => (
+          <div class="flex justify-between gap-4 border-b border-lotg-green/10 pb-2 last:border-0 last:pb-0">
+            <span class="text-lotg-offwhite/70 text-sm uppercase tracking-wide">{row.label}</span>
+            <span class="text-lotg-green text-sm text-right">{row.times}</span>
+          </div>
+        ))}
+      </div>
     </div>
 
   </div>

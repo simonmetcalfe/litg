@@ -1,6 +1,6 @@
 ---
 import Carousel from './Carousel.astro';
-import { glampingPhotos, campingPhotos, sectionHeadings } from '../data/site';
+import { accommodationPhotoSections, sectionHeadings } from '../data/site';
 ---
 
 <section id="accommodation" class="section-alt py-20 px-4 md:px-8 lg:px-16">
@@ -16,10 +16,7 @@ import { glampingPhotos, campingPhotos, sectionHeadings } from '../data/site';
 
     <!-- Sectioned carousel -->
     <Carousel
-      sections={[
-        { label: 'Glamping', images: glampingPhotos },
-        { label: 'Camping',  images: campingPhotos  },
-      ]}
+      sections={accommodationPhotoSections}
       altPrefix="Accommodation photo"
       class="rounded-2xl overflow-hidden shadow-2xl border border-lotg-green/20 mb-12"
       aspectClass="aspect-video"
@@ -27,8 +24,9 @@ import { glampingPhotos, campingPhotos, sectionHeadings } from '../data/site';
 
     <!-- Summary -->
     <p class="text-lotg-offwhite text-lg leading-relaxed">
-      Stay on site in your own tent — quiet and family camping areas are available — or treat yourself to one of the furnished glamping pods, subject to availability.
-      Dogs are very welcome. <a href="#tickets" class="text-lotg-green hover:underline">Tickets</a> has full pricing info.
+      Camp in your own tent — main and quiet family areas available — or book a furnished glamping pod or lunar tent (subject to availability).
+      Electric hookups, fire pits, clean showers, and washing-up stations all on site.
+      See <a href="#tickets" class="text-lotg-green hover:underline">Tickets</a> for pricing.
     </p>
 
   </div>

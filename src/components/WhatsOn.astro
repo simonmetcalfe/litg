@@ -1,5 +1,5 @@
 ---
-import { activityCategories, openingTimes, sectionHeadings } from '../data/site';
+import { activityCategories, sectionHeadings } from '../data/site';
 ---
 
 <section id="whats-on" class="bg-lotg-dark py-20 px-4 md:px-8 lg:px-16">
@@ -13,7 +13,7 @@ import { activityCategories, openingTimes, sectionHeadings } from '../data/site'
     </div>
 
     <!-- Accordion categories -->
-    <div class="grid md:grid-cols-2 gap-4 mb-10">
+    <div class="grid md:grid-cols-2 gap-4">
       {activityCategories.map(cat => (
         <details open class={`group bg-lotg-card rounded-2xl border ${cat.accent === 'yellow' ? 'border-lotg-yellow/20' : 'border-lotg-green/20'} open:border-opacity-60 transition-colors`}>
           <summary class="flex items-center justify-between gap-3 p-6 cursor-pointer list-none select-none">
@@ -34,19 +34,6 @@ import { activityCategories, openingTimes, sectionHeadings } from '../data/site'
           </ul>
         </details>
       ))}
-    </div>
-
-    <!-- Opening times -->
-    <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/20">
-      <h3 class="font-bangers text-lotg-green text-3xl tracking-wide mb-5">Opening Times</h3>
-      <div class="space-y-2">
-        {openingTimes.map(row => (
-          <div class="flex justify-between gap-4 border-b border-lotg-green/10 pb-2 last:border-0 last:pb-0">
-            <span class="text-lotg-offwhite/70 text-sm uppercase tracking-wide">{row.label}</span>
-            <span class="text-lotg-green text-sm text-right">{row.times}</span>
-          </div>
-        ))}
-      </div>
     </div>
 
   </div>
