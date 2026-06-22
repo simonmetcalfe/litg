@@ -17,7 +17,7 @@ export const navLinks: NavLink[] = [
   { href: '#tickets', heading: 'Tickets', label: 'Tickets' },
   { href: '#good-to-know', heading: 'Good to Know', label: 'Good to Know' },
   { href: '#map', heading: 'Map & Getting There', label: 'Directions' },
-  { href: '#contact', heading: 'Get In Touch', label: 'Contact' },
+  { href: '#contact', heading: 'Contact', label: 'Contact' },
 ];
 
 /** Keyed by section id (without #) for easy lookup in section components. */
