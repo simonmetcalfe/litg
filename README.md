@@ -1,6 +1,6 @@
 # litg
 
-One-page promotional site for **Lost in the Grass**, a small family festival in the UK. Also serves as a public example of hosting a simple website directly from a GitHub repo (GitHub Pages or similar).
+One-page promotional site for **Lost in the Grass**, a small family micro-festival in the UK. Also serves as a public example of hosting a simple website directly from a GitHub repo (GitHub Pages or similar).
 
 **Live site:** https://lostinthegrass.org.uk  
 **Repo:** https://github.com/simonmetcalfe/litg
