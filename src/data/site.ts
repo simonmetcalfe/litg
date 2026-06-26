@@ -298,6 +298,12 @@ export const activityCategories: ActivityCategory[] = [
   },
 ];
 
+export const cafeBarMenu = {
+  intro:
+    "Fuel up at the on-site café with tea and coffee, fresh smoothies, breakfast, and hot and cold food throughout the weekend. The full café menu is coming soon — in the meantime, Mal's Bar has you covered for drinks.",
+  barMenuImage: "poster/bar_menu.jpeg",
+};
+
 // ── Good to Know ──────────────────────────────────────────
 export interface GoodToKnowItem {
   emoji: string;

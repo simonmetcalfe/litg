@@ -116,6 +116,21 @@ body {
   background-color: var(--color-lotg-mid);
 }
 
+/* ── Menu lightbox dialog ──────────────────────────────── */
+.menu-dialog::backdrop {
+  background-color: rgb(12 25 7 / 0.9);
+}
+
+html.menu-dialog-open,
+body.menu-dialog-open {
+  overflow: hidden;
+}
+
+body.menu-dialog-open {
+  position: fixed;
+  width: 100%;
+}
+
 /* ── Act card fallback gradients (cycling per act) ─────── */
 .card-gradient-1 { background: linear-gradient(135deg, #1C3A0D 0%, #0C2404 100%); }
 .card-gradient-2 { background: linear-gradient(135deg, #1A3520 0%, #0C1A10 100%); }

@@ -1,5 +1,8 @@
 ---
-import { activityCategories, sectionHeadings } from '../data/site';
+import { activityCategories, cafeBarMenu, sectionHeadings } from '../data/site';
+import { asset } from '../utils';
+
+const barMenuSrc = asset(cafeBarMenu.barMenuImage);
 ---
 
 <section id="whats-on" class="bg-lotg-dark py-20 px-4 md:px-8 lg:px-16">
@@ -36,9 +39,124 @@ import { activityCategories, sectionHeadings } from '../data/site';
       ))}
     </div>
 
+    <!-- Café & Bar menu -->
+    <div class="mt-16 max-w-3xl mx-auto">
+      <h3 class="font-bangers text-lotg-yellow text-3xl md:text-4xl tracking-wide text-center mb-6">
+        Café &amp; Bar Menu
+      </h3>
+      <p class="text-lotg-offwhite text-lg leading-relaxed text-center mb-8">
+        {cafeBarMenu.intro}
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="bg-lotg-card rounded-2xl border border-lotg-green/20 overflow-hidden">
+          <div class="aspect-[3/4] flex flex-col items-center justify-center gap-3 p-6 text-center">
+            <span class="text-4xl" aria-hidden="true">☕</span>
+            <p class="font-bangers text-lotg-green text-2xl tracking-wide">Café Menu</p>
+            <p class="text-lotg-offwhite/60 text-sm tracking-wide">Coming soon</p>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          data-menu-open
+          class="group bg-lotg-card rounded-2xl border border-lotg-green/20 overflow-hidden text-left cursor-pointer hover:border-lotg-green/50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-lotg-green"
+          aria-label="Open Mal's Bar menu"
+        >
+          <div class="aspect-[3/4] overflow-hidden relative">
+            <img
+              src={barMenuSrc}
+              alt="Mal's Bar menu thumbnail"
+              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+            <span class="absolute inset-0 bg-lotg-dark/0 group-hover:bg-lotg-dark/20 transition-colors flex items-center justify-center">
+              <span class="material-icons text-lotg-offwhite opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" style="font-size:48px">zoom_in</span>
+            </span>
+          </div>
+          <p class="px-4 py-3 font-bangers text-lotg-green text-xl tracking-wide text-center">
+            Mal's Bar Menu
+          </p>
+        </button>
+      </div>
+    </div>
+
+    <dialog
+      id="bar-menu-dialog"
+      class="menu-dialog bg-transparent border-0 p-0 m-auto max-w-[min(95vw,42rem)] w-full max-h-[95dvh] overflow-y-auto overscroll-y-contain backdrop:bg-lotg-dark/90"
+    >
+      <div class="relative">
+        <button
+          type="button"
+          data-menu-close
+          class="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-lotg-dark/80 text-lotg-offwhite flex items-center justify-center hover:bg-lotg-green hover:text-lotg-dark transition-colors"
+          aria-label="Close menu"
+        >
+          <span class="material-icons" style="font-size:24px">close</span>
+        </button>
+        <img
+          src={barMenuSrc}
+          alt="Mal's Bar @ Lost in the Grass — full drinks menu"
+          class="w-full h-auto rounded-2xl shadow-2xl border border-lotg-green/20"
+        />
+      </div>
+    </dialog>
+
     <p class="mt-8 text-center text-lotg-offwhite/50 text-sm leading-relaxed max-w-2xl mx-auto">
       We endevour to provide everything listed here, but as a small festival, some events, activities, or catering may change. We'll do our best to keep you informed by updating the website and informing ticket holders via email.
     </p>
 
   </div>
 </section>
+
+<script>
+  const dialog = document.getElementById('bar-menu-dialog') as HTMLDialogElement;
+  const openBtn = document.querySelector<HTMLButtonElement>('[data-menu-open]');
+  const closeBtn = dialog?.querySelector<HTMLButtonElement>('[data-menu-close]');
+
+  let scrollY = 0;
+
+  const lockScroll = () => {
+    scrollY = window.scrollY;
+    document.documentElement.classList.add('menu-dialog-open');
+    document.body.classList.add('menu-dialog-open');
+    document.body.style.top = `-${scrollY}px`;
+  };
+
+  const unlockScroll = () => {
+    document.documentElement.classList.remove('menu-dialog-open');
+    document.body.classList.remove('menu-dialog-open');
+    document.body.style.top = '';
+    window.scrollTo(0, scrollY);
+  };
+
+  openBtn?.addEventListener('click', () => {
+    lockScroll();
+    dialog?.showModal();
+  });
+
+  const closeDialog = () => {
+    dialog?.close();
+    unlockScroll();
+  };
+
+  closeBtn?.addEventListener('click', closeDialog);
+
+  dialog?.addEventListener('click', (e) => {
+    if (e.target === dialog) closeDialog();
+  });
+
+  dialog?.addEventListener('cancel', closeDialog);
+
+  // Stop wheel events over the backdrop from reaching the page behind.
+  dialog?.addEventListener('wheel', (e) => {
+    const target = e.currentTarget as HTMLDialogElement;
+    const { scrollTop, scrollHeight, clientHeight } = target;
+    const atTop = scrollTop <= 0;
+    const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
+
+    if ((e.deltaY < 0 && atTop) || (e.deltaY > 0 && atBottom)) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+</script>
