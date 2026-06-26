@@ -362,7 +362,7 @@ export const openingTimes = [
   { label: "Site Open", times: "Fri 12pm – Mon 12pm" },
   { label: "Main Stage", times: "Fri–Sun" },
   { label: "Café", times: "Sat–Sun Daily" },
-  { label: "Bar", times: "Fri–Sat Afternoon–Late" },
+  { label: "Bar", times: "Fri–Sun Afternoon–Late" },
   { label: "Kids Disco", times: "Fri" },
   { label: "Kids Cinema", times: "Fri–Sun" },
   { label: "Campfire & Hot Tub", times: "Fri–Sat Eve Till Late" },
