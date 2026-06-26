@@ -300,7 +300,7 @@ export const activityCategories: ActivityCategory[] = [
 
 export const cafeBarMenu = {
   intro:
-    "Fuel up at the on-site café with tea and coffee, fresh smoothies, breakfast, and hot and cold food throughout the weekend. The full café menu is coming soon — in the meantime, Mal's Bar has you covered for drinks.",
+    "Fuel up at the on-site cafe and bar.  The full cafe menu is coming soon.",
   barMenuImage: "poster/bar_menu.jpeg",
 };
 
@@ -333,7 +333,7 @@ export const goodToKnowGroups: GoodToKnowGroup[] = [
     title: 'Bar & Food',
     items: [
       { emoji: '🍺', text: 'There\'s a great on-site bar — please support it. You\'re welcome to bring your own drinks for the campsite only.' },
-      { emoji: '☕', text: 'Café opening times are yet to be confirmed; please bring a few snacks for out-of-hours eating.' },
+      { emoji: '☕', text: 'Cafe opening times are yet to be confirmed; please bring a few snacks for out-of-hours eating.' },
       { emoji: '💵', text: 'Cards are accepted but cash is preferred.' },
     ],
   },
@@ -367,7 +367,7 @@ export const goodToKnowGroups: GoodToKnowGroup[] = [
 export const openingTimes = [
   { label: "Site Open", times: "Fri 12pm – Mon 12pm" },
   { label: "Main Stage", times: "Fri–Sun" },
-  { label: "Café", times: "Sat–Sun" },
+  { label: "Cafe", times: "Sat–Sun" },
   { label: "Bar", times: "Fri–Sun" },
   { label: "Kids Disco", times: "Fri" },
   { label: "Kids Cinema", times: "Fri–Sun" },
