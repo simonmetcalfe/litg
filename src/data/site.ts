@@ -361,11 +361,11 @@ export const goodToKnowGroups: GoodToKnowGroup[] = [
 export const openingTimes = [
   { label: "Site Open", times: "Fri 12pm – Mon 12pm" },
   { label: "Main Stage", times: "Fri–Sun" },
-  { label: "Café", times: "Sat–Sun Daily" },
-  { label: "Bar", times: "Fri–Sat Afternoon–Late" },
+  { label: "Café", times: "Sat–Sun" },
+  { label: "Bar", times: "Fri–Sun" },
   { label: "Kids Disco", times: "Fri" },
   { label: "Kids Cinema", times: "Fri–Sun" },
-  { label: "Campfire & Hot Tub", times: "Fri–Sat Eve Till Late" },
+  { label: "Campfire & Hot Tub", times: "Fri–Sun" },
 ];
 
 // ── Directions ────────────────────────────────────────────
