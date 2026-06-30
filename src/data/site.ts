@@ -289,7 +289,7 @@ export const activityCategories: ActivityCategory[] = [
     accent: "yellow",
     items: [
       "Woodfired Hot Tub",
-      "Morning Yoga",
+      "Morning Yoga (please bring your own mat if possible)",
       "Sound bath",
       "Massage",
       "Woodland walks",
