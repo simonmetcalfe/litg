@@ -12,11 +12,11 @@ export interface NavLink {
 export const navLinks: NavLink[] = [
   { href: '#lineup', heading: 'Lineup', label: 'Lineup' },
   { href: '#venue', heading: 'Venue', label: 'Venue' },
-  { href: '#whats-on', heading: 'Activities & Food', label: 'Activities' },
+  { href: '#activities-and-food', heading: 'Activities & Food', label: 'Activities & Food' },
   { href: '#accommodation', heading: 'Accommodation', label: 'Accommodation' },
   { href: '#tickets', heading: 'Tickets', label: 'Tickets' },
   { href: '#good-to-know', heading: 'Good to Know', label: 'Good to Know' },
-  { href: '#map', heading: 'Map & Getting There', label: 'Directions' },
+  { href: '#map-and-getting-there', heading: 'Map & Getting There', label: 'Directions' },
   { href: '#contact', heading: 'Contact', label: 'Contact' },
 ];
 
