@@ -234,11 +234,11 @@ Every `<section>` must alternate between the two background tokens — **never t
 |---|---|---|
 | 1 | `lineup` | `bg-lotg-dark` |
 | 2 | `venue` | `section-alt` |
-| 3 | `whats-on` (Activities & Food) | `bg-lotg-dark` |
+| 3 | `activities-and-food` | `bg-lotg-dark` |
 | 4 | `accommodation` | `section-alt` |
 | 5 | `tickets` | `bg-lotg-dark` |
 | 6 | `good-to-know` | `section-alt` |
-| 7 | `map` | `bg-lotg-dark` |
+| 7 | `map-and-getting-there` | `bg-lotg-dark` |
 | 8 | `contact` | `bg-lotg-dark` — intentional double (footer feel) |
 
 > If you add, remove, or reorder a section, update this table and audit every section's background class to restore the alternating pattern.
