@@ -313,7 +313,7 @@ export const activityCategories: ActivityCategory[] = [
 
 export const cafeBarMenu = {
   intro:
-    "Fuel up at the on-site cafe and bar.  The full cafe menu is coming soon.",
+    "Fuel up at the on-site cafe and bar. The full cafe menu is coming soon.",
   barMenuImage: "poster/bar_menu.jpeg",
 };
 
@@ -386,6 +386,12 @@ export const openingTimes = [
   { label: "Kids Cinema", times: "Fri–Sun" },
   { label: "Campfire & Hot Tub", times: "Fri–Sun" },
 ];
+
+// ── Contact & newsletter ─────────────────────────────────
+export const contactEmail = 'hello@lostinthegrass.org.uk';
+
+export const newsletterSignupUrl =
+  'https://1opxr.mjt.lu/wgt/1opxr/07us/form?c=1f5a6de2';
 
 // ── Directions ────────────────────────────────────────────
 export const directions = [

@@ -1,5 +1,6 @@
 ---
 import { asset } from '../utils';
+import { newsletterSignupUrl } from '../data/site';
 ---
 
 <section
@@ -53,9 +54,21 @@ import { asset } from '../utils';
     </div>
 
     <!-- Venue -->
-    <p class="mt-8 text-lotg-offwhite/70 text-base tracking-widest uppercase animate-fade-up-delay2">
-      A Micro-Festival · Hosted at Out to Grass Woodend Farm · Malvern
-    </p>
+    <div class="mt-8 space-y-2 animate-fade-up-delay2">
+      <p class="text-lotg-offwhite/70 text-base tracking-widest uppercase">
+        <a
+          href={newsletterSignupUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-lotg-green transition-colors"
+        >
+          Sign up to Newsletter
+        </a>
+      </p>
+      <p class="text-lotg-offwhite/70 text-base tracking-widest uppercase">
+        A Micro-Festival · Hosted at Out to Grass Woodend Farm · Malvern
+      </p>
+    </div>
   </div>
 
   <!-- Scroll indicator -->

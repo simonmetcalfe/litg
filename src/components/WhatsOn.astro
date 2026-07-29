@@ -1,6 +1,6 @@
 ---
 import Carousel from './Carousel.astro';
-import { activityCategories, activityPhotos, cafeBarMenu, sectionHeadings } from '../data/site';
+import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, sectionHeadings } from '../data/site';
 import { asset } from '../utils';
 
 const barMenuSrc = asset(cafeBarMenu.barMenuImage);
@@ -55,6 +55,17 @@ const barMenuSrc = asset(cafeBarMenu.barMenuImage);
       </h3>
       <p class="text-lotg-offwhite text-lg leading-relaxed text-center mb-8">
         {cafeBarMenu.intro}
+        {' '}
+        To keep yourself informed, please
+        <a
+          href={newsletterSignupUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline underline-offset-4 decoration-lotg-green/40 hover:text-lotg-green hover:decoration-lotg-green transition-colors"
+        >
+          sign up to our newsletter
+        </a>
+        if you haven't already!
       </p>
 
       <div class="grid sm:grid-cols-2 gap-6">

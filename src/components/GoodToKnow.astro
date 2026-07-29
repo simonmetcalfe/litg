@@ -1,5 +1,5 @@
 ---
-import { openingTimes, goodToKnowGroups, sectionHeadings } from '../data/site';
+import { openingTimes, goodToKnowGroups, newsletterSignupUrl, sectionHeadings } from '../data/site';
 ---
 
 <section id="good-to-know" class="section-alt py-20 px-4 md:px-8 lg:px-16">
@@ -9,6 +9,18 @@ import { openingTimes, goodToKnowGroups, sectionHeadings } from '../data/site';
       <h2 class="font-bangers text-lotg-green section-h2 tracking-wider text-outline-lg leading-none">
         {sectionHeadings['good-to-know']}
       </h2>
+      <p class="mt-6 text-lotg-offwhite text-lg leading-relaxed">
+        To keep yourself informed, please
+        <a
+          href={newsletterSignupUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline underline-offset-4 decoration-lotg-green/40 hover:text-lotg-green hover:decoration-lotg-green transition-colors"
+        >
+          sign up to our newsletter
+        </a>
+        if you haven't already!
+      </p>
     </div>
 
     <div class="space-y-8">

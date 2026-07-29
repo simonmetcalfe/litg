@@ -1,6 +1,6 @@
 ---
 import { asset } from '../utils';
-import { sectionHeadings } from '../data/site';
+import { contactEmail, newsletterSignupUrl, sectionHeadings } from '../data/site';
 import ContactButton from './ContactButton.astro';
 ---
 
@@ -16,14 +16,21 @@ import ContactButton from './ContactButton.astro';
       <div class="bg-lotg-card border border-lotg-green/20 rounded-2xl p-4 sm:p-6 flex flex-col gap-4">
         <h3 class="font-bangers text-lotg-yellow text-2xl tracking-wide">General enquiries</h3>
         <p class="text-lotg-offwhite text-sm leading-relaxed flex-1">
-          For general enquiries about the venue, camping, accommodation and the facilities, please contact OTG directly, who are helping us with these requests.
+          For general enquiries about the venue, camping, accommodation and the facilities, please get in touch.
         </p>
-        <ContactButton
-          href="mailto:infoouttograss@gmail.com"
-          icon="✉️"
-          label="Email OTG"
-          class="mt-auto"
-        />
+        <div class="mt-auto flex flex-col gap-3">
+          <ContactButton
+            href={`mailto:${contactEmail}`}
+            icon="✉️"
+            label="Email Lost in the Grass"
+          />
+          <ContactButton
+            href={newsletterSignupUrl}
+            icon="📰"
+            label="Sign up to Newsletter"
+            external
+          />
+        </div>
       </div>
 
       <div class="bg-lotg-card border border-lotg-green/20 rounded-2xl p-4 sm:p-6 flex flex-col gap-4">
