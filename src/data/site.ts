@@ -48,7 +48,7 @@ export const billingRows = [
   ["THE GULLS", "FUKUSHIMA DOLPHIN"],
   ["KIMOSABE", "NEBULA SUN", "LIV SANGSTER"],
   ["MAII", "MOONBIRD"],
-  ["HOWDO BEAN & THE DINOS", "MR TUMNUS"],
+  ["HOWDO BEAN & THE DINOS", "MR TUMNUS", "FREESPIRITS"],
 ];
 
 export const mainActs: Act[] = [
@@ -122,6 +122,14 @@ export const mainActs: Act[] = [
     style: "Folk / Prog / Post-rock / Ambient",
     bandcamp: "https://mrtumnus23.bandcamp.com",
     photo: "photos_bands/band_mr_tumnus.jpeg",
+  },
+  {
+    name: "Freespirits",
+    about:
+      "London alternative band formed in 2013 by brothers GianCarlo and Lucas Mariani — heavy guitars, strong melodies, and stadium-sized choruses in the vein of Nirvana and Foo Fighters.",
+    style: "Alternative / Rock / Grunge",
+    spotify: "https://open.spotify.com/artist/0nPrFoUuwcB27aaf1qEOak",
+    photo: "photos_bands/band_freespirits.jpeg",
   },
 ];
 
@@ -243,6 +251,11 @@ export interface ActivityCategory {
   items: string[];
 }
 
+// Activity photo carousel — flat list (add more as photos land).
+export const activityPhotos = [
+  "photos_activities/kids_cinema.jpeg",
+];
+
 export const activityCategories: ActivityCategory[] = [
   {
     id: "entertainment",
@@ -300,7 +313,7 @@ export const activityCategories: ActivityCategory[] = [
 
 export const cafeBarMenu = {
   intro:
-    "Fuel up at the on-site cafe and bar.  The full cafe menu is coming soon.",
+    "Fuel up at the on-site cafe and bar. The full cafe menu is coming soon.",
   barMenuImage: "poster/bar_menu.jpeg",
 };
 
@@ -373,6 +386,12 @@ export const openingTimes = [
   { label: "Kids Cinema", times: "Fri–Sun" },
   { label: "Campfire & Hot Tub", times: "Fri–Sun" },
 ];
+
+// ── Contact & newsletter ─────────────────────────────────
+export const contactEmail = 'hello@lostinthegrass.org.uk';
+
+export const newsletterSignupUrl =
+  'https://1opxr.mjt.lu/wgt/1opxr/07us/form?c=1f5a6de2';
 
 // ── Directions ────────────────────────────────────────────
 export const directions = [
