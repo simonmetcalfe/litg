@@ -48,7 +48,7 @@ export const billingRows = [
   ["THE GULLS", "FUKUSHIMA DOLPHIN"],
   ["KIMOSABE", "NEBULA SUN", "LIV SANGSTER"],
   ["MAII", "MOONBIRD"],
-  ["HOWDO BEAN & THE DINOS", "MR TUMNUS"],
+  ["HOWDO BEAN & THE DINOS", "MR TUMNUS", "FREESPIRITS"],
 ];
 
 export const mainActs: Act[] = [
@@ -122,6 +122,14 @@ export const mainActs: Act[] = [
     style: "Folk / Prog / Post-rock / Ambient",
     bandcamp: "https://mrtumnus23.bandcamp.com",
     photo: "photos_bands/band_mr_tumnus.jpeg",
+  },
+  {
+    name: "Freespirits",
+    about:
+      "London alternative band formed in 2013 by brothers GianCarlo and Lucas Mariani — heavy guitars, strong melodies, and stadium-sized choruses in the vein of Nirvana and Foo Fighters.",
+    style: "Alternative / Rock / Grunge",
+    spotify: "https://open.spotify.com/artist/0nPrFoUuwcB27aaf1qEOak",
+    photo: "photos_bands/band_freespirits.jpeg",
   },
 ];
 
@@ -242,6 +250,11 @@ export interface ActivityCategory {
   accent: "green" | "yellow";
   items: string[];
 }
+
+// Activity photo carousel — flat list (add more as photos land).
+export const activityPhotos = [
+  "photos_activities/kids_cinema.jpeg",
+];
 
 export const activityCategories: ActivityCategory[] = [
   {
