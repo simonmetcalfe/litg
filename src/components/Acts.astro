@@ -71,11 +71,17 @@ let fallbackGradientIndex = 0;
                   DJs:
                 </p>
               )}
-              {day.djs.map((row) => (
-                <p class={`font-bangers tracking-wider leading-snug ${day.live ? 'text-lotg-offwhite/80' : 'text-lotg-offwhite'} ${(day.live ? djSizeClass : liveSizeClass)[row.size ?? 'sm']}`}>
-                  {row.acts.join(' · ')}
-                </p>
-              ))}
+              {day.djs.map((row) => {
+                const size = row.size ?? 'sm';
+                // Headliner DJs (lg) match live headliner size; supporting DJs stay a step smaller when live also plays
+                const sizeClass = (size === 'lg' || !day.live ? liveSizeClass : djSizeClass)[size];
+                const colorClass = size === 'lg' || !day.live ? 'text-lotg-offwhite' : 'text-lotg-offwhite/80';
+                return (
+                  <p class={`font-bangers tracking-wider leading-snug ${colorClass} ${sizeClass}`}>
+                    {row.acts.join(' · ')}
+                  </p>
+                );
+              })}
             </div>
           )}
         </div>

@@ -87,8 +87,8 @@ export const lineupByDay: LineupDay[] = [
       },
     ],
     djs: [
-      { acts: ["VIRGIN VINYLS", "STEVE PERRETT"], size: "md" },
-      { acts: ["BOSON", "RIDDIM 'N RUM", "VIK", "PARTY MACHINE"], size: "sm" },
+      { acts: ["STEVE PERRETT", "BOSON", "RIDDIM 'N RUM", "VIK", "PARTY MACHINE"], size: "sm" },
+      { acts: ["VIRGIN VINYLS"], size: "lg" },
     ],
   },
 ];
