@@ -43,12 +43,54 @@ export interface DJ {
 }
 
 // ── Lineup ───────────────────────────────────────────────
-// Poster billing rows — drives the headline display in the Acts section
-export const billingRows = [
-  ["THE GULLS", "FUKUSHIMA DOLPHIN"],
-  ["KIMOSABE", "NEBULA SUN", "LIV SANGSTER"],
-  ["MAII", "MOONBIRD"],
-  ["HOWDO BEAN & THE DINOS", "MR TUMNUS", "FREESPIRITS"],
+// Day-by-day schedule — drives the headline display at the top of the Acts section.
+// size: sm = base, md = slightly bigger, lg = bigger again (poster billing hierarchy)
+export type BillingSize = "sm" | "md" | "lg";
+
+export interface BillingRow {
+  acts: string[];
+  size?: BillingSize;
+}
+
+export interface LineupDay {
+  day: string;
+  /** Optional intro line (e.g. Friday DJ-only evening) */
+  intro?: string;
+  live?: BillingRow[];
+  djs?: BillingRow[];
+}
+
+export const lineupByDay: LineupDay[] = [
+  {
+    day: "Friday 21st August",
+    intro: "An evening of DJ sets from:",
+    djs: [
+      { acts: ["GREGG", "MINT", "GRILLO"], size: "sm" },
+      { acts: ["LANX", "DOMMO", "THE MILKMAN"], size: "md" },
+    ],
+  },
+  {
+    day: "Saturday 22nd August",
+    live: [
+      { acts: ["MAII", "MOONBIRD", "KIMOSABE"], size: "sm" },
+      { acts: ["LIV SANGSTER", "FUKUSHIMA DOLPHIN"], size: "md" },
+      { acts: ["NEBULA SUN", "THE GULLS"], size: "lg" },
+    ],
+    djs: [{ acts: ["JAMMA GOLD", "ROGAN JOSH", "AD:VERSE"], size: "sm" }],
+  },
+  {
+    day: "Sunday 23rd August",
+    live: [
+      {
+        acts: ["FREESPIRITS", "DARK HABIT", "MR TUMNUS", "HOWDO BEAN & THE DINOS"],
+        size: "md",
+      },
+    ],
+    djs: [
+      { acts: ["STEVE PERRETT", "BOSON", "RIDDIM 'N RUM", "VIK", "PARTY MACHINE"], size: "sm" },
+      { acts: ["VIRGIN VINYLS"], size: "lg" },
+    ],
+  },
 ];
 
 export const mainActs: Act[] = [
@@ -106,6 +148,13 @@ export const mainActs: Act[] = [
     style: "Psychedelic Electronica / Indie Electronic",
     spotify: "https://open.spotify.com/artist/5Xha2kjFXFMfvvaDwZmIuG",
     photo: "photos_bands/band_moonbird.jpeg",
+  },
+  {
+    name: "Dark Habit",
+    about:
+      "Brighton-based duo playing keys, acoustic guitar, and singing upbeat sad songs.",
+    style: "Acoustic / Indie Folk",
+    photo: "photos_bands/band_dark_habit.jpeg",
   },
   {
     name: "Howdo Bean & The Dinos",
