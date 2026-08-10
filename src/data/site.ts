@@ -47,7 +47,7 @@ export interface DJ {
 export const billingRows = [
   ["THE GULLS", "FUKUSHIMA DOLPHIN"],
   ["KIMOSABE", "NEBULA SUN", "LIV SANGSTER"],
-  ["MAII", "MOONBIRD"],
+  ["MAII", "MOONBIRD", "DARK HABIT"],
   ["HOWDO BEAN & THE DINOS", "MR TUMNUS", "FREESPIRITS"],
 ];
 
@@ -106,6 +106,13 @@ export const mainActs: Act[] = [
     style: "Psychedelic Electronica / Indie Electronic",
     spotify: "https://open.spotify.com/artist/5Xha2kjFXFMfvvaDwZmIuG",
     photo: "photos_bands/band_moonbird.jpeg",
+  },
+  {
+    name: "Dark Habit",
+    about:
+      "Brighton-based duo playing keys, acoustic guitar, and singing upbeat sad songs.",
+    style: "Acoustic / Indie Folk",
+    photo: "photos_bands/band_dark_habit.jpeg",
   },
   {
     name: "Howdo Bean & The Dinos",
