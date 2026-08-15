@@ -28,7 +28,10 @@ const cafeHours = openingTimes.find(t => t.label === 'Cafe');
     <!-- Activity categories -->
     <div class="grid md:grid-cols-2 gap-4">
       {activityCategories.map(cat => (
-        <div class={`bg-lotg-card rounded-2xl border ${cat.accent === 'yellow' ? 'border-lotg-yellow/20' : 'border-lotg-green/20'}`}>
+        <div
+          id={`activity-${cat.id}`}
+          class={`scroll-mt-24 lg:scroll-mt-28 bg-lotg-card rounded-2xl border ${cat.accent === 'yellow' ? 'border-lotg-yellow/20' : 'border-lotg-green/20'}`}
+        >
           <div class="flex items-center gap-3 p-6 pb-4">
             <span class="text-3xl">{cat.emoji}</span>
             <h3 class={`font-bangers text-3xl tracking-wide ${cat.accent === 'yellow' ? 'text-lotg-yellow' : 'text-lotg-green'}`}>
@@ -72,7 +75,7 @@ const cafeHours = openingTimes.find(t => t.label === 'Cafe');
     </div>
 
     <!-- Cafe & Bar menu -->
-    <div class="mt-16 max-w-3xl mx-auto">
+    <div id="cafe-and-bar-menu" class="scroll-mt-24 lg:scroll-mt-28 mt-16 max-w-3xl mx-auto">
       <h3 class="font-bangers text-lotg-yellow text-3xl md:text-4xl tracking-wide text-center mb-6">
         Cafe &amp; Bar Menu
       </h3>
