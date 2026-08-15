@@ -1,9 +1,10 @@
 ---
 import Carousel from './Carousel.astro';
-import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, sectionHeadings } from '../data/site';
+import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, openingTimes, sectionHeadings } from '../data/site';
 import { asset } from '../utils';
 
 const barMenuSrc = asset(cafeBarMenu.barMenuImage);
+const cafeHours = openingTimes.find(t => t.label === 'Cafe');
 ---
 
 <section id="activities-and-food" class="bg-lotg-dark py-20 px-4 md:px-8 lg:px-16">
@@ -24,27 +25,49 @@ const barMenuSrc = asset(cafeBarMenu.barMenuImage);
       aspectClass="aspect-video"
     />
 
-    <!-- Accordion categories -->
+    <!-- Activity categories -->
     <div class="grid md:grid-cols-2 gap-4">
       {activityCategories.map(cat => (
-        <details open class={`group bg-lotg-card rounded-2xl border ${cat.accent === 'yellow' ? 'border-lotg-yellow/20' : 'border-lotg-green/20'} open:border-opacity-60 transition-colors`}>
-          <summary class="flex items-center justify-between gap-3 p-6 cursor-pointer list-none select-none">
-            <div class="flex items-center gap-3">
-              <span class="text-3xl">{cat.emoji}</span>
-              <h3 class={`font-bangers text-3xl tracking-wide ${cat.accent === 'yellow' ? 'text-lotg-yellow' : 'text-lotg-green'}`}>
-                {cat.title}
-              </h3>
-            </div>
-          </summary>
-          <ul class="px-6 pb-6 space-y-2">
+        <div class={`bg-lotg-card rounded-2xl border ${cat.accent === 'yellow' ? 'border-lotg-yellow/20' : 'border-lotg-green/20'}`}>
+          <div class="flex items-center gap-3 p-6 pb-4">
+            <span class="text-3xl">{cat.emoji}</span>
+            <h3 class={`font-bangers text-3xl tracking-wide ${cat.accent === 'yellow' ? 'text-lotg-yellow' : 'text-lotg-green'}`}>
+              {cat.title}
+            </h3>
+          </div>
+          <ul class="px-6 pb-6 space-y-3">
             {cat.items.map(item => (
               <li class="flex items-start gap-2 text-lotg-offwhite">
                 <span class={`mt-0.5 shrink-0 ${cat.accent === 'yellow' ? 'text-lotg-yellow' : 'text-lotg-green'}`}>✦</span>
-                <span class="tracking-wide">{item}</span>
+                <div class="min-w-0">
+                  <span class="tracking-wide">
+                    {item.text}
+                    {item.link && (
+                      <>
+                        {' '}
+                        <a
+                          href={item.link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="underline underline-offset-4 decoration-lotg-green/40 hover:text-lotg-green hover:decoration-lotg-green transition-colors"
+                        >
+                          {item.link.label}
+                        </a>
+                      </>
+                    )}
+                  </span>
+                  {item.times && item.times.length > 0 && (
+                    <div class="mt-1 text-lotg-offwhite/70 text-sm leading-relaxed">
+                      {item.times.map(line => (
+                        <div>{line}</div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </li>
             ))}
           </ul>
-        </details>
+        </div>
       ))}
     </div>
 
@@ -66,14 +89,36 @@ const barMenuSrc = asset(cafeBarMenu.barMenuImage);
           sign up to our newsletter
         </a>
         if you haven't already!
+        {' '}
+        {cafeBarMenu.snacksNote}
       </p>
 
       <div class="grid sm:grid-cols-2 gap-6">
-        <div class="bg-lotg-card rounded-2xl border border-lotg-green/20 overflow-hidden">
-          <div class="aspect-[3/4] flex flex-col items-center justify-center gap-3 p-6 text-center">
-            <span class="text-4xl" aria-hidden="true">☕</span>
-            <p class="font-bangers text-lotg-green text-2xl tracking-wide">Cafe Menu</p>
-            <p class="text-lotg-offwhite/60 text-sm tracking-wide">Coming soon</p>
+        <div class="bg-lotg-card rounded-2xl border border-lotg-green/20 overflow-hidden flex flex-col">
+          <div class="p-5 flex-1">
+            <p class="font-bangers text-lotg-green text-2xl tracking-wide text-center mb-2">Cafe Menu</p>
+            {cafeHours && (
+              <div class="text-center text-lotg-offwhite/70 text-sm leading-relaxed mb-4">
+                {cafeHours.times.map(line => (
+                  <div>{line}</div>
+                ))}
+              </div>
+            )}
+            <div class="space-y-5">
+              {cafeBarMenu.cafeMenu.map(section => (
+                <div>
+                  <h4 class="font-bangers text-lotg-yellow text-lg tracking-wide mb-2">{section.title}</h4>
+                  <ul class="space-y-1.5">
+                    {section.items.map(item => (
+                      <li class="flex items-start gap-2 text-lotg-offwhite text-sm leading-relaxed">
+                        <span class="shrink-0" aria-hidden="true">{item.emoji}</span>
+                        <span>{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -83,6 +128,9 @@ const barMenuSrc = asset(cafeBarMenu.barMenuImage);
           class="group bg-lotg-card rounded-2xl border border-lotg-green/20 overflow-hidden text-left cursor-pointer hover:border-lotg-green/50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-lotg-green"
           aria-label="Open Mal's Bar menu"
         >
+          <p class="px-4 py-3 font-bangers text-lotg-green text-xl tracking-wide text-center">
+            Mal's Bar Menu
+          </p>
           <div class="aspect-[3/4] overflow-hidden relative">
             <img
               src={barMenuSrc}
@@ -94,9 +142,6 @@ const barMenuSrc = asset(cafeBarMenu.barMenuImage);
               <span class="material-icons text-lotg-offwhite opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" style="font-size:48px">zoom_in</span>
             </span>
           </div>
-          <p class="px-4 py-3 font-bangers text-lotg-green text-xl tracking-wide text-center">
-            Mal's Bar Menu
-          </p>
         </button>
       </div>
     </div>
