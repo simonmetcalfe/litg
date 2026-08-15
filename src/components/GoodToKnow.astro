@@ -1,5 +1,6 @@
 ---
-import { openingTimes, goodToKnowGroups, newsletterSignupUrl, sectionHeadings } from '../data/site';
+import OpeningTimesList from './OpeningTimesList.astro';
+import { goodToKnowGroups, newsletterSignupUrl, sectionHeadings } from '../data/site';
 ---
 
 <section id="good-to-know" class="section-alt py-20 px-4 md:px-8 lg:px-16">
@@ -27,6 +28,9 @@ import { openingTimes, goodToKnowGroups, newsletterSignupUrl, sectionHeadings } 
       {goodToKnowGroups.map(group => (
         <div>
           <h3 class="font-bangers text-lotg-yellow text-2xl tracking-wide mb-3">{group.title}</h3>
+          {group.intro && (
+            <p class="text-lotg-offwhite text-sm leading-relaxed mb-3">{group.intro}</p>
+          )}
           <div class="space-y-2">
             {group.items.map(item => (
               <div class="flex items-start gap-3 bg-lotg-mid border border-lotg-green/20 rounded-xl px-4 py-3">
@@ -39,16 +43,8 @@ import { openingTimes, goodToKnowGroups, newsletterSignupUrl, sectionHeadings } 
       ))}
     </div>
 
-    <div class="mt-12 bg-lotg-card rounded-2xl p-6 border border-lotg-green/20">
-      <h3 class="font-bangers text-lotg-green text-3xl tracking-wide mb-5">Opening Times</h3>
-      <div class="space-y-2">
-        {openingTimes.map(row => (
-          <div class="flex justify-between gap-4 border-b border-lotg-green/10 pb-2 last:border-0 last:pb-0">
-            <span class="text-lotg-offwhite/70 text-sm uppercase tracking-wide">{row.label}</span>
-            <span class="text-lotg-green text-sm text-right">{row.times}</span>
-          </div>
-        ))}
-      </div>
+    <div class="mt-12">
+      <OpeningTimesList />
     </div>
 
   </div>

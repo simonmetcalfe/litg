@@ -292,12 +292,20 @@ export const accommodationPhotoSections = [
 ];
 
 // ── Activities & Food ─────────────────────────────────────
+export interface ActivityItem {
+  text: string;
+  /** One schedule line per day — rendered in muted grey under the title */
+  times?: string[];
+  /** Optional external link shown after the item text */
+  link?: { href: string; label: string };
+}
+
 export interface ActivityCategory {
   id: string;
   emoji: string;
   title: string;
   accent: "green" | "yellow";
-  items: string[];
+  items: ActivityItem[];
 }
 
 // Activity photo carousel — flat list (add more as photos land).
@@ -312,10 +320,10 @@ export const activityCategories: ActivityCategory[] = [
     title: "Entertainment",
     accent: "green",
     items: [
-      "Live music and DJS all weekend",
-      "Acoustic Fireside Jamming",
-      "Fire dancing performance",
-      "Fire maze",
+      { text: "Live music and DJS all weekend" },
+      { text: "Acoustic Fireside Jamming" },
+      { text: "Fire dancing performance" },
+      { text: "Fire maze" },
     ],
   },
   {
@@ -324,24 +332,11 @@ export const activityCategories: ActivityCategory[] = [
     title: "Kids",
     accent: "yellow",
     items: [
-      "Kids Cinema",
-      "Kids Disco",
-      "Bouncy Castle & Ball Pit",
-      "Games & Treasure Hunt",
-      "Arts & Crafts",
-    ],
-  },
-  {
-    id: "food",
-    emoji: "🍽️",
-    title: "Food",
-    accent: "green",
-    items: [
-      "Tea & Coffee",
-      "Fresh Smoothies",
-      "Breakfast",
-      "Delicious hot and cold food",
-      "More details to follow...",
+      { text: "Kids Cinema" },
+      { text: "Kids Disco" },
+      { text: "Bouncy Castle & Ball Pit" },
+      { text: "Games & Treasure Hunt" },
+      { text: "Arts & Crafts" },
     ],
   },
   {
@@ -350,19 +345,79 @@ export const activityCategories: ActivityCategory[] = [
     title: "Health & Wellbeing",
     accent: "yellow",
     items: [
-      "Woodfired Hot Tub",
-      "Morning Yoga (please bring your own mat if possible)",
-      "Sound bath",
-      "Massage",
-      "Woodland walks",
-      "Chillout spaces",
+      {
+        text: "Yoga (Jenny) (free — please bring your own mat)",
+        times: ["Sat 9am–10am", "Sun 9am–10am"],
+        link: { href: "https://www.instagram.com/jennielive", label: "@jennielive" },
+      },
+      {
+        text: "Meditation & sound bath (Jenny + Maggie)",
+        times: ["Sat 10.30am–11.30am"],
+      },
+      {
+        text: "Myofascial + movement (Maggie)",
+        times: ["Sat 4pm–5pm"],
+      },
+      {
+        text: "Stretching + breathwork (Maggie)",
+        times: ["Sun 11am–12pm"],
+      },
+      {
+        text: "Massage (Annabelle, on request) — £20 for 20 minutes, £40 for 40 minutes, please bring cash",
+        times: [
+          "Sat 12pm–3.45pm, 5.15pm–8pm",
+          "Sun 12.15pm–4pm, 5pm–8pm",
+        ],
+      },
+    ],
+  },
+  {
+    id: "more",
+    emoji: "🌿",
+    title: "More Activities",
+    accent: "green",
+    items: [
+      { text: "Woodfired Hot Tub" },
+      { text: "Woodland walks" },
+      { text: "Chillout spaces" },
     ],
   },
 ];
 
+export interface CafeMenuSection {
+  title: string;
+  items: { emoji: string; text: string }[];
+}
+
 export const cafeBarMenu = {
-  intro:
-    "Fuel up at the on-site cafe and bar. The full cafe menu is coming soon.",
+  intro: "Fuel up at the on-site cafe and bar.",
+  snacksNote: "Please bring a few snacks for out-of-hours eating.",
+  cafeMenu: [
+    {
+      title: "Breakfast",
+      items: [
+        { emoji: "☕", text: "Tea & coffee" },
+        { emoji: "🥓", text: "Bacon baps" },
+        { emoji: "🌭", text: "Sausages…" },
+      ],
+    },
+    {
+      title: "Lunch / Dinner",
+      items: [
+        { emoji: "🌶️", text: "Chilli con carne" },
+        { emoji: "🍔", text: "Burgers" },
+        { emoji: "🍢", text: "Chicken kebabs" },
+      ],
+    },
+    {
+      title: "Vegetarian & vegan",
+      items: [
+        { emoji: "🧀", text: "Halloumi kebabs" },
+        { emoji: "🌱", text: "Vegan sausages" },
+        { emoji: "🍓", text: "Fresh strawberry & honey kefir" },
+      ],
+    },
+  ] satisfies CafeMenuSection[],
   barMenuImage: "poster/bar_menu.jpeg",
 };
 
@@ -374,10 +429,21 @@ export interface GoodToKnowItem {
 
 export interface GoodToKnowGroup {
   title: string;
+  /** Plain text under the heading (not in an item box) */
+  intro?: string;
   items: GoodToKnowItem[];
 }
 
 export const goodToKnowGroups: GoodToKnowGroup[] = [
+  {
+    title: 'Fire Safety',
+    intro: 'Due to the current weather conditions, we ask for the following:',
+    items: [
+      { emoji: '🚫', text: 'No BBQs' },
+      { emoji: '🚫', text: 'No camp fires' },
+      { emoji: '✅', text: 'Camping stoves are allowed' },
+    ],
+  },
   {
     title: 'Camping & Parking',
     items: [
@@ -387,7 +453,7 @@ export const goodToKnowGroups: GoodToKnowGroup[] = [
       { emoji: '🚰', text: 'Drinking water is available across the site.' },
       { emoji: '🚿', text: 'Hot showers and baby changing facilities are free for all guests.' },
       { emoji: '🧼', text: 'Washing-up stations are available.' },
-      { emoji: '⚡', text: 'Electric hookups are available across the site for £30 for the weekend. You\'ll need a 3-pin mains adaptor — tokens available at the bar.' },
+      { emoji: '⚡', text: 'Electric hookups (IEC 60309 blue plug) are available across the site for £30 for the weekend. You\'ll need a 3-pin mains adaptor — tokens available at the bar.' },
       { emoji: '🚘', text: 'Electric car charging can be arranged, but please don\'t use the campsite hookups as it will cause a power outage across the site.' },
     ],
   },
@@ -395,17 +461,15 @@ export const goodToKnowGroups: GoodToKnowGroup[] = [
     title: 'Bar & Food',
     items: [
       { emoji: '🍺', text: 'There\'s a great on-site bar — please support it. You\'re welcome to bring your own drinks for the campsite only.' },
-      { emoji: '☕', text: 'Cafe opening times are yet to be confirmed; please bring a few snacks for out-of-hours eating.' },
-      { emoji: '💵', text: 'Cards are accepted but cash is preferred.' },
+      { emoji: '💵', text: 'Cards are accepted but cash is preferred. If you\'re attending massage, please bring cash to cover this.' },
     ],
   },
   {
     title: 'Wellness & Activities',
     items: [
       { emoji: '🧖', text: 'The wood-fired hot tub if free.  Children must be accompanied by an adult at all times.' },
-      { emoji: '🧘', text: 'Yoga sessions are on — bring clothes and a mat if you\'d like to join in.' },
-      { emoji: '🔥', text: 'Fire pits are available to hire — firewood can be puchased from the bar.' },
-
+      { emoji: '🧘', text: 'Yoga sessions are free (please bring your own mat if you\'d like to join in).' },
+      { emoji: '💆', text: 'Massage — £20 for 20 minutes, £40 for 40 minutes, please bring cash.' },
     ],
   },
   {
@@ -426,14 +490,44 @@ export const goodToKnowGroups: GoodToKnowGroup[] = [
 ];
 
 // ── Opening times ─────────────────────────────────────────
-export const openingTimes = [
-  { label: "Site Open", times: "Fri 12pm – Mon 12pm" },
-  { label: "Main Stage", times: "Fri–Sun" },
-  { label: "Cafe", times: "Sat–Sun" },
-  { label: "Bar", times: "Fri–Sun" },
-  { label: "Kids Disco", times: "Fri" },
-  { label: "Kids Cinema", times: "Fri–Sun" },
-  { label: "Campfire & Hot Tub", times: "Fri–Sun" },
+export interface OpeningTime {
+  label: string;
+  /** One entry per line / day */
+  times: string[];
+  note?: string;
+}
+
+export const openingTimes: OpeningTime[] = [
+  { label: "Site Open", times: ["Fri 12pm – Mon 12pm"] },
+  {
+    label: "Gate",
+    times: [
+      "Fri 12pm–6pm",
+      "Sat 10am–6pm",
+      "Sun closed",
+    ],
+    note: "If you're arriving outside these times, please let us know so we can make arrangements.",
+  },
+  { label: "Main Stage", times: ["Fri–Sun"] },
+  {
+    label: "Cafe",
+    times: [
+      "Fri 5pm–7pm",
+      "Sat 9am–11am, 1pm–3pm, 5pm–7pm",
+      "Sun 9am–11am, 1pm–3pm, 5pm–7pm",
+    ],
+  },
+  { label: "Bar", times: ["Fri–Sun"] },
+  { label: "Kids Disco", times: ["Fri 5pm–6pm"] },
+  {
+    label: "Kids Cinema",
+    times: [
+      "Fri 6pm–9pm",
+      "Sat 6pm–9pm",
+      "Sun 6pm–9pm",
+    ],
+  },
+  { label: "Campfire & Hot Tub", times: ["Fri–Sun"] },
 ];
 
 // ── Contact & newsletter ─────────────────────────────────
