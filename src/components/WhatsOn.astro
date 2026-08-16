@@ -43,28 +43,37 @@ const cafeHours = openingTimes.find(t => t.label === 'Cafe');
               <li class="flex items-start gap-2 text-lotg-offwhite">
                 <span class={`mt-0.5 shrink-0 ${cat.accent === 'yellow' ? 'text-lotg-yellow' : 'text-lotg-green'}`}>✦</span>
                 <div class="min-w-0">
-                  <span class="tracking-wide">
-                    {item.text}
-                    {item.link && (
-                      <>
-                        {' '}
-                        <a
-                          href={item.link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="underline underline-offset-4 decoration-lotg-green/40 hover:text-lotg-green hover:decoration-lotg-green transition-colors"
-                        >
-                          {item.link.label}
-                        </a>
-                      </>
-                    )}
-                  </span>
+                  <span class="tracking-wide">{item.text}</span>
                   {item.times && item.times.length > 0 && (
                     <div class="mt-1 text-lotg-offwhite/70 text-sm leading-relaxed">
                       {item.times.map(line => (
                         <div>{line}</div>
                       ))}
                     </div>
+                  )}
+                  {item.links && item.links.length > 0 && (
+                    <div class="mt-1 flex flex-wrap gap-x-4 text-sm">
+                      {item.links.map(link => (
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="text-lotg-green underline underline-offset-4 decoration-lotg-green/40 hover:decoration-lotg-green transition-colors"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                  {item.cta && (
+                    <a
+                      href={item.cta.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="mt-2 inline-block rounded-full bg-lotg-green px-4 py-1.5 text-sm font-semibold text-lotg-dark hover:bg-lotg-green/80 transition-colors"
+                    >
+                      {item.cta.label}
+                    </a>
                   )}
                 </div>
               </li>
