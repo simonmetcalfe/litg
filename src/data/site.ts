@@ -353,7 +353,7 @@ export const activityCategories: ActivityCategory[] = [
         links: [{ href: "https://www.instagram.com/jennielive", label: "@jennielive" }],
       },
       {
-        text: "Meditation & sound bath (Jenny + Maggie) (free)",
+        text: "Meditation & sound bath (Jenny + Margarita) (free)",
         times: ["Sat 10.30am–11.30am"],
         links: [
           { href: "https://www.instagram.com/jennielive", label: "@jennielive" },
@@ -361,13 +361,10 @@ export const activityCategories: ActivityCategory[] = [
         ],
       },
       {
-        text: "Myofascial + movement (Maggie) (free)",
-        times: ["Sat 4pm–5pm"],
-        links: [{ href: "https://www.margaritabennett.co.uk", label: "Website" }],
-      },
-      {
-        text: "Movement, stretch and Myofascia Release (Maggie) (free)",
-        times: ["Sun 11am–12pm"],
+        text: "Movement, stretch and Myofascia Release (Margarita) (free)",
+        times: ["Sat 4pm–5pm",
+          "Sun 11am–12pm",
+        ],
         links: [{ href: "https://www.margaritabennett.co.uk", label: "Website" }],
       },
       {
