@@ -35,7 +35,22 @@ import { goodToKnowGroups, newsletterSignupUrl, sectionHeadings } from '../data/
             {group.items.map(item => (
               <div class="flex items-start gap-3 bg-lotg-mid border border-lotg-green/20 rounded-xl px-4 py-3">
                 <span class="text-xl shrink-0 mt-0.5">{item.emoji}</span>
-                <p class="text-lotg-offwhite text-sm leading-relaxed">{item.text}</p>
+                <p class="text-lotg-offwhite text-sm leading-relaxed">
+                  {item.text}
+                  {item.cta && (
+                    <>
+                      {' '}
+                      <a
+                        href={item.cta.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-lotg-green underline underline-offset-4 decoration-lotg-green/40 hover:decoration-lotg-green transition-colors"
+                      >
+                        {item.cta.label}
+                      </a>
+                    </>
+                  )}
+                </p>
               </div>
             ))}
           </div>

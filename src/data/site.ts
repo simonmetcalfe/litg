@@ -296,8 +296,10 @@ export interface ActivityItem {
   text: string;
   /** One schedule line per day — rendered in muted grey under the title */
   times?: string[];
-  /** Optional external link shown after the item text */
-  link?: { href: string; label: string };
+  /** Optional external links shown under the schedule lines */
+  links?: { href: string; label: string }[];
+  /** Optional call to action, rendered as a button under the links */
+  cta?: { href: string; label: string };
 }
 
 export interface ActivityCategory {
@@ -348,19 +350,25 @@ export const activityCategories: ActivityCategory[] = [
       {
         text: "Yoga (Jenny) (free — please bring your own mat)",
         times: ["Sat 9am–10am", "Sun 9am–10am"],
-        link: { href: "https://www.instagram.com/jennielive", label: "@jennielive" },
+        links: [{ href: "https://www.instagram.com/jennielive", label: "@jennielive" }],
       },
       {
-        text: "Meditation & sound bath (Jenny + Maggie)",
+        text: "Meditation & sound bath (Jenny + Maggie) (free)",
         times: ["Sat 10.30am–11.30am"],
+        links: [
+          { href: "https://www.instagram.com/jennielive", label: "@jennielive" },
+          { href: "https://www.margaritabennett.co.uk", label: "Website" },
+        ],
       },
       {
-        text: "Myofascial + movement (Maggie)",
+        text: "Myofascial + movement (Maggie) (free)",
         times: ["Sat 4pm–5pm"],
+        links: [{ href: "https://www.margaritabennett.co.uk", label: "Website" }],
       },
       {
-        text: "Stretching + breathwork (Maggie)",
+        text: "Movement, stretch and Myofascia Release (Maggie) (free)",
         times: ["Sun 11am–12pm"],
+        links: [{ href: "https://www.margaritabennett.co.uk", label: "Website" }],
       },
       {
         text: "Massage (Annabelle, on request) — £20 for 20 minutes, £40 for 40 minutes, please bring cash",
@@ -368,6 +376,8 @@ export const activityCategories: ActivityCategory[] = [
           "Sat 12pm–3.45pm, 5.15pm–8pm",
           "Sun 12.15pm–4pm, 5pm–8pm",
         ],
+        links: [{ href: "https://www.instagram.com/annabelle_bolton_massage", label: "@annabelle_bolton_massage" }],
+        cta: { href: "https://calendly.com/annabelle-bolton/20", label: "Book your massage now" },
       },
     ],
   },
@@ -425,6 +435,8 @@ export const cafeBarMenu = {
 export interface GoodToKnowItem {
   emoji: string;
   text: string;
+  /** Optional call to action shown after the text */
+  cta?: { href: string; label: string };
 }
 
 export interface GoodToKnowGroup {
@@ -469,7 +481,11 @@ export const goodToKnowGroups: GoodToKnowGroup[] = [
     items: [
       { emoji: '🧖', text: 'The wood-fired hot tub if free.  Children must be accompanied by an adult at all times.' },
       { emoji: '🧘', text: 'Yoga sessions are free (please bring your own mat if you\'d like to join in).' },
-      { emoji: '💆', text: 'Massage — £20 for 20 minutes, £40 for 40 minutes, please bring cash.' },
+      {
+        emoji: '💆',
+        text: 'Massage — £20 for 20 minutes, £40 for 40 minutes, please bring cash.',
+        cta: { href: 'https://calendly.com/annabelle-bolton/20', label: 'Book your massage now' },
+      },
     ],
   },
   {
