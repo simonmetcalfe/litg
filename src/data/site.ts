@@ -324,7 +324,7 @@ export const activityCategories: ActivityCategory[] = [
     items: [
       { text: "Live music and DJS all weekend" },
       { text: "Acoustic Fireside Jamming" },
-      { text: "Fire dancing performance" },
+      { text: "Fire dancing or LED show" },
       { text: "Fire maze" },
     ],
   },
@@ -368,7 +368,7 @@ export const activityCategories: ActivityCategory[] = [
         links: [{ href: "https://www.margaritabennett.co.uk", label: "Website" }],
       },
       {
-        text: "Massage (Annabelle, on request) — £20 for 20 minutes, £40 for 40 minutes, please bring cash",
+        text: "Massage (Annabelle, on request) — £20 for 20 minutes, £40 for 40 minutes (card or cash).",
         times: [
           "Sat 12pm–3.45pm, 5.15pm–8pm",
           "Sun 12.15pm–4pm, 5pm–8pm",
@@ -451,6 +451,7 @@ export const goodToKnowGroups: GoodToKnowGroup[] = [
       { emoji: '🚫', text: 'No BBQs' },
       { emoji: '🚫', text: 'No camp fires' },
       { emoji: '✅', text: 'Camping stoves are allowed' },
+      { emoji: '🔥', text: 'There will be a fire dancing or LED show, depending on weather conditions.' },
     ],
   },
   {
@@ -463,14 +464,14 @@ export const goodToKnowGroups: GoodToKnowGroup[] = [
       { emoji: '🚿', text: 'Hot showers and baby changing facilities are free for all guests.' },
       { emoji: '🧼', text: 'Washing-up stations are available.' },
       { emoji: '⚡', text: 'Electric hookups (IEC 60309 blue plug) are available across the site for £30 for the weekend. You\'ll need a 3-pin mains adaptor — tokens available at the bar.' },
-      { emoji: '🚘', text: 'Electric car charging can be arranged, but please don\'t use the campsite hookups as it will cause a power outage across the site.' },
+      { emoji: '🚘', text: 'Unfortunately we cannot arrange electric car charging. Please don\'t charge EVs from the campsite hookups — it will cause a power outage across the site.' },
     ],
   },
   {
     title: 'Bar & Food',
     items: [
       { emoji: '🍺', text: 'There\'s a great on-site bar — please support it. You\'re welcome to bring your own drinks for the campsite only.' },
-      { emoji: '💵', text: 'Cards are accepted but cash is preferred. If you\'re attending massage, please bring cash to cover this.' },
+      { emoji: '💵', text: 'Cards are accepted but cash is preferred.' },
     ],
   },
   {
@@ -480,7 +481,7 @@ export const goodToKnowGroups: GoodToKnowGroup[] = [
       { emoji: '🧘', text: 'Yoga sessions are free (please bring your own mat if you\'d like to join in).' },
       {
         emoji: '💆',
-        text: 'Massage — £20 for 20 minutes, £40 for 40 minutes, please bring cash.',
+        text: 'Massage — £20 for 20 minutes, £40 for 40 minutes (card or cash).',
         cta: { href: 'https://calendly.com/annabelle-bolton/20', label: 'Book your massage now' },
       },
     ],
