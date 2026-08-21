@@ -42,56 +42,89 @@ export interface DJ {
   listen?: string;
 }
 
-// ── Lineup ───────────────────────────────────────────────
-// Day-by-day schedule — drives the headline display at the top of the Acts section.
+// ── Schedule ─────────────────────────────────────────────
+// Timings from assets/schedule/schedule_bands.csv (15-min grid, collapsed).
+// Operational rows omitted: CLOSED, CURFEW, OPEN DECKS, Playlist / DJ / Soundcheck.
 // size: sm = base, md = slightly bigger, lg = bigger again (poster billing hierarchy)
 export type BillingSize = "sm" | "md" | "lg";
 
-export interface BillingRow {
-  acts: string[];
+export interface ScheduleSlot {
+  /** 24h "HH:MM" */
+  start: string;
+  /** 24h "HH:MM" — exclusive end of the collapsed run */
+  end: string;
+  name: string;
   size?: BillingSize;
+  kind: "live" | "dj" | "other";
 }
 
-export interface LineupDay {
+export interface ScheduleDay {
   day: string;
-  /** Optional intro line (e.g. Friday DJ-only evening) */
-  intro?: string;
-  live?: BillingRow[];
-  djs?: BillingRow[];
+  /** CSV day subtitle, e.g. Warm Up / Main Event / Chillout */
+  tagline?: string;
+  slots: ScheduleSlot[];
 }
 
-export const lineupByDay: LineupDay[] = [
+export const scheduleByDay: ScheduleDay[] = [
   {
     day: "Friday 21st August",
-    intro: "An evening of DJ sets from:",
-    djs: [
-      { acts: ["GREGG", "MINT", "GRILLO"], size: "sm" },
-      { acts: ["LANX", "DOMMO", "THE MILKMAN"], size: "md" },
+    tagline: "Warm Up",
+    slots: [
+      { start: "17:00", end: "18:00", name: "KIDS DISCO", size: "sm", kind: "other" },
+      { start: "18:00", end: "19:00", name: "GREG", size: "sm", kind: "dj" },
+      { start: "19:00", end: "20:00", name: "MINT", size: "sm", kind: "dj" },
+      { start: "20:00", end: "21:00", name: "GRILLO", size: "sm", kind: "dj" },
+      { start: "21:00", end: "22:00", name: "LANX", size: "md", kind: "dj" },
+      { start: "22:00", end: "23:00", name: "DOMMO", size: "md", kind: "dj" },
+      { start: "23:00", end: "00:00", name: "THE MILKMAN", size: "md", kind: "dj" },
     ],
   },
   {
     day: "Saturday 22nd August",
-    live: [
-      { acts: ["MAII", "MOONBIRD", "KIMOSABE"], size: "sm" },
-      { acts: ["LIV SANGSTER", "FUKUSHIMA DOLPHIN"], size: "md" },
-      { acts: ["NEBULA SUN", "THE GULLS"], size: "lg" },
+    tagline: "Main Event",
+    slots: [
+      { start: "12:00", end: "12:45", name: "MAII", size: "sm", kind: "live" },
+      { start: "13:00", end: "14:00", name: "MOONBIRD", size: "sm", kind: "live" },
+      { start: "14:15", end: "15:15", name: "LIV SANGSTER", size: "md", kind: "live" },
+      { start: "15:30", end: "16:30", name: "KIMOSABE", size: "sm", kind: "live" },
+      { start: "16:45", end: "17:45", name: "FUKUSHIMA DOLPHIN", size: "md", kind: "live" },
+      { start: "18:00", end: "19:00", name: "NEBULA SUN", size: "lg", kind: "live" },
+      { start: "19:15", end: "20:15", name: "JAMMA GOLD", size: "sm", kind: "dj" },
+      { start: "20:30", end: "21:30", name: "THE GULLS", size: "lg", kind: "live" },
+      { start: "21:45", end: "22:45", name: "AD:VERSE", size: "sm", kind: "dj" },
+      { start: "23:00", end: "00:00", name: "ROGAN JOSH", size: "sm", kind: "dj" },
     ],
-    djs: [{ acts: ["JAMMA GOLD", "ROGAN JOSH", "AD:VERSE"], size: "sm" }],
   },
   {
     day: "Sunday 23rd August",
-    live: [
-      {
-        acts: ["FREESPIRITS", "DARK HABIT", "MR TUMNUS", "HOWDO BEAN & THE DINOS"],
-        size: "md",
-      },
-    ],
-    djs: [
-      { acts: ["STEVE PERRETT", "BOSON", "RIDDIM 'N RUM", "VIK", "PARTY MACHINE"], size: "sm" },
-      { acts: ["VIRGIN VINYLS"], size: "lg" },
+    tagline: "Chillout",
+    slots: [
+      { start: "12:00", end: "12:45", name: "HOWDO BEAN & THE DINOS", size: "md", kind: "live" },
+      { start: "13:00", end: "14:00", name: "MR TUMNUS", size: "md", kind: "live" },
+      { start: "14:00", end: "15:00", name: "STEVE PERRETT", size: "sm", kind: "dj" },
+      { start: "15:00", end: "16:00", name: "RIDDIM 'N RUM", size: "sm", kind: "dj" },
+      { start: "16:00", end: "17:00", name: "VIK", size: "sm", kind: "dj" },
+      { start: "17:30", end: "18:30", name: "DARK HABIT", size: "md", kind: "live" },
+      { start: "19:00", end: "20:00", name: "FREESPIRITS", size: "md", kind: "live" },
+      { start: "20:00", end: "21:00", name: "BOSON", size: "sm", kind: "dj" },
+      { start: "21:00", end: "22:30", name: "PARTY MACHINE", size: "sm", kind: "dj" },
+      { start: "22:30", end: "00:00", name: "VIRGIN VINYLS", size: "lg", kind: "dj" },
     ],
   },
 ];
+
+/** "18:00" → "6pm", "12:45" → "12.45pm", "00:00" → "12am" */
+export function formatScheduleTime(hhmm: string): string {
+  const [hRaw, mRaw] = hhmm.split(":");
+  const h = Number(hRaw);
+  const suffix = h % 24 >= 12 ? "pm" : "am";
+  const h12 = h % 12 || 12;
+  return Number(mRaw) === 0 ? `${h12}${suffix}` : `${h12}.${mRaw}${suffix}`;
+}
+
+export function formatScheduleRange(start: string, end: string): string {
+  return `${formatScheduleTime(start)}–${formatScheduleTime(end)}`;
+}
 
 export const mainActs: Act[] = [
   {

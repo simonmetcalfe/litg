@@ -1,5 +1,13 @@
 ---
-import { lineupByDay, mainActs, djs, sectionHeadings, type BillingSize } from '../data/site';
+import {
+  scheduleByDay,
+  mainActs,
+  djs,
+  sectionHeadings,
+  formatScheduleRange,
+  type BillingSize,
+  type ScheduleDay,
+} from '../data/site';
 import { asset } from '../utils';
 
 // Gradient classes for acts without photos (cycle through 6)
@@ -8,19 +16,33 @@ const gradients = [
   'card-gradient-4', 'card-gradient-5', 'card-gradient-6',
 ];
 
-// Live billing sizes (poster hierarchy)
+// Live billing sizes (poster hierarchy). Dropped the extra lg: bump so names
+// still fit a three-column timetable; relative sm/md/lg steps are unchanged.
 const liveSizeClass: Record<BillingSize, string> = {
-  sm: 'text-xl md:text-2xl lg:text-3xl',
-  md: 'text-2xl md:text-3xl lg:text-4xl',
-  lg: 'text-3xl md:text-4xl lg:text-5xl',
+  sm: 'text-xl md:text-2xl',
+  md: 'text-2xl md:text-3xl',
+  lg: 'text-3xl md:text-4xl',
 };
 
 // DJ billing — a step smaller than live when both appear on the same day
 const djSizeClass: Record<BillingSize, string> = {
-  sm: 'text-lg md:text-xl lg:text-2xl',
-  md: 'text-xl md:text-2xl lg:text-3xl',
-  lg: 'text-2xl md:text-3xl lg:text-4xl',
+  sm: 'text-lg md:text-xl',
+  md: 'text-xl md:text-2xl',
+  lg: 'text-2xl md:text-3xl',
 };
+
+function slotSizeClass(day: ScheduleDay, kind: ScheduleDay['slots'][number]['kind'], size: BillingSize) {
+  const isHeadliner = size === 'lg';
+  const hasLive = day.slots.some(s => s.kind === 'live');
+  const supportingDj = kind === 'dj' && !isHeadliner && hasLive;
+  return (supportingDj ? djSizeClass : liveSizeClass)[size];
+}
+
+function slotColorClass(day: ScheduleDay, kind: ScheduleDay['slots'][number]['kind'], size: BillingSize) {
+  const isHeadliner = size === 'lg';
+  const hasLive = day.slots.some(s => s.kind === 'live');
+  return kind === 'dj' && !isHeadliner && hasLive ? 'text-lotg-offwhite/80' : 'text-lotg-offwhite';
+}
 
 let fallbackGradientIndex = 0;
 ---
@@ -35,55 +57,33 @@ let fallbackGradientIndex = 0;
       </h2>
     </div>
 
-    <!-- Day-by-day schedule -->
-    <div class="text-center py-4 mb-14 space-y-12">
-      {lineupByDay.map((day) => (
-        <div class="space-y-3">
-          <h3 class="font-bangers text-lotg-yellow text-2xl md:text-3xl lg:text-4xl tracking-wider">
+    <!-- Day-by-day timetable -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 py-4 mb-14">
+      {scheduleByDay.map((day) => (
+        <div>
+          <h3 class="font-bangers text-lotg-yellow text-2xl md:text-3xl lg:text-4xl tracking-wider text-center">
             {day.day}
           </h3>
-
-          {day.intro && (
-            <p class="font-bangers text-lotg-offwhite/50 text-sm md:text-base tracking-widest uppercase">
-              {day.intro}
+          {day.tagline && (
+            <p class="font-bangers text-lotg-offwhite/50 text-sm md:text-base tracking-widest uppercase text-center mt-1">
+              {day.tagline}
             </p>
           )}
-
-          {day.live && (
-            <div class="space-y-1">
-              {!day.intro && (
-                <p class="font-bangers text-lotg-offwhite/50 text-sm md:text-base tracking-widest uppercase">
-                  Live music from:
-                </p>
-              )}
-              {day.live.map((row) => (
-                <p class={`font-bangers text-lotg-offwhite tracking-wider leading-snug ${liveSizeClass[row.size ?? 'sm']}`}>
-                  {row.acts.join(' · ')}
-                </p>
-              ))}
-            </div>
-          )}
-
-          {day.djs && (
-            <div class="space-y-1">
-              {!day.intro && (
-                <p class="font-bangers text-lotg-offwhite/50 text-sm md:text-base tracking-widest uppercase">
-                  DJs:
-                </p>
-              )}
-              {day.djs.map((row) => {
-                const size = row.size ?? 'sm';
-                // Headliner DJs (lg) match live headliner size; supporting DJs stay a step smaller when live also plays
-                const sizeClass = (size === 'lg' || !day.live ? liveSizeClass : djSizeClass)[size];
-                const colorClass = size === 'lg' || !day.live ? 'text-lotg-offwhite' : 'text-lotg-offwhite/80';
-                return (
-                  <p class={`font-bangers tracking-wider leading-snug ${colorClass} ${sizeClass}`}>
-                    {row.acts.join(' · ')}
-                  </p>
-                );
-              })}
-            </div>
-          )}
+          <ol class="mt-5 grid grid-cols-[auto_minmax(0,1fr)]">
+            {day.slots.map((slot) => {
+              const size = slot.size ?? 'sm';
+              return (
+                <li class="col-span-2 grid grid-cols-subgrid items-baseline gap-x-3 border-b border-lotg-green/10 py-2.5 last:border-0">
+                  <time class="whitespace-nowrap text-lotg-yellow/90 text-sm md:text-base tracking-wide">
+                    {formatScheduleRange(slot.start, slot.end)}
+                  </time>
+                  <span class={`min-w-0 font-bangers tracking-wider leading-snug ${slotColorClass(day, slot.kind, size)} ${slotSizeClass(day, slot.kind, size)}`}>
+                    {slot.name}
+                  </span>
+                </li>
+              );
+            })}
+          </ol>
         </div>
       ))}
     </div>
