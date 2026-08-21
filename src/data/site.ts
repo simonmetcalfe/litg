@@ -327,6 +327,8 @@ export const accommodationPhotoSections = [
 // ── Activities & Food ─────────────────────────────────────
 export interface ActivityItem {
   text: string;
+  /** Optional in-page or external href wrapping the title */
+  href?: string;
   /** One schedule line per day — rendered in muted grey under the title */
   times?: string[];
   /** Optional external links shown under the schedule lines */
@@ -367,7 +369,7 @@ export const activityCategories: ActivityCategory[] = [
     title: "Kids",
     accent: "yellow",
     items: [
-      { text: "Kids Cinema" },
+      { text: "Kids Cinema", href: "#kids-cinema" },
       { text: "Kids Disco" },
       { text: "Bouncy Castle & Ball Pit" },
       { text: "Games & Treasure Hunt" },
@@ -460,6 +462,38 @@ export const cafeBarMenu = {
   ] satisfies CafeMenuSection[],
   barMenuImage: "poster/bar_menu.jpeg",
 };
+
+export interface KidsCinemaDay {
+  day: string;
+  films: string[];
+}
+
+export const kidsCinemaSchedule: KidsCinemaDay[] = [
+  {
+    day: "Friday",
+    films: [
+      "Despicable Me 4",
+      "Tom and Jerry: Forbidden Compass",
+      "The Sheep Detectives",
+    ],
+  },
+  {
+    day: "Saturday",
+    films: [
+      "Toy Story",
+      "Shrek",
+      "Chicken Run: Dawn of the Nugget",
+    ],
+  },
+  {
+    day: "Sunday",
+    films: [
+      "Finding Nemo",
+      "Tom and Jerry: Cowboy Up!",
+      "The Garfield Movie",
+    ],
+  },
+];
 
 // ── Good to Know ──────────────────────────────────────────
 export interface GoodToKnowItem {

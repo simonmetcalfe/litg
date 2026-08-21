@@ -1,10 +1,11 @@
 ---
 import Carousel from './Carousel.astro';
-import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, openingTimes, sectionHeadings } from '../data/site';
+import { activityCategories, activityPhotos, cafeBarMenu, kidsCinemaSchedule, newsletterSignupUrl, openingTimes, sectionHeadings } from '../data/site';
 import { asset } from '../utils';
 
 const barMenuSrc = asset(cafeBarMenu.barMenuImage);
 const cafeHours = openingTimes.find(t => t.label === 'Cafe');
+const cinemaHours = openingTimes.find(t => t.label === 'Kids Cinema');
 ---
 
 <section id="activities-and-food" class="bg-lotg-dark py-20 px-4 md:px-8 lg:px-16">
@@ -43,7 +44,16 @@ const cafeHours = openingTimes.find(t => t.label === 'Cafe');
               <li class="flex items-start gap-2 text-lotg-offwhite">
                 <span class={`mt-0.5 shrink-0 ${cat.accent === 'yellow' ? 'text-lotg-yellow' : 'text-lotg-green'}`}>✦</span>
                 <div class="min-w-0">
-                  <span class="tracking-wide">{item.text}</span>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      class="tracking-wide underline underline-offset-4 decoration-lotg-green/40 hover:text-lotg-green hover:decoration-lotg-green transition-colors"
+                    >
+                      {item.text}
+                    </a>
+                  ) : (
+                    <span class="tracking-wide">{item.text}</span>
+                  )}
                   {item.times && item.times.length > 0 && (
                     <div class="mt-1 text-lotg-offwhite/70 text-sm leading-relaxed">
                       {item.times.map(line => (
@@ -155,6 +165,32 @@ const cafeHours = openingTimes.find(t => t.label === 'Cafe');
             </span>
           </div>
         </button>
+      </div>
+    </div>
+
+    <!-- Kids Cinema -->
+    <div id="kids-cinema" class="scroll-mt-24 lg:scroll-mt-28 mt-16 max-w-3xl mx-auto">
+      <h3 class="font-bangers text-lotg-yellow text-3xl md:text-4xl tracking-wide text-center mb-6">
+        Kids Cinema
+      </h3>
+      {cinemaHours && (
+        <div class="text-center text-lotg-offwhite/70 text-sm leading-relaxed mb-8">
+          {cinemaHours.times.map(line => (
+            <div>{line}</div>
+          ))}
+        </div>
+      )}
+      <div class="grid sm:grid-cols-3 gap-6">
+        {kidsCinemaSchedule.map(day => (
+          <div class="bg-lotg-card rounded-2xl border border-lotg-green/20 p-5">
+            <p class="font-bangers text-lotg-green text-2xl tracking-wide text-center mb-4">{day.day}</p>
+            <ol class="space-y-2.5">
+              {day.films.map(film => (
+                <li class="text-lotg-offwhite text-sm leading-relaxed text-center">{film}</li>
+              ))}
+            </ol>
+          </div>
+        ))}
       </div>
     </div>
 
