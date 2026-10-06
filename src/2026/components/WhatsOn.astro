@@ -1,6 +1,6 @@
 ---
 import Carousel from './Carousel.astro';
-import { activityCategories, activityPhotos, cafeBarMenu, kidsCinemaSchedule, newsletterSignupUrl, openingTimes, sectionHeadings } from '../data/site';
+import { activityCategories, activityPhotos, cafeBarMenu, kidsCinemaSchedule, openingTimes, sectionHeadings } from '../data/site';
 import { asset } from '../utils';
 
 const barMenuSrc = asset(cafeBarMenu.barMenuImage);
@@ -102,14 +102,7 @@ const cinemaHours = openingTimes.find(t => t.label === 'Kids Cinema');
         {cafeBarMenu.intro}
         {' '}
         To keep yourself informed, please
-        <a
-          href={newsletterSignupUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="underline underline-offset-4 decoration-lotg-green/40 hover:text-lotg-green hover:decoration-lotg-green transition-colors"
-        >
-          sign up to our newsletter
-        </a>
+        sign up to our newsletter
         if you haven't already!
         {' '}
         {cafeBarMenu.snacksNote}

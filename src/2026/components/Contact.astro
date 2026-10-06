@@ -1,6 +1,6 @@
 ---
 import { asset } from '../utils';
-import { contactEmail, newsletterSignupUrl, sectionHeadings } from '../data/site';
+import { contactEmail, sectionHeadings } from '../data/site';
 import ContactButton from './ContactButton.astro';
 ---
 
@@ -23,12 +23,6 @@ import ContactButton from './ContactButton.astro';
             href={`mailto:${contactEmail}`}
             icon="✉️"
             label="Email Lost in the Grass"
-          />
-          <ContactButton
-            href={newsletterSignupUrl}
-            icon="📰"
-            label="Sign up to Newsletter"
-            external
           />
         </div>
       </div>

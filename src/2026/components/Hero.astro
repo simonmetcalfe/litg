@@ -1,6 +1,6 @@
 ---
 import { asset } from '../utils';
-import { newsletterSignupUrl } from '../data/site';
+import { archiveNotice, festivalHomepageUrl } from '../data/site';
 ---
 
 <section
@@ -35,36 +35,21 @@ import { newsletterSignupUrl } from '../data/site';
       Music · Camping · Family Fun Near Malvern
     </p>
 
-    <!-- CTA buttons -->
-    <div class="mt-8 flex flex-wrap gap-4 justify-center animate-fade-up-delay2">
+    <!-- Archive notice + CTA -->
+    <div class="mt-8 flex flex-col items-center gap-4 animate-fade-up-delay2">
+      <p class="text-lotg-offwhite/70 text-base tracking-widest uppercase max-w-xl">
+        {archiveNotice}
+      </p>
       <a
-        href="https://outtograss.com/product-category/lost-in-the-grass-2026"
-        target="_blank"
-        rel="noopener"
+        href={festivalHomepageUrl}
         class="bg-lotg-green text-lotg-dark px-8 py-3 rounded-full text-xl uppercase font-bold hover:bg-lotg-yellow hover:scale-105 transition-all duration-200 shadow-lg"
       >
-        Get Tickets
-      </a>
-      <a
-        href="#lineup"
-        class="border-2 border-lotg-green text-lotg-green px-8 py-3 rounded-full text-xl uppercase font-bold hover:bg-lotg-green hover:text-lotg-dark hover:scale-105 transition-all duration-200"
-      >
-        See Lineup
+        Go to festival homepage
       </a>
     </div>
 
     <!-- Venue -->
     <div class="mt-8 space-y-2 animate-fade-up-delay2">
-      <p class="text-lotg-offwhite/70 text-base tracking-widest uppercase">
-        <a
-          href={newsletterSignupUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-lotg-green transition-colors"
-        >
-          Sign up to Newsletter
-        </a>
-      </p>
       <p class="text-lotg-offwhite/70 text-base tracking-widest uppercase">
         A Micro-Festival · Hosted at Out to Grass Woodend Farm · Malvern
       </p>

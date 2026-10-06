@@ -1,6 +1,5 @@
 ---
-import { sectionHeadings } from '../data/site';
-const ticketUrl = 'https://outtograss.com/product-category/lost-in-the-grass-2026';
+import { archiveNotice, festivalHomepageUrl, sectionHeadings } from '../data/site';
 ---
 
 <section id="tickets" class="bg-lotg-dark py-20 px-4 md:px-8 lg:px-16">
@@ -47,12 +46,6 @@ const ticketUrl = 'https://outtograss.com/product-category/lost-in-the-grass-202
         <p class="font-bangers text-lotg-green text-5xl">£360</p>
         <p class="text-lotg-offwhite/50 text-sm">Per tent · 1–4 guests</p>
         <p class="text-lotg-offwhite/40 text-xs">No towels provided</p>
-        <a
-          href={ticketUrl}
-          target="_blank"
-          rel="noopener"
-          class="text-lotg-yellow text-xs uppercase hover:underline"
-        >Check availability on OTG website</a>
       </div>
 
       <!-- Glamping -->
@@ -75,14 +68,15 @@ const ticketUrl = 'https://outtograss.com/product-category/lost-in-the-grass-202
       <p class="text-lotg-offwhite/50 text-sm">Per dog</p>
     </div>
 
-    <!-- CTA -->
+    <!-- Archive notice + CTA -->
+    <p class="text-lotg-offwhite/70 text-base tracking-widest uppercase max-w-xl mx-auto mb-6">
+      {archiveNotice}
+    </p>
     <a
-      href={ticketUrl}
-      target="_blank"
-      rel="noopener"
+      href={festivalHomepageUrl}
       class="inline-flex items-center gap-3 bg-lotg-green text-lotg-dark text-2xl px-10 py-4 rounded-full font-bold uppercase hover:bg-lotg-yellow hover:scale-105 transition-all duration-200 shadow-[0_0_30px_rgba(98,212,32,0.4)]"
     >
-      Buy Tickets Now
+      Go to festival homepage
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
       </svg>

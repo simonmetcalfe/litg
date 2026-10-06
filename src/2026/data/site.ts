@@ -409,7 +409,6 @@ export const activityCategories: ActivityCategory[] = [
           "Sun 12.15pm–4pm, 5pm–8pm",
         ],
         links: [{ href: "https://www.instagram.com/annabelle_bolton_massage", label: "@annabelle_bolton_massage" }],
-        cta: { href: "https://calendly.com/annabelle-bolton/20", label: "Book your massage now" },
       },
     ],
   },
@@ -549,7 +548,6 @@ export const goodToKnowGroups: GoodToKnowGroup[] = [
       {
         emoji: '💆',
         text: 'Massage — £20 for 20 minutes, £40 for 40 minutes (card or cash).',
-        cta: { href: 'https://calendly.com/annabelle-bolton/20', label: 'Book your massage now' },
       },
     ],
   },
@@ -611,11 +609,14 @@ export const openingTimes: OpeningTime[] = [
   { label: "Campfire & Hot Tub", times: ["Fri–Sun"] },
 ];
 
-// ── Contact & newsletter ─────────────────────────────────
+// ── Contact ──────────────────────────────────────────────
 export const contactEmail = 'hello@lostinthegrass.org.uk';
 
-export const newsletterSignupUrl =
-  'https://1opxr.mjt.lu/wgt/1opxr/07us/form?c=1f5a6de2';
+// ── Archive ──────────────────────────────────────────────
+export const festivalHomepageUrl = '/';
+
+export const archiveNotice =
+  "You're viewing an archive of the 2026 festival. Head to the festival homepage for the latest updates.";
 
 // ── Directions ────────────────────────────────────────────
 export const directions = [
