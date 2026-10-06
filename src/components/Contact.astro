@@ -1,6 +1,6 @@
 ---
 import { asset } from '../utils';
-import { contactEmail, newsletterSignupUrl, sectionHeadings } from '../data/site';
+import { contactEmail, instagramHandle, instagramUrl, newsletterSignupUrl, sectionHeadings } from '../data/site';
 import ContactButton from './ContactButton.astro';
 ---
 
@@ -39,10 +39,10 @@ import ContactButton from './ContactButton.astro';
           If you're interested in performing or getting involved.
         </p>
         <ContactButton
-          href="https://instagram.com/l0st_in_the_grass"
+          href={instagramUrl}
           iconSrc={asset('icons_social/Instagram-Logo.wine.png')}
           iconAlt="Instagram"
-          label="@l0st_in_the_grass"
+          label={instagramHandle}
           external
           class="mt-auto"
         />
@@ -73,7 +73,7 @@ import ContactButton from './ContactButton.astro';
     <!-- Footer -->
     <div class="border-t border-lotg-green/10 pt-8 space-y-2">
       <img
-        src={asset('logo/website_logo.png')}
+        src={asset('logo/website_logo_nodate.png')}
         alt="Lost in the Grass"
         class="h-12 mx-auto opacity-80"
         loading="lazy"

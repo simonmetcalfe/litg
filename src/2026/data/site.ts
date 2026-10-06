@@ -616,7 +616,7 @@ export const contactEmail = 'hello@lostinthegrass.org.uk';
 export const festivalHomepageUrl = '/';
 
 export const archiveNotice =
-  "You're viewing an archive of the 2026 festival. Head to the festival homepage for the latest updates.";
+  "You're viewing an archive of our 2026 event. Head to the festival homepage for the latest updates.";
 
 // ── Directions ────────────────────────────────────────────
 export const directions = [

@@ -1,6 +1,5 @@
 ---
-import { sectionHeadings } from '../data/site';
-const ticketUrl = 'https://outtograss.com/product-category/lost-in-the-grass-2026';
+import { sectionHeadings, ticketTiers, ticketUrl } from '../data/site';
 ---
 
 <section id="tickets" class="bg-lotg-dark py-20 px-4 md:px-8 lg:px-16">
@@ -11,27 +10,41 @@ const ticketUrl = 'https://outtograss.com/product-category/lost-in-the-grass-202
       {sectionHeadings['tickets']}
     </h2>
 
-    <!-- Ticket cards -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-4">
+    <!-- Weekend ticket price tiers -->
+    <div class="grid md:grid-cols-3 gap-4 mb-4">
+      {ticketTiers.map(tier => (
+        <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/40 flex flex-col items-center gap-4 hover:border-lotg-green hover:shadow-[0_0_20px_rgba(98,212,32,0.2)] transition-all">
+          <div>
+            <h3 class="font-bangers text-lotg-offwhite text-3xl tracking-wide">{tier.name}</h3>
+            <p class="text-lotg-yellow text-sm uppercase tracking-wide">{tier.dates}</p>
+          </div>
+          <div class="w-full grid grid-cols-2 gap-4">
+            {[
+              { emoji: '🎟️', label: 'Adult weekend', ticket: tier.adult },
+              { emoji: '🦕', label: 'Child weekend', ticket: tier.child },
+            ].map(({ emoji, label, ticket }) => (
+              <div class="flex flex-col items-center gap-1">
+                <span class="text-2xl">{emoji}</span>
+                <p class="text-lotg-offwhite/70 text-sm">{label}</p>
+                <p class="font-bangers text-lotg-green text-5xl">{ticket.price}</p>
+                {ticket.saving && (
+                  <p class="text-lotg-yellow text-xs uppercase">{ticket.saving}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
 
-      <!-- Adults -->
-      <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/40 flex flex-col items-center gap-2 hover:border-lotg-green hover:shadow-[0_0_20px_rgba(98,212,32,0.2)] transition-all">
-        <span class="text-3xl">🎟️</span>
-        <h3 class="font-bangers text-lotg-offwhite text-2xl tracking-wide">Adults</h3>
-        <p class="font-bangers text-lotg-green text-5xl">£110</p>
-        <p class="text-lotg-offwhite/50 text-sm">18+</p>
-      </div>
+    <p class="text-lotg-offwhite/50 text-sm mb-8">
+      Adults 18+ · Children ages 5–17 · <span class="text-lotg-yellow uppercase">Under 5s FREE</span>
+    </p>
 
-      <!-- Kids -->
-      <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/40 flex flex-col items-center gap-2 hover:border-lotg-green hover:shadow-[0_0_20px_rgba(98,212,32,0.2)] transition-all">
-        <span class="text-3xl">🦕</span>
-        <h3 class="font-bangers text-lotg-offwhite text-2xl tracking-wide">Kids</h3>
-        <p class="font-bangers text-lotg-green text-5xl">£35</p>
-        <p class="text-lotg-offwhite/50 text-sm">Ages 5–17</p>
-        <p class="text-lotg-yellow text-xs uppercase">Under 5s FREE</p>
-      </div>
+    <!-- Camping & accommodation -->
+    <div class="grid sm:grid-cols-2 gap-4 mb-4">
 
-      <!-- Camping -->
+      <!-- Campervans -->
       <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/30 flex flex-col items-center gap-2">
         <span class="text-3xl">🚐</span>
         <h3 class="font-bangers text-lotg-offwhite text-2xl tracking-wide">Campervans</h3>
@@ -53,16 +66,6 @@ const ticketUrl = 'https://outtograss.com/product-category/lost-in-the-grass-202
           rel="noopener"
           class="text-lotg-yellow text-xs uppercase hover:underline"
         >Check availability on OTG website</a>
-      </div>
-
-      <!-- Glamping -->
-      <div class="relative bg-lotg-card rounded-2xl p-6 pt-8 border border-lotg-green/20 flex flex-col items-center gap-2 opacity-75">
-        <span class="absolute top-0 inset-x-0 bg-lotg-yellow text-lotg-dark text-xs font-bold uppercase tracking-wider py-1 rounded-t-2xl">Sold out</span>
-        <span class="text-3xl">🏕️</span>
-        <h3 class="font-bangers text-lotg-offwhite text-2xl tracking-wide">Glamping</h3>
-        <p class="font-bangers text-lotg-green text-4xl">£420–550</p>
-        <p class="text-lotg-offwhite/50 text-sm">Per tent · 1–4 guests</p>
-        <p class="text-lotg-offwhite/40 text-xs">No towels provided</p>
       </div>
 
     </div>

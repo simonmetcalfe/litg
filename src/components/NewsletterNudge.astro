@@ -1,0 +1,20 @@
+---
+import { newsletterSignupUrl } from '../data/site';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<p class={`text-lotg-offwhite/50 text-sm leading-relaxed ${className}`}>
+  Make sure you've
+  <a
+    href={newsletterSignupUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="underline underline-offset-4 decoration-lotg-offwhite/30 hover:text-lotg-green hover:decoration-lotg-green transition-colors"
+  >joined our newsletter</a>
+  to stay informed.
+</p>

@@ -1,11 +1,7 @@
 ---
 import Carousel from './Carousel.astro';
-import { activityCategories, activityPhotos, cafeBarMenu, kidsCinemaSchedule, newsletterSignupUrl, openingTimes, sectionHeadings } from '../data/site';
-import { asset } from '../utils';
-
-const barMenuSrc = asset(cafeBarMenu.barMenuImage);
-const cafeHours = openingTimes.find(t => t.label === 'Cafe');
-const cinemaHours = openingTimes.find(t => t.label === 'Kids Cinema');
+import NewsletterNudge from './NewsletterNudge.astro';
+import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, sectionHeadings } from '../data/site';
 ---
 
 <section id="activities-and-food" class="bg-lotg-dark py-20 px-4 md:px-8 lg:px-16">
@@ -39,6 +35,9 @@ const cinemaHours = openingTimes.find(t => t.label === 'Kids Cinema');
               {cat.title}
             </h3>
           </div>
+          {cat.intro && (
+            <p class="px-6 pb-4 text-lotg-offwhite/80 text-sm leading-relaxed">{cat.intro}</p>
+          )}
           <ul class="px-6 pb-6 space-y-3">
             {cat.items.map(item => (
               <li class="flex items-start gap-2 text-lotg-offwhite">
@@ -89,6 +88,7 @@ const cinemaHours = openingTimes.find(t => t.label === 'Kids Cinema');
               </li>
             ))}
           </ul>
+          {cat.newsletterNudge && <NewsletterNudge class="px-6 pb-6 -mt-2" />}
         </div>
       ))}
     </div>
@@ -116,55 +116,14 @@ const cinemaHours = openingTimes.find(t => t.label === 'Kids Cinema');
       </p>
 
       <div class="grid sm:grid-cols-2 gap-6">
-        <div class="bg-lotg-card rounded-2xl border border-lotg-green/20 overflow-hidden flex flex-col">
-          <div class="p-5 flex-1">
-            <p class="font-bangers text-lotg-green text-2xl tracking-wide text-center mb-2">Cafe Menu</p>
-            {cafeHours && (
-              <div class="text-center text-lotg-offwhite/70 text-sm leading-relaxed mb-4">
-                {cafeHours.times.map(line => (
-                  <div>{line}</div>
-                ))}
-              </div>
-            )}
-            <div class="space-y-5">
-              {cafeBarMenu.cafeMenu.map(section => (
-                <div>
-                  <h4 class="font-bangers text-lotg-yellow text-lg tracking-wide mb-2">{section.title}</h4>
-                  <ul class="space-y-1.5">
-                    {section.items.map(item => (
-                      <li class="flex items-start gap-2 text-lotg-offwhite text-sm leading-relaxed">
-                        <span class="shrink-0" aria-hidden="true">{item.emoji}</span>
-                        <span>{item.text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div class="bg-lotg-card rounded-2xl border border-lotg-green/20 p-5 text-center">
+          <p class="font-bangers text-lotg-green text-2xl tracking-wide mb-2">Cafe Menu</p>
+          <p class="text-lotg-offwhite/70 text-sm">To be confirmed</p>
         </div>
-
-        <button
-          type="button"
-          data-menu-open
-          class="group bg-lotg-card rounded-2xl border border-lotg-green/20 overflow-hidden text-left cursor-pointer hover:border-lotg-green/50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-lotg-green"
-          aria-label="Open Mal's Bar menu"
-        >
-          <p class="px-4 py-3 font-bangers text-lotg-green text-xl tracking-wide text-center">
-            Mal's Bar Menu
-          </p>
-          <div class="aspect-[3/4] overflow-hidden relative">
-            <img
-              src={barMenuSrc}
-              alt="Mal's Bar menu thumbnail"
-              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
-            <span class="absolute inset-0 bg-lotg-dark/0 group-hover:bg-lotg-dark/20 transition-colors flex items-center justify-center">
-              <span class="material-icons text-lotg-offwhite opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" style="font-size:48px">zoom_in</span>
-            </span>
-          </div>
-        </button>
+        <div class="bg-lotg-card rounded-2xl border border-lotg-green/20 p-5 text-center">
+          <p class="font-bangers text-lotg-green text-2xl tracking-wide mb-2">Mal's Bar Menu</p>
+          <p class="text-lotg-offwhite/70 text-sm">To be confirmed</p>
+        </div>
       </div>
     </div>
 
@@ -173,47 +132,9 @@ const cinemaHours = openingTimes.find(t => t.label === 'Kids Cinema');
       <h3 class="font-bangers text-lotg-yellow text-3xl md:text-4xl tracking-wide text-center mb-6">
         Kids Cinema
       </h3>
-      {cinemaHours && (
-        <div class="text-center text-lotg-offwhite/70 text-sm leading-relaxed mb-8">
-          {cinemaHours.times.map(line => (
-            <div>{line}</div>
-          ))}
-        </div>
-      )}
-      <div class="grid sm:grid-cols-3 gap-6">
-        {kidsCinemaSchedule.map(day => (
-          <div class="bg-lotg-card rounded-2xl border border-lotg-green/20 p-5">
-            <p class="font-bangers text-lotg-green text-2xl tracking-wide text-center mb-4">{day.day}</p>
-            <ol class="space-y-2.5">
-              {day.films.map(film => (
-                <li class="text-lotg-offwhite text-sm leading-relaxed text-center">{film}</li>
-              ))}
-            </ol>
-          </div>
-        ))}
-      </div>
+      <p class="text-center text-lotg-offwhite/70 text-sm">To be confirmed</p>
+      <NewsletterNudge class="mt-2 text-center" />
     </div>
-
-    <dialog
-      id="bar-menu-dialog"
-      class="menu-dialog bg-transparent border-0 p-0 m-auto max-w-[min(95vw,42rem)] w-full max-h-[95dvh] overflow-y-auto overscroll-y-contain backdrop:bg-lotg-dark/90"
-    >
-      <div class="relative">
-        <button
-          type="button"
-          data-menu-close
-          class="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-lotg-dark/80 text-lotg-offwhite flex items-center justify-center hover:bg-lotg-green hover:text-lotg-dark transition-colors"
-          aria-label="Close menu"
-        >
-          <span class="material-icons" style="font-size:24px">close</span>
-        </button>
-        <img
-          src={barMenuSrc}
-          alt="Mal's Bar @ Lost in the Grass — full drinks menu"
-          class="w-full h-auto rounded-2xl shadow-2xl border border-lotg-green/20"
-        />
-      </div>
-    </dialog>
 
     <p class="mt-8 text-center text-lotg-offwhite/50 text-sm leading-relaxed max-w-2xl mx-auto">
       We endevour to provide everything listed here, but as a small festival, some events, activities, or catering may change. We'll do our best to keep you informed by updating the website and informing ticket holders via email.
@@ -222,54 +143,3 @@ const cinemaHours = openingTimes.find(t => t.label === 'Kids Cinema');
   </div>
 </section>
 
-<script>
-  const dialog = document.getElementById('bar-menu-dialog') as HTMLDialogElement;
-  const openBtn = document.querySelector<HTMLButtonElement>('[data-menu-open]');
-  const closeBtn = dialog?.querySelector<HTMLButtonElement>('[data-menu-close]');
-
-  let scrollY = 0;
-
-  const lockScroll = () => {
-    scrollY = window.scrollY;
-    document.documentElement.classList.add('menu-dialog-open');
-    document.body.classList.add('menu-dialog-open');
-    document.body.style.top = `-${scrollY}px`;
-  };
-
-  const unlockScroll = () => {
-    document.documentElement.classList.remove('menu-dialog-open');
-    document.body.classList.remove('menu-dialog-open');
-    document.body.style.top = '';
-    window.scrollTo(0, scrollY);
-  };
-
-  openBtn?.addEventListener('click', () => {
-    lockScroll();
-    dialog?.showModal();
-  });
-
-  const closeDialog = () => {
-    dialog?.close();
-    unlockScroll();
-  };
-
-  closeBtn?.addEventListener('click', closeDialog);
-
-  dialog?.addEventListener('click', (e) => {
-    if (e.target === dialog) closeDialog();
-  });
-
-  dialog?.addEventListener('cancel', closeDialog);
-
-  // Stop wheel events over the backdrop from reaching the page behind.
-  dialog?.addEventListener('wheel', (e) => {
-    const target = e.currentTarget as HTMLDialogElement;
-    const { scrollTop, scrollHeight, clientHeight } = target;
-    const atTop = scrollTop <= 0;
-    const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
-
-    if ((e.deltaY < 0 && atTop) || (e.deltaY > 0 && atBottom)) {
-      e.preventDefault();
-    }
-  }, { passive: false });
-</script>

@@ -1,6 +1,6 @@
 ---
 import { asset } from '../utils';
-import { navLinks } from '../data/site';
+import { navLinks, ticketUrl } from '../data/site';
 ---
 
 <nav
@@ -37,7 +37,7 @@ import { navLinks } from '../data/site';
     <!-- Tickets CTA (desktop) / hamburger (mobile) -->
     <div class="ml-auto lg:ml-0 flex items-center">
       <a
-        href="https://outtograss.com/product-category/lost-in-the-grass-2026"
+        href={ticketUrl}
         target="_blank"
         rel="noopener"
         class="hidden lg:inline-flex items-center bg-lotg-green text-lotg-dark px-4 py-1.5 xl:px-5 xl:py-2 2xl:px-6 2xl:py-3 rounded-full text-sm xl:text-base 2xl:text-lg uppercase font-bold hover:bg-lotg-yellow transition-colors whitespace-nowrap"
@@ -76,7 +76,7 @@ import { navLinks } from '../data/site';
       ))}
       <li class="pt-3 pb-1">
         <a
-          href="https://outtograss.com/product-category/lost-in-the-grass-2026"
+          href={ticketUrl}
           target="_blank"
           rel="noopener"
           class="block text-center bg-lotg-green text-lotg-dark py-2.5 rounded-full uppercase font-bold hover:bg-lotg-yellow transition-colors"

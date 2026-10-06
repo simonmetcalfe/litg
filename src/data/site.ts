@@ -18,222 +18,49 @@ export const navLinks: NavLink[] = [
   { href: '#good-to-know', heading: 'Good to Know', label: 'Good to Know' },
   { href: '#map-and-getting-there', heading: 'Map & Getting There', label: 'Directions' },
   { href: '#contact', heading: 'Contact', label: 'Contact' },
+  { href: '/2026', heading: '2026 Event', label: '2026 Event' },
 ];
 
 /** Keyed by section id (without #) for easy lookup in section components. */
 export const sectionHeadings = Object.fromEntries(
-  navLinks.map(l => [l.href.slice(1), l.heading])
+  navLinks.filter(l => l.href.startsWith('#')).map(l => [l.href.slice(1), l.heading])
 ) as Record<string, string>;
 
-// ── Types ────────────────────────────────────────────────
-export interface Act {
+// ── Tickets ──────────────────────────────────────────────
+export const ticketUrl =
+  'https://www.outtograss.com/product-category/lost-in-the-grass-2027/';
+
+export interface TicketPrice {
+  price: string;
+  saving?: string;
+}
+
+export interface TicketTier {
   name: string;
-  about: string;
-  style: string;
-  spotify?: string;
-  bandcamp?: string;
-  photo?: string;
+  dates: string;
+  adult: TicketPrice;
+  child: TicketPrice;
 }
 
-export interface DJ {
-  name: string;
-  location: string;
-  style?: string;
-  listen?: string;
-}
-
-// ── Schedule ─────────────────────────────────────────────
-// Timings from assets/schedule/schedule_bands.csv (15-min grid, collapsed).
-// Operational rows omitted: CLOSED, CURFEW, OPEN DECKS, Playlist / DJ / Soundcheck.
-// size: sm = base, md = slightly bigger, lg = bigger again (poster billing hierarchy)
-export type BillingSize = "sm" | "md" | "lg";
-
-export interface ScheduleSlot {
-  /** 24h "HH:MM" */
-  start: string;
-  /** 24h "HH:MM" — exclusive end of the collapsed run */
-  end: string;
-  name: string;
-  size?: BillingSize;
-  kind: "live" | "dj" | "other";
-}
-
-export interface ScheduleDay {
-  day: string;
-  /** CSV day subtitle, e.g. Warm Up / Main Event / Chillout */
-  tagline?: string;
-  slots: ScheduleSlot[];
-}
-
-export const scheduleByDay: ScheduleDay[] = [
+export const ticketTiers: TicketTier[] = [
   {
-    day: "Friday 21st August",
-    tagline: "Warm Up",
-    slots: [
-      { start: "17:00", end: "18:00", name: "KIDS DISCO", size: "sm", kind: "other" },
-      { start: "18:00", end: "19:00", name: "GREG", size: "sm", kind: "dj" },
-      { start: "19:00", end: "20:00", name: "MINT", size: "sm", kind: "dj" },
-      { start: "20:00", end: "21:00", name: "GRILLO", size: "sm", kind: "dj" },
-      { start: "21:00", end: "22:00", name: "LANX", size: "md", kind: "dj" },
-      { start: "22:00", end: "23:00", name: "DOMMO", size: "md", kind: "dj" },
-      { start: "23:00", end: "00:00", name: "THE MILKMAN", size: "md", kind: "dj" },
-    ],
+    name: 'Super Early Bird',
+    dates: 'Until 31 Oct 2026',
+    adult: { price: '£90', saving: '£30 off' },
+    child: { price: '£15', saving: '£20 off' },
   },
   {
-    day: "Saturday 22nd August",
-    tagline: "Main Event",
-    slots: [
-      { start: "12:00", end: "12:45", name: "MAII", size: "sm", kind: "live" },
-      { start: "13:00", end: "14:00", name: "MOONBIRD", size: "sm", kind: "live" },
-      { start: "14:15", end: "15:15", name: "LIV SANGSTER", size: "md", kind: "live" },
-      { start: "15:30", end: "16:30", name: "KIMOSABE", size: "sm", kind: "live" },
-      { start: "16:45", end: "17:45", name: "FUKUSHIMA DOLPHIN", size: "md", kind: "live" },
-      { start: "18:00", end: "19:00", name: "NEBULA SUN", size: "lg", kind: "live" },
-      { start: "19:15", end: "20:15", name: "JAMMA GOLD", size: "sm", kind: "dj" },
-      { start: "20:30", end: "21:30", name: "THE GULLS", size: "lg", kind: "live" },
-      { start: "21:45", end: "22:45", name: "AD:VERSE", size: "sm", kind: "dj" },
-      { start: "23:00", end: "00:00", name: "ROGAN JOSH", size: "sm", kind: "dj" },
-    ],
+    name: 'Early Bird',
+    dates: '1 Nov – 30 Nov 2026',
+    adult: { price: '£100', saving: '£20 off' },
+    child: { price: '£20', saving: '£15 off' },
   },
   {
-    day: "Sunday 23rd August",
-    tagline: "Chillout",
-    slots: [
-      { start: "12:00", end: "12:45", name: "HOWDO BEAN & THE DINOS", size: "md", kind: "live" },
-      { start: "13:00", end: "14:00", name: "MR TUMNUS", size: "md", kind: "live" },
-      { start: "14:00", end: "15:00", name: "STEVE PERRETT", size: "sm", kind: "dj" },
-      { start: "15:00", end: "16:00", name: "RIDDIM 'N RUM", size: "sm", kind: "dj" },
-      { start: "16:00", end: "17:00", name: "VIK", size: "sm", kind: "dj" },
-      { start: "17:30", end: "18:30", name: "DARK HABIT", size: "md", kind: "live" },
-      { start: "19:00", end: "20:00", name: "FREESPIRITS", size: "md", kind: "live" },
-      { start: "20:00", end: "21:00", name: "BOSON", size: "sm", kind: "dj" },
-      { start: "21:00", end: "22:30", name: "PARTY MACHINE", size: "sm", kind: "dj" },
-      { start: "22:30", end: "00:00", name: "VIRGIN VINYLS", size: "lg", kind: "dj" },
-    ],
+    name: 'Full Price',
+    dates: 'From 1 Dec 2026',
+    adult: { price: '£120' },
+    child: { price: '£35' },
   },
-];
-
-/** "18:00" → "6pm", "12:45" → "12.45pm", "00:00" → "12am" */
-export function formatScheduleTime(hhmm: string): string {
-  const [hRaw, mRaw] = hhmm.split(":");
-  const h = Number(hRaw);
-  const suffix = h % 24 >= 12 ? "pm" : "am";
-  const h12 = h % 12 || 12;
-  return Number(mRaw) === 0 ? `${h12}${suffix}` : `${h12}.${mRaw}${suffix}`;
-}
-
-export function formatScheduleRange(start: string, end: string): string {
-  return `${formatScheduleTime(start)}–${formatScheduleTime(end)}`;
-}
-
-export const mainActs: Act[] = [
-  {
-    name: "The Gulls",
-    about:
-      "Nomadic UK power quartet formed in Camden but based in Brighton, known for high-energy rock and DIY outdoor gigs on the road.",
-    style: "Rock / Funk / Psychedelia",
-    spotify: "https://open.spotify.com/artist/2n0FlGHc3OxI0x2WI39BEc",
-    photo: "photos_bands/band_the_gulls.jpeg",
-  },
-  {
-    name: "Fukushima Dolphin",
-    about:
-      "Brighton duo blending swirling guitars with driving rhythms and psychedelic production.",
-    style: "Indie / Rock / Electronic",
-    spotify: "https://open.spotify.com/artist/6AdQ6qTDQo6wPcBYJ6zQfj",
-    photo: "photos_bands/band_fukushima_dolphin.jpeg",
-  },
-  {
-    name: "Kimosabe",
-    about:
-      "Female-fronted band rooted in UK sound-system culture — regulars on the local festival circuit.",
-    style: "Dub / Funk / Ska / Punk",
-    photo: "photos_bands/band_kimosabe.jpeg",
-  },
-  {
-    name: "Nebula Sun",
-    about:
-      "Norwich quintet with a distinctive double-tenor sax section and the DIY-recorded debut album Breathe Into Form.",
-    style: "Progressive Rock / Jazz / Soul",
-    spotify: "https://open.spotify.com/artist/3Swhpora4IpX5frCYZ9zaC",
-    photo: "photos_bands/band_nebula_sun.jpeg",
-  },
-  {
-    name: "Liv Sangster",
-    about:
-      "Brighton multi-instrumentalist releasing freestyle-driven material across voice, beatbox, and layered textures.",
-    style: "Dream-pop / Hip-hop / Beatbox",
-    spotify: "https://open.spotify.com/artist/4FCuIRaeCVFJEwfR9e9INY",
-    photo: "photos_bands/band_liv_sangster.jpeg",
-  },
-  {
-    name: "MAII & The Shenanigans",
-    about:
-      "Biarritz-born Brighton act blending dreamy trip-hop with rock energy and jazz-tinged, poetic songwriting.",
-    style: "Trip-hop / Rock / Jazz",
-    spotify: "https://open.spotify.com/artist/1HDDMpc2ncTw3eosYutXvs",
-    photo: "photos_bands/band_maii_and_the_shenanigans.jpeg",
-  },
-  {
-    name: "Moonbird",
-    about:
-      "Bristol duo building summery psychedelic electronica live with loops and synths. BBC Introducing showcase act.",
-    style: "Psychedelic Electronica / Indie Electronic",
-    spotify: "https://open.spotify.com/artist/5Xha2kjFXFMfvvaDwZmIuG",
-    photo: "photos_bands/band_moonbird.jpeg",
-  },
-  {
-    name: "Dark Habit",
-    about:
-      "Brighton-based duo playing keys, acoustic guitar, and singing upbeat sad songs.",
-    style: "Acoustic / Indie Folk",
-    photo: "photos_bands/band_dark_habit.jpeg",
-  },
-  {
-    name: "Howdo Bean & The Dinos",
-    about:
-      "Scottish children's entertainment act with catchy dinosaur songs, dancing games, and costumed dinos joining the fun.",
-    style: "Children's Music / Acoustic / Family",
-    bandcamp: "https://howdobean.bandcamp.com",
-    photo: "photos_bands/band_howdo_bean_and_the_dinos.jpeg",
-  },
-  {
-    name: "Mr Tumnus",
-    about:
-      "St Albans solo project of Alex Thomas — atmospheric folk, prog, and post-rock honed over two decades.",
-    style: "Folk / Prog / Post-rock / Ambient",
-    bandcamp: "https://mrtumnus23.bandcamp.com",
-    photo: "photos_bands/band_mr_tumnus.jpeg",
-  },
-  {
-    name: "Freespirits",
-    about:
-      "London alternative band formed in 2013 by brothers GianCarlo and Lucas Mariani — heavy guitars, strong melodies, and stadium-sized choruses in the vein of Nirvana and Foo Fighters.",
-    style: "Alternative / Rock / Grunge",
-    spotify: "https://open.spotify.com/artist/0nPrFoUuwcB27aaf1qEOak",
-    photo: "photos_bands/band_freespirits.jpeg",
-  },
-];
-
-export const djs: DJ[] = [
-  {
-    name: "Virgin Vinyls",
-    location: "Brighton",
-    style: "Funk / Disco / Rare Grooves",
-    listen: "https://totallywiredradio.com/the-virgin-vinyls/",
-  },
-  { name: "Lanx", location: "Somerset", style: "Mod / Funk / Soul / Jazz" },
-  { name: "Jamma Gold", location: "Somerset" },
-  { name: "Dommo", location: "Bristol" },
-  { name: "Steve Perrett", location: "Wiltshire" },
-  { name: "AD:Verse", location: "Malvern" },
-  { name: "Boson", location: "Coventry" },
-  { name: "Riddim 'n Rum", location: "Brighton" },
-  { name: "Milkman", location: "Surrey" },
-  { name: "Grillo", location: "Brighton" },
-  { name: "Rogan Josh", location: "London" },
-  { name: "Mint", location: "Somerset" },
-  { name: "Strike Daddy", location: "Brighton" },
 ];
 
 // ── Venue photo carousel sections ────────────────────────
@@ -342,6 +169,10 @@ export interface ActivityCategory {
   emoji: string;
   title: string;
   accent: "green" | "yellow";
+  /** Optional text shown above the items */
+  intro?: string;
+  /** Show a newsletter sign-up nudge under the items (for placeholder content) */
+  newsletterNudge?: boolean;
   items: ActivityItem[];
 }
 
@@ -381,36 +212,14 @@ export const activityCategories: ActivityCategory[] = [
     emoji: "🧘",
     title: "Health & Wellbeing",
     accent: "yellow",
+    intro:
+      "We're still putting together the 2027 wellbeing programme. Last year we had the following, and we hope to bring back many of the same activities — and more:",
+    newsletterNudge: true,
     items: [
-      {
-        text: "Yoga (Jenny) (free — please bring your own mat)",
-        times: ["Sat 9am–10am", "Sun 9am–10am"],
-        links: [{ href: "https://www.instagram.com/jennielive", label: "@jennielive" }],
-      },
-      {
-        text: "Meditation & sound bath (Jenny + Margarita) (free)",
-        times: ["Sat 10.30am–11.30am"],
-        links: [
-          { href: "https://www.instagram.com/jennielive", label: "@jennielive" },
-          { href: "https://www.margaritabennett.co.uk", label: "Website" },
-        ],
-      },
-      {
-        text: "Movement, stretch and Myofascia Release (Margarita) (free)",
-        times: ["Sat 4pm–5pm",
-          "Sun 11am–12pm",
-        ],
-        links: [{ href: "https://www.margaritabennett.co.uk", label: "Website" }],
-      },
-      {
-        text: "Massage (Annabelle, on request) — £20 for 20 minutes, £40 for 40 minutes (card or cash).",
-        times: [
-          "Sat 12pm–3.45pm, 5.15pm–8pm",
-          "Sun 12.15pm–4pm, 5pm–8pm",
-        ],
-        links: [{ href: "https://www.instagram.com/annabelle_bolton_massage", label: "@annabelle_bolton_massage" }],
-        cta: { href: "https://calendly.com/annabelle-bolton/20", label: "Book your massage now" },
-      },
+      { text: "Yoga" },
+      { text: "Meditation & sound bath" },
+      { text: "Movement, stretch and Myofascia Release" },
+      { text: "Massage" },
     ],
   },
   {
@@ -426,74 +235,10 @@ export const activityCategories: ActivityCategory[] = [
   },
 ];
 
-export interface CafeMenuSection {
-  title: string;
-  items: { emoji: string; text: string }[];
-}
-
 export const cafeBarMenu = {
   intro: "Fuel up at the on-site cafe and bar.",
   snacksNote: "Please bring a few snacks for out-of-hours eating.",
-  cafeMenu: [
-    {
-      title: "Breakfast",
-      items: [
-        { emoji: "☕", text: "Tea & coffee" },
-        { emoji: "🥓", text: "Bacon baps" },
-        { emoji: "🌭", text: "Sausages…" },
-      ],
-    },
-    {
-      title: "Lunch / Dinner",
-      items: [
-        { emoji: "🌶️", text: "Chilli con carne" },
-        { emoji: "🍔", text: "Burgers" },
-        { emoji: "🍢", text: "Chicken kebabs" },
-      ],
-    },
-    {
-      title: "Vegetarian & vegan",
-      items: [
-        { emoji: "🧀", text: "Halloumi kebabs" },
-        { emoji: "🌱", text: "Vegan sausages" },
-        { emoji: "🍓", text: "Fresh strawberry & honey kefir" },
-      ],
-    },
-  ] satisfies CafeMenuSection[],
-  barMenuImage: "poster/bar_menu.jpeg",
 };
-
-export interface KidsCinemaDay {
-  day: string;
-  films: string[];
-}
-
-export const kidsCinemaSchedule: KidsCinemaDay[] = [
-  {
-    day: "Friday",
-    films: [
-      "Despicable Me 4",
-      "Tom and Jerry: Forbidden Compass",
-      "The Sheep Detectives",
-    ],
-  },
-  {
-    day: "Saturday",
-    films: [
-      "Toy Story",
-      "Shrek",
-      "Chicken Run: Dawn of the Nugget",
-    ],
-  },
-  {
-    day: "Sunday",
-    films: [
-      "Finding Nemo",
-      "Tom and Jerry: Cowboy Up!",
-      "The Garfield Movie",
-    ],
-  },
-];
 
 // ── Good to Know ──────────────────────────────────────────
 export interface GoodToKnowItem {
@@ -513,12 +258,10 @@ export interface GoodToKnowGroup {
 export const goodToKnowGroups: GoodToKnowGroup[] = [
   {
     title: 'Fire Safety',
-    intro: 'Due to the current weather conditions, we ask for the following:',
     items: [
-      { emoji: '🚫', text: 'No BBQs' },
-      { emoji: '🚫', text: 'No camp fires' },
-      { emoji: '✅', text: 'Camping stoves are allowed' },
-      { emoji: '🔥', text: 'There will be a fire dancing or LED show, depending on weather conditions.' },
+      { emoji: '🍖', text: 'BBQs are allowed (subject to weather conditions)' },
+      { emoji: '🔥', text: 'Camp fires are allowed (subject to weather conditions)' },
+      { emoji: '🍳', text: 'Camping stoves are allowed' },
     ],
   },
   {
@@ -546,11 +289,7 @@ export const goodToKnowGroups: GoodToKnowGroup[] = [
     items: [
       { emoji: '🧖', text: 'The wood-fired hot tub if free.  Children must be accompanied by an adult at all times.' },
       { emoji: '🧘', text: 'Yoga sessions are free (please bring your own mat if you\'d like to join in).' },
-      {
-        emoji: '💆',
-        text: 'Massage — £20 for 20 minutes, £40 for 40 minutes (card or cash).',
-        cta: { href: 'https://calendly.com/annabelle-bolton/20', label: 'Book your massage now' },
-      },
+      { emoji: '💆', text: 'Massage — £20 for 20 minutes, £40 for 40 minutes (card or cash).' },
     ],
   },
   {
@@ -613,6 +352,9 @@ export const openingTimes: OpeningTime[] = [
 
 // ── Contact & newsletter ─────────────────────────────────
 export const contactEmail = 'hello@lostinthegrass.org.uk';
+
+export const instagramHandle = '@l0st_in_the_grass';
+export const instagramUrl = 'https://instagram.com/l0st_in_the_grass';
 
 export const newsletterSignupUrl =
   'https://1opxr.mjt.lu/wgt/1opxr/07us/form?c=1f5a6de2';
