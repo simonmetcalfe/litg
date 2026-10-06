@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/MaterialIcons/MaterialIcons-Regular.woff2") format("woff2");
+  font-display: block;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+  vertical-align: middle;
+  user-select: none;
+}
+
+@font-face {
+  font-family: "Bangers";
+  src: url("/fonts/Bangers_main_body/Bangers-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Frijole";
+  src: url("/fonts/Frijole_logo/Frijole-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* Brand colours */
+  --color-lotg-green:    #62D420;
+  --color-lotg-yellow:   #EDE840;
+  --color-lotg-offwhite: #F2F0EC;
+  --color-lotg-dark:     #0C1907;
+  --color-lotg-mid:      #142B09;
+  --color-lotg-card:     #1C3A0D;
+
+  /* Fonts — self-hosted in assets/fonts/ */
+  --font-frijole: "Frijole", cursive;
+  --font-bangers: "Bangers", cursive;
+}
+
+/* ── Base ──────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+html {
+  /* clip on html ensures the viewport itself never scrolls horizontally;
+     body alone does not propagate 'clip' to the viewport level */
+  overflow-x: clip;
+}
+
+body {
+  background-color: var(--color-lotg-dark);
+  color: var(--color-lotg-offwhite);
+  font-family: var(--font-bangers);
+  letter-spacing: 0.03em;
+  overflow-x: clip;
+}
+
+/* ── Section headings ──────────────────────────────────── */
+/* Fluid scale: fits single long words on small screens (~9vw),
+   caps at 5.4rem (~10% below text-8xl/6rem) on wide screens.
+   overflow-wrap:anywhere is a safety net if something still overflows. */
+.section-h2 {
+  font-size: clamp(1.75rem, 9vw, 5.4rem);
+  overflow-wrap: anywhere;
+}
+
+/* ── Scrollbar hide (carousel tracks) ─────────────────── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── Text shadow — replicates the outlined comic-book look on headings ── */
+.text-outline {
+  -webkit-text-stroke: 2px #0C1907;
+  paint-order: stroke fill;
+}
+
+.text-outline-lg {
+  -webkit-text-stroke: 3px #0C1907;
+  paint-order: stroke fill;
+}
+
+/* ── Nav bar desktop grid ──────────────────────────────── */
+/* minmax(0,1fr) — unlike bare 1fr (= minmax(auto,1fr)) this allows the
+   nav link column to shrink below its min-content, keeping the CTA in frame */
+.nav-bar-grid {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+
+/* ── Section helpers ───────────────────────────────────── */
+.section-alt {
+  background-color: var(--color-lotg-mid);
+}
+
+/* ── Menu lightbox dialog ──────────────────────────────── */
+.menu-dialog::backdrop {
+  background-color: rgb(12 25 7 / 0.9);
+}
+
+html.menu-dialog-open,
+body.menu-dialog-open {
+  overflow: hidden;
+}
+
+body.menu-dialog-open {
+  position: fixed;
+  width: 100%;
+}
+
+/* ── Act card fallback gradients (cycling per act) ─────── */
+.card-gradient-1 { background: linear-gradient(135deg, #1C3A0D 0%, #0C2404 100%); }
+.card-gradient-2 { background: linear-gradient(135deg, #1A3520 0%, #0C1A10 100%); }
+.card-gradient-3 { background: linear-gradient(135deg, #2A2C10 0%, #151607 100%); }
+.card-gradient-4 { background: linear-gradient(135deg, #1E2A10 0%, #101508 100%); }
+.card-gradient-5 { background: linear-gradient(135deg, #2C1E10 0%, #180F08 100%); }
+.card-gradient-6 { background: linear-gradient(135deg, #1A1C30 0%, #0C0E18 100%); }
+
+/* ── Hero logo entrance animation ─────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out both;
+}
+.animate-fade-up-delay {
+  animation: fadeUp 0.8s ease-out 0.3s both;
+}
+.animate-fade-up-delay2 {
+  animation: fadeUp 0.8s ease-out 0.55s both;
+}
