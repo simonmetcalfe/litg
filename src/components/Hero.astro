@@ -1,6 +1,7 @@
 ---
 import { asset } from '../utils';
-import { newsletterSignupUrl } from '../data/site';
+import Logo from './Logo.astro';
+import { newsletterSignupUrl, ticketUrl } from '../data/site';
 ---
 
 <section
@@ -10,7 +11,7 @@ import { newsletterSignupUrl } from '../data/site';
   <!-- Background image -->
   <div class="absolute inset-0 z-0">
     <img
-      src={asset('background/background_poster.jpeg')}
+      src={asset('background/background_poster_2027.jpeg')}
       alt="Lost in the Grass micro-festival scene"
       class="w-full h-full object-cover object-center"
       loading="eager"
@@ -23,12 +24,15 @@ import { newsletterSignupUrl } from '../data/site';
   <div class="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto">
 
     <!-- Festival logo -->
-    <img
-      src={asset('logo/website_logo.png')}
-      alt="Lost in the Grass — 21–23 Aug 2026"
-      class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg animate-fade-up drop-shadow-2xl"
-      loading="eager"
+    <Logo
+      tag="h1"
+      class="text-[2.1rem] sm:text-[2.6rem] md:text-[3.05rem] lg:text-[3.5rem] animate-fade-up drop-shadow-2xl"
     />
+
+    <!-- Dates -->
+    <p class="mt-0.5 font-frijole text-lotg-yellow text-2xl md:text-3xl lg:text-4xl leading-none tracking-normal logo-outline drop-shadow-lg animate-fade-up">
+      20–22 Aug 2027
+    </p>
 
     <!-- Tagline -->
     <p class="mt-6 text-lotg-offwhite text-xl md:text-2xl lg:text-3xl tracking-wide max-w-xl leading-snug animate-fade-up-delay drop-shadow-lg">
@@ -38,18 +42,18 @@ import { newsletterSignupUrl } from '../data/site';
     <!-- CTA buttons -->
     <div class="mt-8 flex flex-wrap gap-4 justify-center animate-fade-up-delay2">
       <a
-        href="https://outtograss.com/product-category/lost-in-the-grass-2026"
+        href={ticketUrl}
         target="_blank"
         rel="noopener"
-        class="bg-lotg-green text-lotg-dark px-8 py-3 rounded-full text-xl uppercase font-bold hover:bg-lotg-yellow hover:scale-105 transition-all duration-200 shadow-lg"
+        class="bg-lotg-blue text-lotg-offwhite px-8 py-3 rounded-full text-xl uppercase font-bold hover:bg-lotg-yellow hover:text-lotg-dark hover:scale-105 transition-all duration-200 shadow-lg"
       >
         Get Tickets
       </a>
       <a
-        href="#lineup"
-        class="border-2 border-lotg-green text-lotg-green px-8 py-3 rounded-full text-xl uppercase font-bold hover:bg-lotg-green hover:text-lotg-dark hover:scale-105 transition-all duration-200"
+        href="/2026"
+        class="border-2 border-lotg-blue text-lotg-offwhite px-8 py-3 rounded-full text-xl uppercase font-bold hover:bg-lotg-blue hover:scale-105 transition-all duration-200"
       >
-        See Lineup
+        See 2026 website
       </a>
     </div>
 
@@ -60,7 +64,7 @@ import { newsletterSignupUrl } from '../data/site';
           href={newsletterSignupUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="hover:text-lotg-green transition-colors"
+          class="underline underline-offset-4 decoration-lotg-offwhite/30 hover:text-lotg-yellow hover:decoration-lotg-yellow transition-colors"
         >
           Sign up to Newsletter
         </a>
@@ -73,6 +77,6 @@ import { newsletterSignupUrl } from '../data/site';
 
   <!-- Scroll indicator -->
   <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-    <span class="material-icons text-lotg-green" style="font-size:28px">expand_more</span>
+    <span class="material-icons text-lotg-yellow" style="font-size:28px">expand_more</span>
   </div>
 </section>

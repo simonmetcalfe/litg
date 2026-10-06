@@ -1,25 +1,18 @@
 ---
 import OpeningTimesList from './OpeningTimesList.astro';
-import { goodToKnowGroups, newsletterSignupUrl, sectionHeadings } from '../data/site';
+import { goodToKnowGroups, sectionHeadings } from '../data/site';
 ---
 
 <section id="good-to-know" class="section-alt py-20 px-4 md:px-8 lg:px-16">
   <div class="max-w-4xl mx-auto">
 
     <div class="text-center mb-12">
-      <h2 class="font-bangers text-lotg-blue section-h2 tracking-wider text-outline-lg leading-none">
+      <h2 class="font-bangers text-lotg-green section-h2 tracking-wider text-outline-lg leading-none">
         {sectionHeadings['good-to-know']}
       </h2>
       <p class="mt-6 text-lotg-offwhite text-lg leading-relaxed">
         To keep yourself informed, please
-        <a
-          href={newsletterSignupUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="underline underline-offset-4 decoration-lotg-yellow/40 hover:text-lotg-yellow hover:decoration-lotg-yellow transition-colors"
-        >
-          sign up to our newsletter
-        </a>
+        sign up to our newsletter
         if you haven't already!
       </p>
     </div>
@@ -33,7 +26,7 @@ import { goodToKnowGroups, newsletterSignupUrl, sectionHeadings } from '../data/
           )}
           <div class="space-y-2">
             {group.items.map(item => (
-              <div class="flex items-start gap-3 bg-lotg-mid border border-lotg-orange/20 rounded-xl px-4 py-3">
+              <div class="flex items-start gap-3 bg-lotg-mid border border-lotg-green/20 rounded-xl px-4 py-3">
                 <span class="text-xl shrink-0 mt-0.5">{item.emoji}</span>
                 <p class="text-lotg-offwhite text-sm leading-relaxed">
                   {item.text}
@@ -44,7 +37,7 @@ import { goodToKnowGroups, newsletterSignupUrl, sectionHeadings } from '../data/
                         href={item.cta.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="text-lotg-yellow underline underline-offset-4 decoration-lotg-yellow/40 hover:decoration-lotg-yellow transition-colors"
+                        class="text-lotg-green underline underline-offset-4 decoration-lotg-green/40 hover:decoration-lotg-green transition-colors"
                       >
                         {item.cta.label}
                       </a>

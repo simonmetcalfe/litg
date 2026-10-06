@@ -1,0 +1,63 @@
+---
+import { asset } from '../utils';
+import { archiveNotice, festivalHomepageUrl } from '../data/site';
+---
+
+<section
+  id="hero"
+  class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20 xl:pt-28 2xl:pt-32"
+>
+  <!-- Background image -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src={asset('background/background_poster.jpeg')}
+      alt="Lost in the Grass micro-festival scene"
+      class="w-full h-full object-cover object-center"
+      loading="eager"
+    />
+    <!-- Dark overlay for text legibility -->
+    <div class="absolute inset-0 bg-gradient-to-b from-lotg-dark/60 via-lotg-dark/40 to-lotg-dark/80"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto">
+
+    <!-- Festival logo -->
+    <img
+      src={asset('logo/website_logo.png')}
+      alt="Lost in the Grass — 21–23 Aug 2026"
+      class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg animate-fade-up drop-shadow-2xl"
+      loading="eager"
+    />
+
+    <!-- Tagline -->
+    <p class="mt-6 text-lotg-offwhite text-xl md:text-2xl lg:text-3xl tracking-wide max-w-xl leading-snug animate-fade-up-delay drop-shadow-lg">
+      Music · Camping · Family Fun Near Malvern
+    </p>
+
+    <!-- Archive notice + CTA -->
+    <div class="mt-8 flex flex-col items-center gap-4 animate-fade-up-delay2">
+      <p class="text-lotg-offwhite/70 text-base tracking-widest uppercase max-w-xl">
+        {archiveNotice}
+      </p>
+      <a
+        href={festivalHomepageUrl}
+        class="bg-lotg-green text-lotg-dark px-8 py-3 rounded-full text-xl uppercase font-bold hover:bg-lotg-yellow hover:scale-105 transition-all duration-200 shadow-lg"
+      >
+        Back to latest event
+      </a>
+    </div>
+
+    <!-- Venue -->
+    <div class="mt-8 space-y-2 animate-fade-up-delay2">
+      <p class="text-lotg-offwhite/70 text-base tracking-widest uppercase">
+        A Micro-Festival · Hosted at Out to Grass Woodend Farm · Malvern
+      </p>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+    <span class="material-icons text-lotg-green" style="font-size:28px">expand_more</span>
+  </div>
+</section>

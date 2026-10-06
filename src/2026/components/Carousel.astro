@@ -52,10 +52,10 @@ sections.forEach((sec, si) => {
           data-tab-idx={i}
           aria-pressed={i === 0 ? 'true' : 'false'}
           class:list={[
-            'carousel-tab font-bangers tracking-wider text-sm px-3 py-1 md:text-xl md:px-6 md:py-2 rounded-full border-2 transition-all duration-200 border-lotg-blue',
+            'carousel-tab font-bangers tracking-wider text-sm px-3 py-1 md:text-xl md:px-6 md:py-2 rounded-full border-2 transition-all duration-200 border-lotg-green',
             i === 0
-              ? 'bg-lotg-blue text-lotg-offwhite'
-              : 'text-lotg-offwhite hover:bg-lotg-blue/20',
+              ? 'bg-lotg-green text-lotg-dark'
+              : 'text-lotg-green hover:bg-lotg-green/10',
           ]}
         >{sec.label}</button>
       ))}
@@ -85,14 +85,14 @@ sections.forEach((sec, si) => {
     <button
       data-prev
       aria-label="Previous"
-      class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-lotg-dark/70 text-lotg-yellow flex items-center justify-center hover:bg-lotg-orange hover:text-lotg-dark transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
+      class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-lotg-dark/70 text-lotg-yellow flex items-center justify-center hover:bg-lotg-green hover:text-lotg-dark transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
     ><span class="material-icons" style="font-size:24px">chevron_left</span></button>
 
     {/* Next */}
     <button
       data-next
       aria-label="Next"
-      class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-lotg-dark/70 text-lotg-yellow flex items-center justify-center hover:bg-lotg-orange hover:text-lotg-dark transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
+      class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-lotg-dark/70 text-lotg-yellow flex items-center justify-center hover:bg-lotg-green hover:text-lotg-dark transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
     ><span class="material-icons" style="font-size:24px">chevron_right</span></button>
 
     {/* Dots */}
@@ -135,7 +135,7 @@ sections.forEach((sec, si) => {
     const updateDots = (idx: number) => {
       dots.forEach((dot, i) => {
         const active = i === idx;
-        dot.classList.toggle('bg-lotg-orange',      active);
+        dot.classList.toggle('bg-lotg-green',      active);
         dot.classList.toggle('!opacity-100',        active);
         dot.classList.toggle('scale-125',           active);
         dot.classList.toggle('bg-lotg-offwhite/40', !active);
@@ -147,8 +147,10 @@ sections.forEach((sec, si) => {
       tabBtns.forEach(btn => {
         const active = Number(btn.dataset.tabIdx) === sec;
         btn.setAttribute('aria-pressed', String(active));
-        btn.classList.toggle('bg-lotg-blue',              active);
-        btn.classList.toggle('hover:bg-lotg-blue/20',     !active);
+        btn.classList.toggle('bg-lotg-green',            active);
+        btn.classList.toggle('text-lotg-dark',           active);
+        btn.classList.toggle('text-lotg-green',          !active);
+        btn.classList.toggle('hover:bg-lotg-green/10',   !active);
       });
     };
 

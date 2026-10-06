@@ -8,8 +8,8 @@ interface Props {
 }
 
 const {
-  title = 'Lost in the Grass | 20–22 Aug 2027',
-  description = 'A weekend of live music, camping & family-friendly fun near Malvern. 20–22 August 2027.',
+  title = 'Lost in the Grass | 21–23 Aug 2026',
+  description = 'A weekend of live music, camping & family-friendly fun near Malvern. 21–23 August 2026.',
 } = Astro.props;
 ---
 
@@ -26,7 +26,7 @@ const {
     <meta property="og:image:width" content="490" />
     <meta property="og:image:height" content="258" />
     <meta property="og:url" content={import.meta.env.SITE + import.meta.env.BASE_URL} />
-    <meta name="theme-color" content="#070B2E" />
+    <meta name="theme-color" content="#0C1907" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -36,13 +36,6 @@ const {
     <link
       rel="preload"
       href={asset('fonts/Bangers_main_body/Bangers-Regular.ttf')}
-      as="font"
-      type="font/ttf"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href={asset('fonts/Frijole_logo/Frijole-Regular.ttf')}
       as="font"
       type="font/ttf"
       crossorigin
