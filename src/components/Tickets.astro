@@ -14,13 +14,8 @@ import { sectionHeadings, ticketTiers, ticketUrl } from '../data/site';
     <div class="grid md:grid-cols-3 gap-4 mb-4">
       {ticketTiers.map(tier => (
         <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-orange/40 flex flex-col items-center gap-4 hover:border-lotg-orange hover:shadow-[0_0_20px_rgba(247,120,42,0.2)] transition-all">
-          {tier.banner && (
-            <h3 class="self-stretch -mx-6 -mt-6 bg-lotg-orange text-lotg-dark font-bangers text-2xl tracking-wide py-1 rounded-t-2xl">{tier.name}</h3>
-          )}
+          <h3 class="self-stretch -mx-6 -mt-6 bg-lotg-orange text-lotg-dark font-bangers text-2xl tracking-wide py-1 rounded-t-2xl">{tier.name}</h3>
           <div>
-            {!tier.banner && (
-              <h3 class="font-bangers text-lotg-yellow text-3xl tracking-wide">{tier.name}</h3>
-            )}
             <p class="text-lotg-offwhite text-sm uppercase tracking-wide">{tier.dates}</p>
           </div>
           <div class="w-full grid grid-cols-2 gap-4">
@@ -33,7 +28,7 @@ import { sectionHeadings, ticketTiers, ticketUrl } from '../data/site';
                 <p class="font-bangers text-lotg-yellow text-2xl tracking-wide">{label}</p>
                 <p class="font-bangers text-lotg-orange text-5xl">{ticket.price}</p>
                 {ticket.saving && (
-                  <p class="text-lotg-orange text-xs uppercase">{ticket.saving}</p>
+                  <p class="text-lotg-offwhite text-xs uppercase">{ticket.saving}</p>
                 )}
               </div>
             ))}
@@ -42,8 +37,8 @@ import { sectionHeadings, ticketTiers, ticketUrl } from '../data/site';
       ))}
     </div>
 
-    <p class="text-lotg-offwhite/50 text-sm mb-8">
-      Adults 18+ · Children ages 5–17 · <span class="text-lotg-orange uppercase">Under 5s FREE</span>
+    <p class="text-lotg-offwhite text-sm mb-8">
+      Adults 18+ · Children ages 5–17 · <span class="text-lotg-yellow uppercase">Under 5s FREE</span>
     </p>
 
     <!-- Camping & accommodation -->
@@ -54,8 +49,8 @@ import { sectionHeadings, ticketTiers, ticketUrl } from '../data/site';
         <span class="text-3xl">🚐</span>
         <h3 class="font-bangers text-lotg-yellow text-2xl tracking-wide">Campervans</h3>
         <p class="font-bangers text-lotg-orange text-5xl">£30</p>
-        <p class="text-lotg-offwhite/50 text-sm">Per van</p>
-        <p class="text-lotg-offwhite/40 text-xs">Elec hookup £35</p>
+        <p class="text-lotg-offwhite text-sm">Per van</p>
+        <p class="text-lotg-offwhite text-xs">Elec hookup £35</p>
       </div>
 
       <!-- Lunar Tents -->
@@ -63,13 +58,13 @@ import { sectionHeadings, ticketTiers, ticketUrl } from '../data/site';
         <span class="text-3xl">🌙</span>
         <h3 class="font-bangers text-lotg-yellow text-2xl tracking-wide">Lunar Tents</h3>
         <p class="font-bangers text-lotg-orange text-5xl">£360</p>
-        <p class="text-lotg-offwhite/50 text-sm">Per tent · 1–4 guests</p>
-        <p class="text-lotg-offwhite/40 text-xs">No towels provided</p>
+        <p class="text-lotg-offwhite text-sm">Per tent · 1–4 guests</p>
+        <p class="text-lotg-offwhite text-xs">No towels provided</p>
         <a
           href={ticketUrl}
           target="_blank"
           rel="noopener"
-          class="text-lotg-orange text-xs uppercase hover:underline"
+          class="text-lotg-yellow text-xs uppercase hover:underline"
         >Check availability on OTG website</a>
       </div>
 
@@ -80,7 +75,7 @@ import { sectionHeadings, ticketTiers, ticketUrl } from '../data/site';
       <span class="text-2xl">🐕</span>
       <h3 class="font-bangers text-lotg-yellow text-2xl tracking-wide">Dogs</h3>
       <p class="font-bangers text-lotg-orange text-3xl">£5</p>
-      <p class="text-lotg-offwhite/50 text-sm">Per dog</p>
+      <p class="text-lotg-offwhite text-sm">Per dog</p>
     </div>
 
     <!-- CTA -->
@@ -88,12 +83,9 @@ import { sectionHeadings, ticketTiers, ticketUrl } from '../data/site';
       href={ticketUrl}
       target="_blank"
       rel="noopener"
-      class="inline-flex items-center gap-3 bg-lotg-blue text-lotg-offwhite text-2xl px-10 py-4 rounded-full font-bold uppercase hover:bg-lotg-yellow hover:text-lotg-dark hover:scale-105 transition-all duration-200 shadow-[0_0_30px_rgba(26,86,255,0.4)]"
+      class="inline-flex items-center bg-lotg-blue text-lotg-offwhite text-2xl px-10 py-4 rounded-full font-bold uppercase hover:bg-lotg-yellow hover:text-lotg-dark hover:scale-105 transition-all duration-200 shadow-[0_0_30px_rgba(26,86,255,0.4)]"
     >
       Buy Tickets Now
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-      </svg>
     </a>
 
   </div>

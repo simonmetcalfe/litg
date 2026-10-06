@@ -13,7 +13,7 @@ const mapsUrl = 'https://maps.app.goo.gl/pnr4GmAQKsL5SxAZ8';
       <h2 class="font-bangers text-lotg-blue section-h2 tracking-wider text-outline-lg leading-none">
         {sectionHeadings['map-and-getting-there']}
       </h2>
-      <p class="text-lotg-orange text-lg tracking-wide mt-2">Out to Grass · Woodend Farm · WR13 5JW</p>
+      <p class="text-lotg-yellow text-lg tracking-wide mt-2">Out to Grass · Woodend Farm · WR13 5JW</p>
     </div>
 
     <!-- Map image — pan/zoom wrapper -->
@@ -42,9 +42,9 @@ const mapsUrl = 'https://maps.app.goo.gl/pnr4GmAQKsL5SxAZ8';
 
       <!-- Zoom controls — top-right -->
       <div class="absolute top-3 right-3 z-30 flex flex-col gap-1">
-        <button id="map-zoom-in"    aria-label="Zoom in"    class="w-9 h-9 rounded-lg bg-black/70 border border-lotg-orange/50 text-lotg-orange hover:bg-lotg-orange hover:text-lotg-dark transition-colors flex items-center justify-center"><span class="material-icons" style="font-size:20px">add</span></button>
-        <button id="map-zoom-out"   aria-label="Zoom out"   class="w-9 h-9 rounded-lg bg-black/70 border border-lotg-orange/50 text-lotg-orange hover:bg-lotg-orange hover:text-lotg-dark transition-colors flex items-center justify-center"><span class="material-icons" style="font-size:20px">remove</span></button>
-        <button id="map-zoom-reset" aria-label="Reset zoom" class="w-9 h-9 rounded-lg bg-black/70 border border-lotg-orange/50 text-lotg-orange hover:bg-lotg-orange hover:text-lotg-dark transition-colors flex items-center justify-center"><span class="material-icons" style="font-size:20px">center_focus_weak</span></button>
+        <button id="map-zoom-in"    aria-label="Zoom in"    class="w-9 h-9 rounded-lg bg-black/70 border border-lotg-yellow/50 text-lotg-yellow hover:bg-lotg-yellow hover:text-lotg-dark transition-colors flex items-center justify-center"><span class="material-icons" style="font-size:20px">add</span></button>
+        <button id="map-zoom-out"   aria-label="Zoom out"   class="w-9 h-9 rounded-lg bg-black/70 border border-lotg-yellow/50 text-lotg-yellow hover:bg-lotg-yellow hover:text-lotg-dark transition-colors flex items-center justify-center"><span class="material-icons" style="font-size:20px">remove</span></button>
+        <button id="map-zoom-reset" aria-label="Reset zoom" class="w-9 h-9 rounded-lg bg-black/70 border border-lotg-yellow/50 text-lotg-yellow hover:bg-lotg-yellow hover:text-lotg-dark transition-colors flex items-center justify-center"><span class="material-icons" style="font-size:20px">center_focus_weak</span></button>
       </div>
     </div>
 
@@ -171,10 +171,10 @@ const mapsUrl = 'https://maps.app.goo.gl/pnr4GmAQKsL5SxAZ8';
         <details class="group bg-lotg-card rounded-2xl border border-lotg-orange/20 overflow-hidden hover:border-lotg-orange/40 transition-colors">
           <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none select-none">
             <div class="flex items-center gap-3">
-              <span class="w-8 h-8 rounded-full bg-lotg-orange text-lotg-dark font-bold text-sm flex items-center justify-center shrink-0">{i + 1}</span>
+              <span class="w-8 h-8 rounded-full bg-lotg-yellow text-lotg-dark font-bold text-sm flex items-center justify-center shrink-0">{i + 1}</span>
               <span class="font-bangers text-lotg-offwhite text-xl tracking-wide">{dir.from}</span>
             </div>
-            <span class="material-icons text-lotg-orange transition-transform duration-200 group-open:rotate-180 shrink-0" style="font-size:20px">expand_more</span>
+            <span class="material-icons text-lotg-yellow transition-transform duration-200 group-open:rotate-180 shrink-0" style="font-size:20px">expand_more</span>
           </summary>
           <div class="px-6 pb-5 pt-1">
             <p class="text-lotg-offwhite/80 text-sm leading-relaxed">{dir.steps}</p>
@@ -189,11 +189,11 @@ const mapsUrl = 'https://maps.app.goo.gl/pnr4GmAQKsL5SxAZ8';
         rel="noopener"
         class="flex items-center gap-3 bg-lotg-card rounded-2xl border border-lotg-orange/30 px-6 py-4 hover:border-lotg-orange hover:bg-lotg-orange/5 transition-all"
       >
-        <svg class="w-6 h-6 text-lotg-orange shrink-0" fill="currentColor" viewBox="0 0 24 24">
+        <svg class="w-6 h-6 text-lotg-yellow shrink-0" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
         </svg>
-        <p class="font-bangers text-lotg-orange text-lg tracking-wide">Open in Google Maps</p>
-        <span class="material-icons text-lotg-orange ml-auto shrink-0" style="font-size:18px">open_in_new</span>
+        <p class="font-bangers text-lotg-yellow text-lg tracking-wide">Open in Google Maps</p>
+        <span class="material-icons text-lotg-yellow ml-auto shrink-0" style="font-size:18px">open_in_new</span>
       </a>
 
       <p class="text-center text-lotg-offwhite text-xs mt-2 tracking-wider select-text">

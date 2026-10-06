@@ -38,8 +38,6 @@ export interface TicketPrice {
 export interface TicketTier {
   name: string;
   dates: string;
-  /** Show the tier name as an orange banner strip across the top of the card */
-  banner?: boolean;
   adult: TicketPrice;
   child: TicketPrice;
 }
@@ -59,7 +57,6 @@ export const ticketTiers: TicketTier[] = [
   },
   {
     name: 'Full Price',
-    banner: true,
     dates: 'From 1 Dec 2026',
     adult: { price: '£120' },
     child: { price: '£35' },

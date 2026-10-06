@@ -41,12 +41,12 @@ import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, s
           <ul class="px-6 pb-6 space-y-3">
             {cat.items.map(item => (
               <li class="flex items-start gap-2 text-lotg-offwhite">
-                <span class={`mt-0.5 shrink-0 ${cat.accent === 'yellow' ? 'text-lotg-yellow' : 'text-lotg-orange'}`}>✦</span>
+                <span class="mt-0.5 shrink-0 text-lotg-yellow">✦</span>
                 <div class="min-w-0">
                   {item.href ? (
                     <a
                       href={item.href}
-                      class="tracking-wide underline underline-offset-4 decoration-lotg-orange/40 hover:text-lotg-orange hover:decoration-lotg-orange transition-colors"
+                      class="tracking-wide underline underline-offset-4 decoration-lotg-yellow/40 hover:text-lotg-yellow hover:decoration-lotg-yellow transition-colors"
                     >
                       {item.text}
                     </a>
@@ -67,7 +67,7 @@ import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, s
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          class="text-lotg-orange underline underline-offset-4 decoration-lotg-orange/40 hover:decoration-lotg-orange transition-colors"
+                          class="text-lotg-yellow underline underline-offset-4 decoration-lotg-yellow/40 hover:decoration-lotg-yellow transition-colors"
                         >
                           {link.label}
                         </a>
@@ -106,7 +106,7 @@ import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, s
           href={newsletterSignupUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="underline underline-offset-4 decoration-lotg-orange/40 hover:text-lotg-orange hover:decoration-lotg-orange transition-colors"
+          class="underline underline-offset-4 decoration-lotg-yellow/40 hover:text-lotg-yellow hover:decoration-lotg-yellow transition-colors"
         >
           sign up to our newsletter
         </a>
@@ -136,7 +136,7 @@ import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, s
       <NewsletterNudge class="mt-2 text-center" />
     </div>
 
-    <p class="mt-8 text-center text-lotg-offwhite/50 text-sm leading-relaxed max-w-2xl mx-auto">
+    <p class="mt-8 text-center text-lotg-offwhite/70 text-sm leading-relaxed max-w-2xl mx-auto">
       We endevour to provide everything listed here, but as a small festival, some events, activities, or catering may change. We'll do our best to keep you informed by updating the website and informing ticket holders via email.
     </p>
 
