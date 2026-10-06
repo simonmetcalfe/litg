@@ -52,10 +52,10 @@ sections.forEach((sec, si) => {
           data-tab-idx={i}
           aria-pressed={i === 0 ? 'true' : 'false'}
           class:list={[
-            'carousel-tab font-bangers tracking-wider text-sm px-3 py-1 md:text-xl md:px-6 md:py-2 rounded-full border-2 transition-all duration-200 border-lotg-orange',
+            'carousel-tab font-bangers tracking-wider text-sm px-3 py-1 md:text-xl md:px-6 md:py-2 rounded-full border-2 transition-all duration-200 border-lotg-blue',
             i === 0
-              ? 'bg-lotg-orange text-lotg-dark'
-              : 'text-lotg-orange hover:bg-lotg-orange/10',
+              ? 'bg-lotg-blue text-lotg-offwhite'
+              : 'text-lotg-offwhite hover:bg-lotg-blue/20',
           ]}
         >{sec.label}</button>
       ))}
@@ -147,10 +147,8 @@ sections.forEach((sec, si) => {
       tabBtns.forEach(btn => {
         const active = Number(btn.dataset.tabIdx) === sec;
         btn.setAttribute('aria-pressed', String(active));
-        btn.classList.toggle('bg-lotg-orange',            active);
-        btn.classList.toggle('text-lotg-dark',           active);
-        btn.classList.toggle('text-lotg-orange',          !active);
-        btn.classList.toggle('hover:bg-lotg-orange/10',   !active);
+        btn.classList.toggle('bg-lotg-blue',              active);
+        btn.classList.toggle('hover:bg-lotg-blue/20',     !active);
       });
     };
 
