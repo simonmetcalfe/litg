@@ -2,6 +2,7 @@
 import { asset } from '../utils';
 import { contactEmail, instagramHandle, instagramUrl, newsletterSignupUrl, sectionHeadings } from '../data/site';
 import ContactButton from './ContactButton.astro';
+import Logo from './Logo.astro';
 ---
 
 <section id="contact" class="bg-lotg-dark py-20 px-4 md:px-8 lg:px-16">
@@ -72,12 +73,7 @@ import ContactButton from './ContactButton.astro';
 
     <!-- Footer -->
     <div class="border-t border-lotg-orange/10 pt-8 space-y-2">
-      <img
-        src={asset('logo/website_logo_nodate_2027.png')}
-        alt="Lost in the Grass"
-        class="h-12 mx-auto opacity-80"
-        loading="lazy"
-      />
+      <Logo class="text-xl opacity-80" />
       <p class="text-lotg-offwhite/70 text-xs tracking-wider">
         © 2026 Echofields · Lost in the Grass · All rights reserved
       </p>

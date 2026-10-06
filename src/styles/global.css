@@ -109,6 +109,12 @@ body {
   paint-order: stroke fill;
 }
 
+/* Scales with font size — used by the text logo and hero date */
+.logo-outline {
+  -webkit-text-stroke: 0.16em #070B2E;
+  paint-order: stroke fill;
+}
+
 /* ── Nav bar desktop grid ──────────────────────────────── */
 /* minmax(0,1fr) — unlike bare 1fr (= minmax(auto,1fr)) this allows the
    nav link column to shrink below its min-content, keeping the CTA in frame */

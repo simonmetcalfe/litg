@@ -2,6 +2,7 @@
 import {
   scheduleByDay,
   mainActs,
+  festivalHomepageUrl,
   djs,
   sectionHeadings,
   formatScheduleRange,
@@ -55,6 +56,15 @@ let fallbackGradientIndex = 0;
       <h2 class="font-bangers text-lotg-green section-h2 tracking-wider text-outline-lg leading-none">
         {sectionHeadings['lineup']}
       </h2>
+      <p class="mt-4 text-lotg-offwhite/70 text-lg tracking-wide">
+        This is the lineup from our previous event.
+      </p>
+      <a
+        href={festivalHomepageUrl}
+        class="mt-4 inline-block bg-lotg-green text-lotg-dark px-8 py-3 rounded-full text-xl uppercase font-bold hover:bg-lotg-yellow hover:scale-105 transition-all duration-200 shadow-lg"
+      >
+        Back to latest event
+      </a>
     </div>
 
     <!-- Day-by-day timetable -->

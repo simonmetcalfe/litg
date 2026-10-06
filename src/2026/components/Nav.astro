@@ -16,7 +16,7 @@ import { festivalHomepageUrl, navLinks } from '../data/site';
   <div class="max-w-7xl mx-auto px-4 min-h-14 py-2 xl:min-h-20 xl:py-4 2xl:min-h-24 2xl:py-5 flex items-center lg:grid nav-bar-grid gap-x-4">
 
     <!-- Logo wordmark -->
-    <a href="#hero" class="font-frijole text-lotg-green text-lg xl:text-xl 2xl:text-2xl leading-none hover:text-lotg-yellow transition-colors whitespace-nowrap self-center">
+    <a href={festivalHomepageUrl} class="font-frijole text-lotg-green text-lg xl:text-xl 2xl:text-2xl leading-none hover:text-lotg-yellow transition-colors whitespace-nowrap self-center">
       Lost in the Grass
     </a>
 
@@ -40,7 +40,7 @@ import { festivalHomepageUrl, navLinks } from '../data/site';
         href={festivalHomepageUrl}
         class="hidden lg:inline-flex items-center bg-lotg-green text-lotg-dark px-4 py-1.5 xl:px-5 xl:py-2 2xl:px-6 2xl:py-3 rounded-full text-sm xl:text-base 2xl:text-lg uppercase font-bold hover:bg-lotg-yellow transition-colors whitespace-nowrap"
       >
-        Festival homepage
+        Latest event
       </a>
       <button
         id="nav-toggle"
@@ -77,7 +77,7 @@ import { festivalHomepageUrl, navLinks } from '../data/site';
           href={festivalHomepageUrl}
           class="block text-center bg-lotg-green text-lotg-dark py-2.5 rounded-full uppercase font-bold hover:bg-lotg-yellow transition-colors"
         >
-          Go to festival homepage
+          Back to latest event
         </a>
       </li>
     </ul>

@@ -1,0 +1,16 @@
+---
+// Text version of the festival logo (replaces website_logo_nodate*.png).
+// Size it by setting font-size on the element, e.g. class="text-4xl".
+interface Props {
+  tag?: 'h1' | 'div';
+  class?: string;
+}
+
+const { tag: Tag = 'div', class: className = '' } = Astro.props;
+---
+
+<Tag class:list={['uppercase text-center leading-[0.95] tracking-normal', className]}>
+  <span class="block font-bangers text-lotg-offwhite text-[0.42em] tracking-wide mb-[0.15em] logo-outline">Echofields presents</span>
+  <span class="block font-frijole text-lotg-yellow logo-outline">Lost in</span>
+  <span class="block font-frijole text-lotg-yellow logo-outline">the Grass</span>
+</Tag>
