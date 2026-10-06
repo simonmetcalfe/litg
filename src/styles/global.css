@@ -47,9 +47,11 @@
 @theme {
   /* Brand colours — 2027 "sunset" palette sampled from background_poster_2027
      blue:   CTA buttons, section headings (h2)
-     yellow: logo/wordmark, secondary headings (h3), accent text, links, icons
-     orange: festival date, prices, banner strips (e.g. "Full Price", "Sold out")
+     green:  logo/wordmark only — sampled from the original website_logo_nodate.png
+     yellow: festival date, secondary headings (h3), accent text, links, icons
+     orange: prices, banner strips (e.g. "Full Price", "Sold out")
      offwhite: body and small print */
+  --color-lotg-green:    #3DFF28;
   --color-lotg-orange:   #F7782A;
   --color-lotg-yellow:   #FCE22A;
   --color-lotg-blue:     #1A56FF;
