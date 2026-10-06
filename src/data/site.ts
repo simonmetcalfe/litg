@@ -73,6 +73,7 @@ export const venuePhotoSections = [
       "photos_venue/day_3.jpeg",
       "photos_venue/day_4.jpeg",
       "photos_venue/day_5.jpg",
+      "photos_venue/day_6.jpeg",
     ],
   },
   {
@@ -140,6 +141,7 @@ export const accommodationPhotoSections = [
     images: [
       "photos_accom/lunar_tent_1.jpeg",
       "photos_accom/lunar_tent_2.jpeg",
+      "photos_accom/lunar_tent_3.jpeg",
     ],
   },
   {
