@@ -168,7 +168,7 @@ export interface ActivityCategory {
   id: string;
   emoji: string;
   title: string;
-  accent: "green" | "yellow";
+  accent: "orange" | "yellow";
   /** Optional text shown above the items */
   intro?: string;
   /** Show a newsletter sign-up nudge under the items (for placeholder content) */
@@ -186,7 +186,7 @@ export const activityCategories: ActivityCategory[] = [
     id: "entertainment",
     emoji: "🎸",
     title: "Entertainment",
-    accent: "green",
+    accent: "orange",
     items: [
       { text: "Live music and DJS all weekend" },
       { text: "Acoustic Fireside Jamming" },
@@ -226,7 +226,7 @@ export const activityCategories: ActivityCategory[] = [
     id: "more",
     emoji: "🌿",
     title: "More Activities",
-    accent: "green",
+    accent: "orange",
     items: [
       { text: "Woodfired Hot Tub" },
       { text: "Woodland walks" },

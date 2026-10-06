@@ -5,7 +5,7 @@ import { navLinks, ticketUrl } from '../data/site';
 
 <nav
   id="site-nav"
-  class="fixed top-0 left-0 right-0 z-50 bg-lotg-dark/90 backdrop-blur-md border-b border-lotg-green/20 transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-50 bg-lotg-dark/90 backdrop-blur-md border-b border-lotg-orange/20 transition-all duration-300"
 >
   <!--
     Mobile  (<lg): flex row — logo left, hamburger right
@@ -16,7 +16,7 @@ import { navLinks, ticketUrl } from '../data/site';
   <div class="max-w-7xl mx-auto px-4 min-h-14 py-2 xl:min-h-20 xl:py-4 2xl:min-h-24 2xl:py-5 flex items-center lg:grid nav-bar-grid gap-x-4">
 
     <!-- Logo wordmark -->
-    <a href="#hero" class="font-frijole text-lotg-green text-lg xl:text-xl 2xl:text-2xl leading-none hover:text-lotg-yellow transition-colors whitespace-nowrap self-center">
+    <a href="#hero" class="font-frijole text-lotg-yellow text-lg xl:text-xl 2xl:text-2xl leading-none hover:text-lotg-orange transition-colors whitespace-nowrap self-center">
       Lost in the Grass
     </a>
 
@@ -26,7 +26,7 @@ import { navLinks, ticketUrl } from '../data/site';
         <li class="flex-1 text-center px-1 py-1">
           <a
             href={link.href}
-            class="block text-lotg-offwhite hover:text-lotg-green transition-colors uppercase leading-tight"
+            class="block text-lotg-offwhite hover:text-lotg-orange transition-colors uppercase leading-tight"
           >
             {link.label}
           </a>
@@ -40,7 +40,7 @@ import { navLinks, ticketUrl } from '../data/site';
         href={ticketUrl}
         target="_blank"
         rel="noopener"
-        class="hidden lg:inline-flex items-center bg-lotg-green text-lotg-dark px-4 py-1.5 xl:px-5 xl:py-2 2xl:px-6 2xl:py-3 rounded-full text-sm xl:text-base 2xl:text-lg uppercase font-bold hover:bg-lotg-yellow transition-colors whitespace-nowrap"
+        class="hidden lg:inline-flex items-center bg-lotg-blue text-lotg-offwhite px-4 py-1.5 xl:px-5 xl:py-2 2xl:px-6 2xl:py-3 rounded-full text-sm xl:text-base 2xl:text-lg uppercase font-bold hover:bg-lotg-yellow hover:text-lotg-dark transition-colors whitespace-nowrap"
       >
         Get Tickets
       </a>
@@ -61,14 +61,14 @@ import { navLinks, ticketUrl } from '../data/site';
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
-    class="lg:hidden hidden bg-lotg-dark border-t border-lotg-green/20"
+    class="lg:hidden hidden bg-lotg-dark border-t border-lotg-orange/20"
   >
     <ul class="flex flex-col px-4 py-3 gap-0">
       {navLinks.map(link => (
         <li>
           <a
             href={link.href}
-            class="mobile-nav-link block py-2.5 text-lotg-offwhite hover:text-lotg-green transition-colors uppercase tracking-wide border-b border-lotg-green/10 last:border-0"
+            class="mobile-nav-link block py-2.5 text-lotg-offwhite hover:text-lotg-orange transition-colors uppercase tracking-wide border-b border-lotg-orange/10 last:border-0"
           >
             {link.label}
           </a>
@@ -79,7 +79,7 @@ import { navLinks, ticketUrl } from '../data/site';
           href={ticketUrl}
           target="_blank"
           rel="noopener"
-          class="block text-center bg-lotg-green text-lotg-dark py-2.5 rounded-full uppercase font-bold hover:bg-lotg-yellow transition-colors"
+          class="block text-center bg-lotg-blue text-lotg-offwhite py-2.5 rounded-full uppercase font-bold hover:bg-lotg-yellow hover:text-lotg-dark transition-colors"
         >
           Get Tickets
         </a>

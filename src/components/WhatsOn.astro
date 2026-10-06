@@ -9,7 +9,7 @@ import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, s
 
     <!-- Heading -->
     <div class="text-center mb-12">
-      <h2 class="font-bangers text-lotg-green section-h2 tracking-wider text-outline-lg leading-none">
+      <h2 class="font-bangers text-lotg-blue section-h2 tracking-wider text-outline-lg leading-none">
         {sectionHeadings['activities-and-food']}
       </h2>
     </div>
@@ -18,7 +18,7 @@ import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, s
     <Carousel
       images={activityPhotos}
       altPrefix="Activity photo"
-      class="rounded-2xl overflow-hidden shadow-2xl border border-lotg-green/20 mb-12"
+      class="rounded-2xl overflow-hidden shadow-2xl border border-lotg-orange/20 mb-12"
       aspectClass="aspect-video"
     />
 
@@ -27,11 +27,11 @@ import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, s
       {activityCategories.map(cat => (
         <div
           id={`activity-${cat.id}`}
-          class={`scroll-mt-24 lg:scroll-mt-28 bg-lotg-card rounded-2xl border ${cat.accent === 'yellow' ? 'border-lotg-yellow/20' : 'border-lotg-green/20'}`}
+          class={`scroll-mt-24 lg:scroll-mt-28 bg-lotg-card rounded-2xl border ${cat.accent === 'yellow' ? 'border-lotg-yellow/20' : 'border-lotg-orange/20'}`}
         >
           <div class="flex items-center gap-3 p-6 pb-4">
             <span class="text-3xl">{cat.emoji}</span>
-            <h3 class={`font-bangers text-3xl tracking-wide ${cat.accent === 'yellow' ? 'text-lotg-yellow' : 'text-lotg-green'}`}>
+            <h3 class="font-bangers text-lotg-yellow text-3xl tracking-wide">
               {cat.title}
             </h3>
           </div>
@@ -41,12 +41,12 @@ import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, s
           <ul class="px-6 pb-6 space-y-3">
             {cat.items.map(item => (
               <li class="flex items-start gap-2 text-lotg-offwhite">
-                <span class={`mt-0.5 shrink-0 ${cat.accent === 'yellow' ? 'text-lotg-yellow' : 'text-lotg-green'}`}>✦</span>
+                <span class={`mt-0.5 shrink-0 ${cat.accent === 'yellow' ? 'text-lotg-yellow' : 'text-lotg-orange'}`}>✦</span>
                 <div class="min-w-0">
                   {item.href ? (
                     <a
                       href={item.href}
-                      class="tracking-wide underline underline-offset-4 decoration-lotg-green/40 hover:text-lotg-green hover:decoration-lotg-green transition-colors"
+                      class="tracking-wide underline underline-offset-4 decoration-lotg-orange/40 hover:text-lotg-orange hover:decoration-lotg-orange transition-colors"
                     >
                       {item.text}
                     </a>
@@ -67,7 +67,7 @@ import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, s
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          class="text-lotg-green underline underline-offset-4 decoration-lotg-green/40 hover:decoration-lotg-green transition-colors"
+                          class="text-lotg-orange underline underline-offset-4 decoration-lotg-orange/40 hover:decoration-lotg-orange transition-colors"
                         >
                           {link.label}
                         </a>
@@ -79,7 +79,7 @@ import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, s
                       href={item.cta.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="mt-2 inline-block rounded-full bg-lotg-green px-4 py-1.5 text-sm font-semibold text-lotg-dark hover:bg-lotg-green/80 transition-colors"
+                      class="mt-2 inline-block rounded-full bg-lotg-blue px-4 py-1.5 text-sm font-semibold text-lotg-offwhite hover:bg-lotg-yellow hover:text-lotg-dark transition-colors"
                     >
                       {item.cta.label}
                     </a>
@@ -106,7 +106,7 @@ import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, s
           href={newsletterSignupUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="underline underline-offset-4 decoration-lotg-green/40 hover:text-lotg-green hover:decoration-lotg-green transition-colors"
+          class="underline underline-offset-4 decoration-lotg-orange/40 hover:text-lotg-orange hover:decoration-lotg-orange transition-colors"
         >
           sign up to our newsletter
         </a>
@@ -116,12 +116,12 @@ import { activityCategories, activityPhotos, cafeBarMenu, newsletterSignupUrl, s
       </p>
 
       <div class="grid sm:grid-cols-2 gap-6">
-        <div class="bg-lotg-card rounded-2xl border border-lotg-green/20 p-5 text-center">
-          <p class="font-bangers text-lotg-green text-2xl tracking-wide mb-2">Cafe Menu</p>
+        <div class="bg-lotg-card rounded-2xl border border-lotg-orange/20 p-5 text-center">
+          <p class="font-bangers text-lotg-yellow text-2xl tracking-wide mb-2">Cafe Menu</p>
           <p class="text-lotg-offwhite/70 text-sm">To be confirmed</p>
         </div>
-        <div class="bg-lotg-card rounded-2xl border border-lotg-green/20 p-5 text-center">
-          <p class="font-bangers text-lotg-green text-2xl tracking-wide mb-2">Mal's Bar Menu</p>
+        <div class="bg-lotg-card rounded-2xl border border-lotg-orange/20 p-5 text-center">
+          <p class="font-bangers text-lotg-yellow text-2xl tracking-wide mb-2">Mal's Bar Menu</p>
           <p class="text-lotg-offwhite/70 text-sm">To be confirmed</p>
         </div>
       </div>

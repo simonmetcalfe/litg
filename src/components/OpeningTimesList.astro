@@ -6,10 +6,10 @@ interface Props {
   headingClass?: string;
 }
 
-const { headingClass = 'text-lotg-green' } = Astro.props;
+const { headingClass = 'text-lotg-yellow' } = Astro.props;
 ---
 
-<div class="bg-lotg-card rounded-2xl p-6 border border-lotg-green/20">
+<div class="bg-lotg-card rounded-2xl p-6 border border-lotg-orange/20">
   <h3 class={`font-bangers text-3xl tracking-wide mb-2 ${headingClass}`}>Opening Times</h3>
   <p class="text-lotg-offwhite/70 text-sm leading-relaxed">
     These times are preliminary — we're working to confirm them.
@@ -17,10 +17,10 @@ const { headingClass = 'text-lotg-green' } = Astro.props;
   <NewsletterNudge class="mb-5" />
   <div class="space-y-3">
     {openingTimes.map(row => (
-      <div class="border-b border-lotg-green/10 pb-3 last:border-0 last:pb-0">
+      <div class="border-b border-lotg-orange/10 pb-3 last:border-0 last:pb-0">
         <div class="flex justify-between gap-4 items-start">
           <span class="text-lotg-offwhite/70 text-sm uppercase tracking-wide shrink-0">{row.label}</span>
-          <div class="text-lotg-green text-sm text-right">
+          <div class="text-lotg-orange text-sm text-right">
             {row.times.map(line => (
               <div>{line}</div>
             ))}
