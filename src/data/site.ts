@@ -40,6 +40,7 @@ export interface TicketTier {
   dates: string;
   adult: TicketPrice;
   child: TicketPrice;
+  soldOut?: boolean;
 }
 
 export const ticketTiers: TicketTier[] = [
@@ -48,6 +49,7 @@ export const ticketTiers: TicketTier[] = [
     dates: 'Until 31 Oct 2026',
     adult: { price: '£90', saving: '£30 off' },
     child: { price: '£15', saving: '£20 off' },
+    soldOut: true,
   },
   {
     name: 'Early Bird',
