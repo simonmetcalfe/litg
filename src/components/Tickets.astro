@@ -13,7 +13,12 @@ import { sectionHeadings, ticketTiers, ticketUrl } from '../data/site';
     <!-- Weekend ticket price tiers -->
     <div class="grid md:grid-cols-3 gap-4 mb-4">
       {ticketTiers.map(tier => (
-        <div class="bg-lotg-card rounded-2xl p-6 border border-lotg-orange/40 flex flex-col items-center gap-4 hover:border-lotg-orange hover:shadow-[0_0_20px_rgba(247,120,42,0.2)] transition-all">
+        <div
+          class:list={[
+            'relative overflow-hidden bg-lotg-card rounded-2xl p-6 border border-lotg-orange/40 flex flex-col items-center gap-4 transition-all',
+            !tier.soldOut && 'hover:border-lotg-orange hover:shadow-[0_0_20px_rgba(247,120,42,0.2)]',
+          ]}
+        >
           <h3 class="self-stretch -mx-6 -mt-6 bg-lotg-orange text-lotg-dark font-bangers text-2xl tracking-wide py-1 rounded-t-2xl">{tier.name}</h3>
           <div>
             <p class="text-lotg-offwhite text-sm uppercase tracking-wide">{tier.dates}</p>
@@ -33,6 +38,11 @@ import { sectionHeadings, ticketTiers, ticketUrl } from '../data/site';
               </div>
             ))}
           </div>
+          {tier.soldOut && (
+            <div class="absolute inset-0 flex items-center justify-center bg-lotg-dark/50">
+              <span class="w-[120%] shrink-0 -rotate-6 bg-lotg-yellow text-lotg-dark font-bangers text-4xl tracking-wide py-2 shadow-lg">Sold out</span>
+            </div>
+          )}
         </div>
       ))}
     </div>
